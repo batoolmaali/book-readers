@@ -1,0 +1,23 @@
+﻿@model List<BookReaders.ViewModels.BookKidVM>
+
+<h1>Books</h1>
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var book in Model)
+        {
+            <li>
+                <h2>@book.Title</h2>
+                <p>@book.Description</p>
+                @if (book.Image != null)
+                {
+                    <img src="data:image;base64,@Convert.ToBase64String(book.Image)" alt="@book.Title" />
+                }
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No books available.</p>
+}

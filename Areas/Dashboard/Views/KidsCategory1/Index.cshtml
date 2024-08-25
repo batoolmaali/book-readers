@@ -1,0 +1,118 @@
+﻿@model IEnumerable<BookAPI.ViewModels.KidsCategoryViewModel>
+
+
+
+
+
+<div class="row container d-flex justify-content-center">
+
+    <div class="container ">
+        <partial name="_Notification" />
+        <div class="row mb-4">
+            <div class="col-md-6">
+
+                <a asp-action="Create" asp-controller="KidsCategory1" class="btn text-light" style="background-color:#573ba3">Create New</a>
+            </div>
+
+
+          
+        </div>
+    </div>
+    <div class="col-lg-12 grid-margin stretch-card ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">All Kids Categories</h5>
+                <hr />
+                <p class="card-description">
+
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                             
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Image)
+                                </th>
+
+                              
+
+                                <th>
+                                    Actions
+                                </th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                   
+                                   
+                                    <td >
+                                            @if (item.Image != null && item.Image.Length > 0)
+                                            {
+                                                string imageBase64 = Convert.ToBase64String(item.Image);
+                                            <img width="50px" src="data:image;base64,@imageBase64" alt="Image" />
+                                            }
+                                            else
+                                            {
+                                            <p>No image available</p>
+                                            }
+                                    </td>
+                                   
+                                  
+                                    <td>
+                                    <a class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Id">
+
+                                        <i class="fas fa-trash-alt delete-icon"></i>
+                                    </a>
+                                    @*   modal *@
+                                    <div class="modal" id="exampleModal-@item.Id">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Modal title</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Are you Sure Delete Item @item.Name ?</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                        <form method="post" asp-action="Delete" asp-controller="KidsCategory1"
+                                                              asp-area="Dashboard" asp-route-id="@item.Id">
+                                                            @Html.AntiForgeryToken()
+                                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                                        </form>
+                                                  
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </td>
+                                 </tr>          
+                                   
+                            }
+
+
+
+                        </tbody>
+                    
+                    
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

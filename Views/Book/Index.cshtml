@@ -1,0 +1,190 @@
+﻿@model IEnumerable<BookReaders.Models.Book>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete Example</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include jQuery UI library for autocomplete -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        .position-relative {
+            position: relative;
+        }
+
+        .custom-autocomplete {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            z-index: 9999; /* Ensure dropdown is on top of other elements */
+        }
+
+        .input-text:focus {
+            box-shadow: 0px 0px 0px;
+            border-color: #573ba3;
+            outline: 0px;
+        }
+
+        .form-control {
+            border: 1px solid #573ba3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid mb-5 " style="background-color:#f5f1ed ; height: 300px; background-size: cover; background-repeat: no-repeat;">
+
+        <div class="row">
+            <div class="about-us">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-lg-6">
+                            <div class="left-image2">
+                                <img src="https://bridge315.qodeinteractive.com/wp-content/uploads/2020/01/p1-img-02.jpg" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="right-content2">
+                                <h4>All Books</h4>
+
+
+
+                                <div class="total mt-2" >
+                                   @*  <h4><div class="main-border-button"><a href="#">Borrow Book</a></div></h4> *@
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<section class="section" id="products">
+    <div class="container">
+        <div class="row">
+        
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+               Showing all results
+            </div>
+                <div class="col-md-6 mb-4" class="position-relative">
+
+                        <div class="input-group position-relative">
+
+                            <input type="text" class="form-control" placeholder="Search for a book" id="searchBook" />
+                            <div class="input-group-append">
+                                <button class="btn btn-outline " type="button" style="border-color:#573ba3"><i class="fa fa-search"></i></button>
+                            </div>
+                        <div id="autocompleteDropdown" class="custom-autocomplete"></div>
+                    </div>
+
+                       @*  <div class="input-group position-relative">
+                            <input type="text" class="form-control input-text" placeholder="Search products...." aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                   id="searchBook">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-warning " type="button"><i class="fa fa-search"></i></button>
+                            </div>
+                            <div id="autocompleteDropdown" class="custom-autocomplete"></div>
+                        </div> *@
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                 
+                    <div class="col-lg-2 col-md-4 col-6 book-item" style="width:200px; margin-right:35px; margin-bottom:30px">
+                    <div class="item" style="width:200px; margin-right:20px">
+                        <div class="thumb">
+                            <div class="hover-content">
+                                <ul>
+                                    <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
+                                    <li>
+                                        <form asp-action="AddToFav" asp-controller="Book" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                            <button type="submit" style="border:none" class="star-button">
+                                                <i class="fa fa-star"></i>
+                                            </button>
+                                        </form>
+                                    </li>
+                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <img src="@Url.Content("~/" + item.ImagePath)" alt="" height="302">
+                        </div>
+                        <div class="down-content">
+                            <h5>@item.Title</h5>
+                            <span style="margin-bottom:10px">
+                             <p class="author-name">@item.Author.Name</p>
+                            </span>
+                            @if (item.Quantity > 0)
+                            {
+                                <a class="btn btn-dark" style="width:100%; background-color: #573ba3; border-radius: 9999px;">
+                                    <i class="fas fa-book"></i>
+                                    Borrow Now
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-danger disabled" style="width:100%; border-radius: 9999px">Not in Library</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#searchBook").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/Book/AutoComplete',
+                        dataType: "json",
+                        data: {
+                            term: request.term
+                        },
+                        success: function (data) {
+                            response(data);
+                        }
+                    });
+                },
+                appendTo: "#autocompleteDropdown",
+                select: function (event, ui) {
+                    showSelectedBook(ui.item.value);
+                }
+            });
+
+            function showSelectedBook(selectedBookTitle) {
+                $('.book-item').each(function () {
+                    var title = $(this).find('h5').text();
+                    if (title.toLowerCase() === selectedBookTitle.toLowerCase()) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+        });
+    </script>
+
+   
+</body>
+</html>
+
+
+

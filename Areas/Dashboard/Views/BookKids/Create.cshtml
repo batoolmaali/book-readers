@@ -1,0 +1,96 @@
+﻿@using BookAPI.ViewModels
+@model BookReaders.ViewModels.FormBookKidVM
+@{
+    var catList = ViewBag.Cat as List<KidsCategoryViewModel>;
+}
+
+
+
+<div class="row container d-flex justify-content-center">
+    <div class="card p-4 ">
+        <form asp-controller="BookKids" asp-action="Create" asp-area="Dashboard" method="post" enctype="multipart/form-data">
+            <h5>Add kids Categories </h5>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group pb-3">
+                <label asp-for="Title">Title</label>
+                <input type="text" id="Title" asp-for="Title" class="form-control">
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group pb-3">
+                <label asp-for="Description">Description</label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group pb-3">
+                @if (catList != null)
+                {
+                    <label asp-for="KidsCategoryId">Category ID</label>
+                    <select asp-for="KidsCategoryId" class="form-control" asp-items="@(new SelectList(catList ,"Id", "Name"))">
+                        <option>--Select Category --</option>
+                    </select>
+                }
+                <span asp-validation-for="KidsCategoryId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group pb-3">
+                <label asp-for="Image">Image</label>
+                <input type="file" asp-for="Image" class="form-control">
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+
+            <div class="form-group pb-3">
+                <label asp-for="PDF">PDF</label>
+                <input type="file" asp-for="PDF" class="form-control">
+                <span asp-validation-for="PDF" class="text-danger"></span>
+            </div>
+
+            <div class="form-group ">
+                <input type="submit" value="Save" class="btn text-light" style="background-color:#573ba3" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+
+@* <form asp-controller="BookKids" asp-action="Create" asp-area="Dashboard" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input type="text" id="Title" asp-for="Title" class="form-control">
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @if (catList != null)
+        {
+            <label asp-for="KidsCategoryId">Category ID</label>
+            <select asp-for="KidsCategoryId" class="form-control" asp-items="@(new SelectList(catList ,"Id", "Name"))">
+                <option>--Select Category --</option>
+            </select>
+        }
+        <span asp-validation-for="KidsCategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Image">Image</label>
+        <input type="file" asp-for="Image" class="form-control-file">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</form> *@

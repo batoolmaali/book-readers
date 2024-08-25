@@ -1,0 +1,111 @@
+﻿@model UserBorrowViewModel
+
+
+
+
+<!-- ***** Main Banner Area Start ***** -->
+<div class="container-fluid mb-5 " style="background-color:#f5f1ed ; height: 300px; background-size: cover; background-repeat: no-repeat;">
+
+    <div class="row">
+        <div class="about-us">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-6">
+                        <div class="left-image2">
+                            <img src="https://bridge315.qodeinteractive.com/wp-content/uploads/2020/01/p1-img-02.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="right-content2">
+                            <h4>Favorite Books</h4>
+
+
+
+                            <div class="total mt-2">
+                                <h4><div class="main-border-button"><a href="#">Borrow Book</a></div></h4>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading text-center">
+                    <h2>Welcome, @Model.User.UserName</h2>
+                    <span>Your Borrow List:</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<!-- ***** Main Banner Area End ***** -->
+<!-- ***** Product Area Starts ***** -->
+@if (Model.Borrows != null && Model.Borrows.Any() && Model.Borrows.All(f => f.Book != null))
+{
+    <ul>
+        @foreach (var favorite in Model.Borrows)
+        {
+            @if(favorite.IsReturned== false)
+            {
+                <section class="section" id="product">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="left-images">
+                                    <img width="50px" src="@Url.Content("~/" + favorite.Book.ImagePath)" />
+                                    <img src="assets/images/single-product-02.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-8 pl-5">
+                                <div class="right-content">
+                                    <h4>@favorite.Book.Title</h4>
+                                    <span class="price">Languages: @favorite.Book.Language</span>
+                                    @* <ul class="stars">
+                        <li>@favorite.Book.Category.Name</li>
+                        </ul> *@
+                                    <span>@favorite.Book.Description</span>
+                                    @*         <div class="quote">
+                        <i class="fa fa-quote-left"></i><h3>By: @favorite.Book.Author.Name</h3>
+                        </div> *@
+                                    <div class="quantity-content">
+                                        <div class="total">
+                                            <h4>
+                                                <div class="main-border-button">
+                                                    <a asp-action="Return" asp-controller="Borrow" asp-area="" asp-route-id="@favorite.Book.Id">
+                                                        Return
+                                                    </a>
+                                                </div>
+                                            </h4>
+                                      
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            }
+            else
+            {
+              
+            }
+
+    }
+    </ul>
+}
+else
+{
+
+    <p class="alert-success w-100 d-flex justify-content-center text-center p-5">No favorites found or some favorites are missing book information.</p>
+}

@@ -1,0 +1,79 @@
+﻿@model BookReaders.Areas.AccountUser.ViewModels.LoginViewModel
+
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+ 
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/css/Registerformstyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container1">
+        <div class="image-bg"></div>
+        <div class="content">
+            <div className="head">
+                <div style="width:100%; text-align:center; margin-top:10%">
+                    <h1>Login</h1>
+                </div>
+               
+             @*    <a className="back" > <HiOutlineArrowNarrowLeft size={22} />Back
+                </a> *@
+               
+            </div> 
+            <div class="body" >
+               
+                <div class="main" style="margin-top:20%">
+                  <form asp-action="Login" asp-controller="Account" >
+                   <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-content" style="margin-top: 15px;">
+                            <div class="form-group">
+                                <label asp-for="UserName" class="control-label"></label>
+                                <input asp-for="UserName" class="form-control" placeholder="Enter your Name"/>
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                        
+                            <div class="form-group">
+                                <label asp-for="Password" class="control-label"></label>
+                                <input asp-for="Password" class="form-control" placeholder="Enter your Password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+
+                            <div class="footer">
+                                <button type="submit" class="btn btn-dark w-100">Login</button>
+                            </div>
+                         
+                             
+                            </div>
+                     
+                      
+                    </form>
+              
+
+              @*   <div>
+                    <a asp-action="Index">Back to List</a>
+                </div> *@
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+

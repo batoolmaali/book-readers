@@ -1,0 +1,68 @@
+﻿@model List<BookReaders.Areas.Dashboard.Models.RoleViewModel>
+
+
+@* <partial name="_RoleForm" model="new BookReaders.Areas.Dashboard.Models.RoleViewModel()" /> *@
+
+
+
+<div class="row container d-flex justify-content-center">
+    <partial name="~/Areas/Dashboard/Views/Role/_RoleForm.cshtml" model=" new BookReaders.Areas.Dashboard.Models.RoleViewModel()" />
+    <div class="container ">
+        <partial name="_Notification" />
+        <div class="row mb-4">
+        
+
+
+         
+        </div>
+    </div>
+    <div class="col-lg-12 grid-margin stretch-card ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">All Roles</h5>
+                <hr />
+                <p class="card-description">
+
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Role Name
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Id">
+
+                                            <i class="fas fa-trash-alt delete-icon"></i>
+                                        </a>
+
+                                        <a type="button" asp-action="EditBook" asp-controller="Book" asp-area="Dashboard" asp-route-id="@item.Id" class="btn text-light btn-sm"
+                                           style="background-color:#573ba3">
+                                            <i class="fas fa-edit edit-icon"></i>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            }
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

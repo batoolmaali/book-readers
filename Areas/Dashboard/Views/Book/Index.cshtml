@@ -1,0 +1,204 @@
+﻿@model IEnumerable<BookReaders.Models.Book>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="row container d-flex justify-content-center">
+  
+    <div class="container ">
+        <partial name="_Notification" />
+        <div class="row mb-4">
+            <div class="col-md-6">
+
+                <a asp-action="Create" asp-controller="Book" class="btn text-light" style="background-color:#573ba3">Create New</a>
+            </div>
+           
+
+            <div class="col-md-6">
+                <form asp-action="Search" asp-controller="Book" asp-area="Dashboard" method="get" class="form-inline d-flex">
+               
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="SearchItem">
+                    <input class="btn text-light" style="background-color:#573ba3" type="submit" value="Search"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 grid-margin stretch-card ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">All Books</h5>
+                <hr />
+                <p class="card-description">
+
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                            @*     <th>
+                                    @Html.DisplayNameFor(model => model.Description)
+                                </th> *@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Quantity)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Language)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PublishDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ImagePath)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IsAvailable)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Category)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Author)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BookPDF)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IsComingSoon)
+                                </th>
+                                <th>
+                                    Actions
+                                </th>
+
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                @*     <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td> *@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Quantity)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Language)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PublishDate.Year)
+                                    </td>
+                                    <td>
+                                       <img width="50px" src="@Url.Content("~/" + item.ImagePath)"/>
+                                    </td>
+                                    <td>
+                                        @if(item.IsAvailable== true)
+                                        {
+                                            <p class="text-success">Available</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="text-danger">Not Available</p>
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Category.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Author.Name)
+                                    </td>
+                                   
+                                    
+                                    <td>
+                                        <a class="btn text-light btn-sm"
+                                           style="background-color:#573ba3" href="@Url.Content("~/" + @item.BookPDF)" target="_blank">PDF</a>
+                                    </td>
+                                    <td>
+                                        @if(item.IsComingSoon== true)
+                                        {
+                                            <span class="text-success">Yes</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-danger">No</span>
+                                        }
+                                    </td>
+                        
+                                <td>
+                            <a class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Id">
+
+                                        <i class="fas fa-trash-alt delete-icon"></i>
+                                    </a>
+                                    @*   modal *@
+                                    <div class="modal" id="exampleModal-@item.Id">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Modal title</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Are you Sure Delete Item @item.Title ?</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form asp-action="Delete" asp-route-id="@item.Id" method="post">
+                                                        @Html.AntiForgeryToken()
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form>
+
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <a type="button" asp-action="EditBook" asp-controller="Book" asp-area="Dashboard" asp-route-id="@item.Id" class="btn text-light btn-sm"
+                                           style="background-color:#573ba3">
+                                        <i class="fas fa-edit edit-icon"></i>
+                                    </a>
+
+                                </td>
+                            </tr>
+                            }
+                     
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@* <div class="container d-flex justify-content-center mt-4">
+    @{
+        if (Model.ToList().Count < 5)
+        {
+            int id = 0;
+            <a type="button" asp-action="Index" asp-controller="Author" asp-area="Dashboard" asp-route-id="@id" class="btn text-light btn-sm" style="background-color:#573ba3">
+                Previous
+            </a>
+        }
+        else 
+        {
+            <a type="button" asp-action="Index" asp-controller="Author" asp-area="Dashboard" asp-route-id="@Model.ToList().Last().Id" class="btn text-light btn-sm" style="background-color:#573ba3">
+                Next
+            </a>
+        }
+     
+    }
+
+</div> *@

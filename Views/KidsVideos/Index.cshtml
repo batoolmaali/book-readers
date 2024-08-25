@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BookReaders.ViewModels.KidsVideosViewModel>
+<div class="page-heading-kids " id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    @*     <h2>Single Product Page</h2>
+                    <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span> *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="our-team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Videos For Kids</h2>
+                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                </div>
+            </div>
+            @foreach (var item in Model) {
+            <div class="col-lg-4">
+                <div class="team-item">
+                    <div class="thumb">
+                        <div class="hover-effect">
+                            <div class="inner-content">
+                               
+                            </div>
+                        </div>
+                            <video width="320" height="240" controls poster="@item.ThumbnailUrl">
+                                <source src="@item.VideoUrl" type="video/mp4">
+                    </div>
+                    <div class="down-content">
+                        <h4>     @Html.DisplayFor(modelItem => item.Title)</h4>
+                            <span>  @Html.DisplayFor(modelItem => item.Description)</span>
+                    </div>
+                </div>
+            </div>
+           }
+        </div>
+    </div>
+</section>

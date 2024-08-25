@@ -1,0 +1,489 @@
+﻿@model BookReaders.Models.BookDetailsViewModel
+
+@{
+    var userName = ViewBag.UserName; // Retrieve username from ViewBag
+    
+}
+<style>
+
+
+    .mt-20 {
+        margin-top: 50px !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #3d405c;
+        margin: 0px 0px 15px 0px;
+        font-family: 'Circular Std Medium';
+    }
+
+
+    .about-us .left-image img {
+        width: 70%;
+        overflow: hidden;
+
+    }
+
+    .about-us .left-image{
+        display:flex;
+        justify-content:end
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: #3d3f5d;
+    }
+
+    .tab-regular .nav.nav-tabs {
+        border-bottom: transparent;
+    }
+
+        .tab-regular .nav.nav-tabs .nav-item {
+        }
+
+        .tab-regular .nav.nav-tabs .nav-link {
+            display: block;
+            padding: 17px 49px;
+     /*        color: #71748d;
+            background-color: #dddde8; */
+            margin-right: 5px;
+           /*  border-color: #dddde8; */
+        }
+
+    .tab-regular .nav-tabs .nav-link.active {
+        background-color: #fff;
+        border-color: #e6e6f2 #e6e6f2 #fff;
+        color: #5969ff;
+    }
+
+    .tab-regular .tab-content {
+        background-color: #fff;
+        padding: 30px;
+        border: 1px solid #e6e6f2;
+        border-radius: 4px;
+        border-top-left-radius: 0px
+    }
+
+</style>
+<!-- ***** Main Banner Area Start ***** -->
+<div class="page-heading" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2>Single Product Page</h2>
+                    <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+<!-- ***** Product Area Starts ***** -->
+@if (Model.Book != null)
+{
+    <section class="section" id="product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="left-images">
+                        <img src="@Url.Content("~/" + Model.Book.ImagePath)" alt="">
+                        <img src="assets/images/single-product-02.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-8 pl-5">
+                    <div class="right-content">
+                        <h4>@Html.DisplayFor(model => model.Book.Title)</h4>
+                        <span class="price">Languages: @Html.DisplayFor(item => item.Book.Language)</span>
+                        <ul class="stars">@Html.DisplayFor(model => model.Book.Category.Name)</ul>
+                        <span>@Html.DisplayFor(model => model.Book.Description)</span>
+                        <div class="quote">
+                            <i class="fa fa-quote-left"></i>
+                            <h3>By: @Html.DisplayFor(item => item.Book.Author.Name)</h3>
+                        </div>
+                        <div class="quantity-content" style="height:150px">
+                            <div class="total">
+                                <h4 class="d-flex justify-content-between " style="width:35%">
+                                    @if (Model.Book.Quantity > 0)
+                                    {
+                                        
+                                            <div class="main-border-button"><a href="#">Borrow Book</a></div>
+                                        <div class="main-border-button">
+                                            <a class="main-border-button" href="@Url.Content("~/" + @Model.Book.BookPDF)" target="_blank">Book PDF</a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                      
+                                            <div class="main-border-button "><a href="#" class="disabled">Not Available</a></div>
+                                        <div class="main-border-button">
+                                            <a class="main-border-button" href="@Url.Content("~/" + @Model.Book.BookPDF)" target="_blank">Book PDF</a>
+                                        </div>
+                                       
+                                    }
+                              
+                          </h4>
+                       @*          <div class="main-border-button">
+                                    <a class="main-border-button" href="@Url.Content("~/" + @Model.Book.BookPDF)" target="_blank">Book PDF</a>
+                                </div> *@
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container d-flex justify-content-center w-100">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-5 mt-20">
+
+            <div class="tab-regular">
+                <ul class="nav nav-tabs " id="myTab" role="tablist">
+                    <li class="nav-item ">
+                        <a class="nav-link active bg-dark text-light" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About Author #1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-dark text-light" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Reviews #2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-dark text-light" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Tab Title #3</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="about-us">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="left-image">
+                                            <img src="@Url.Content("~/" + Model.Book.Author.ImagePath)" alt="" width="40%"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="right-content" style="margin-top:0px">
+                                            <h4>@Model.Book.Author.Name</h4>
+                                            <span>@Model.Book.Author.Birthdate</span>
+                                            <div class="quote">
+                                                <i class="fa fa-quote-left"></i><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod kon tempor incididunt ut labore.</p>
+                                            </div>
+                                            <p>  @Model.Book.Author.Biography</p>
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <h3>Tab Content 1</h3>
+                        <div class="container-fluid">
+                            <div class="container mt-5">
+                                <div class="input-group mb-3" style="width: 100%;">
+
+
+                                    <form asp-action="AddReview" asp-controller="Book" asp-area="" method="post"
+                                          class="d-flex w-100">
+                                        <input type="hidden" asp-for="@Model.Book.Id" />
+                                        <input type="text" class="form-control" asp-for="NewReviewComment" placeholder="Add your review" />
+                                        <input class="btn btn-outline-secondary" type="submit" />
+                                    </form>
+
+                                </div>
+                                <div class="row  d-flex justify-content-center">
+
+                                    <div class="col-md-12">
+
+                                        <div class="headings d-flex justify-content-between align-items-center mb-3">
+                                            <h5>All comments(@Model.Reviews.Count())</h5>
+
+                                            <div class="buttons">
+
+                                                <span class="badge bg-white d-flex flex-row align-items-center">
+                                                   @*  <span class="text-primary">Comments "ON"</span> *@
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+
+                                                    </div>
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        @if (Model.Reviews != null && Model.Reviews.Any())
+                                        {
+
+
+                                            @foreach (var review in Model.Reviews)
+                                            {
+                                                <div class="card p-3 mt-2">
+
+                                                    <div class="d-flex justify-content-between align-items-center">
+
+                                                        <div class="user d-flex flex-row align-items-center">
+
+                                                <img src="@Url.Content("~/" + review.User.ImagePath)" width="30" class="user-img rounded-circle mr-2">
+                                                            <span>
+                                                                @if (!string.IsNullOrEmpty(@review.User.UserName))
+
+                                                                {
+                                                                    <p>
+                                                                        By: <small class="text-danger">
+                                                                            @review.User.UserName
+                                                                        </small>
+                                                                    </p>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <p>By: <small class="text-danger">Unknown User</small></p>
+                                                                }
+                                                                <small class="font-weight-bold">@review.Comment</small>
+                                                            </span>
+
+                                                        </div>
+
+                                                        <small>@review.ReviewDate.DayOfWeek</small>
+
+                                                    </div>
+
+                                                    <div class="action d-flex justify-content-between mt-2 align-items-center">
+
+                                                        <div class="reply px-4">
+                                                            <small>Remove</small>
+                                                            <span class="dots"></span>
+                                                            <small>Reply</small>
+                                                            <span class="dots"></span>
+                                                            <small>Translate</small>
+
+                                                        </div>
+
+                                                        <div class="icons align-items-center">
+                                                            <i class="fa fa-check-circle-o check-icon text-primary"></i>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            <p>No reviews yet.</p>
+                                        }
+
+
+
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                    </div>
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <h3>Tab Heading Content 2</h3>
+                        <p>Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras pulvinar mattis. Amet risus nullam eget felis eget nunc lobortis mattis. Lacus viverra vitae congue eu. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Est placerat in egestas erat imperdiet sed euismod.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@* <div class="container ">
+<div class="tabs-to-dropdown">
+    <div class="nav-wrapper d-flex align-items-center justify-content-between">
+        <ul class="nav nav-pills d-none d-md-flex" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="pills-company-tab" data-toggle="pill" href="#pills-company" role="tab" aria-controls="pills-company" aria-selected="true">Company</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-product-tab" data-toggle="pill" href="#pills-product" role="tab" aria-controls="pills-product" aria-selected="false">Product</a>
+            </li>
+          
+        </ul>
+
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">
+                <a href="">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z" fill="currentColor" />
+                    </svg>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8 3C9.10457 3 10 3.89543 10 5V8H16C17.1046 8 18 8.89543 18 10C18 11.1046 17.1046 12 16 12H10V14C10 15.6569 11.3431 17 13 17H16C17.1046 17 18 17.8954 18 19C18 20.1046 17.1046 21 16 21H13C9.13401 21 6 17.866 6 14V5C6 3.89543 6.89543 3 8 3Z" fill="currentColor" />
+                    </svg>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.00977 5.83789C3.00977 5.28561 3.45748 4.83789 4.00977 4.83789H20C20.5523 4.83789 21 5.28561 21 5.83789V17.1621C21 18.2667 20.1046 19.1621 19 19.1621H5C3.89543 19.1621 3 18.2667 3 17.1621V6.16211C3 6.11449 3.00333 6.06765 3.00977 6.0218V5.83789ZM5 8.06165V17.1621H19V8.06199L14.1215 12.9405C12.9499 14.1121 11.0504 14.1121 9.87885 12.9405L5 8.06165ZM6.57232 6.80554H17.428L12.7073 11.5263C12.3168 11.9168 11.6836 11.9168 11.2931 11.5263L6.57232 6.80554Z" fill="currentColor" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-company" role="tabpanel" aria-labelledby="pills-company-tab">
+            <div class="container-fluid">
+                <h2 class="mb-3 font-weight-bold">About Author</h2>
+                        <div class="about-us">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="left-image">
+                                            <img src="~/Home/images/about-left-image.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="right-content">
+                                            <h4>@Model.Book.Author.Name</h4>
+                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore.</span>
+                                            <div class="quote">
+                                                <i class="fa fa-quote-left"></i><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod kon tempor incididunt ut labore.</p>
+                                            </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-product" role="tabpanel" aria-labelledby="pills-product-tab">
+            <div class="container-fluid">
+                    <div class="container mt-5">
+                        <div class="input-group mb-3" style="width: 100%;">
+                     
+                          
+                                <form asp-action="AddReview" asp-controller="Book" asp-area="" method="post"
+                                class="d-flex w-100">
+                                        <input type="hidden" asp-for="@Model.Book.Id"  />
+                                    <input type="text" class="form-control" asp-for="NewReviewComment" placeholder="Add your review" />
+                                    <input class ="btn btn-outline-secondary" type="submit"/>
+                                </form>
+                           
+                        </div>
+                        <div class="row  d-flex justify-content-center">
+
+                            <div class="col-md-8">
+
+                                <div class="headings d-flex justify-content-between align-items-center mb-3">
+                                    <h5>All comments(@Model.Reviews.Count())</h5>
+
+                                    <div class="buttons">
+
+                                        <span class="badge bg-white d-flex flex-row align-items-center">
+                                            <span class="text-primary">Comments "ON"</span>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+
+                                            </div>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                  @if (Model.Reviews != null && Model.Reviews.Any())
+                {
+                   
+                                      
+                                            @foreach (var review in Model.Reviews)
+                                            {
+                                            <div class="card p-3 mt-2">
+
+                                                <div class="d-flex justify-content-between align-items-center">
+
+                                                    <div class="user d-flex flex-row align-items-center">
+
+                                                        <img src="https://i.imgur.com/C4egmYM.jpg" width="30" class="user-img rounded-circle mr-2">
+                                                        <span>
+                                                            @if (!string.IsNullOrEmpty(userName))
+                                                            
+                                                            {
+                                                                <p>By: <small class="text-danger">
+                                                                        @review.User.Id
+                                                                    </small></p>
+                                                            }
+                                                            else
+                                                            {
+                                                                <p>By: <small class="text-danger">Unknown User</small></p>
+                                                            }
+                                                            <small class="font-weight-bold">@review.Comment</small>
+                                                        </span>
+
+                                                    </div>
+
+                                                    <small>@review.ReviewDate.DayOfWeek</small>
+
+                                                </div>
+
+                                                <div class="action d-flex justify-content-between mt-2 align-items-center">
+
+                                                    <div class="reply px-4">
+                                                        <small>Remove</small>
+                                                        <span class="dots"></span>
+                                                        <small>Reply</small>
+                                                        <span class="dots"></span>
+                                                        <small>Translate</small>
+
+                                                    </div>
+
+                                                    <div class="icons align-items-center">
+                                                        <i class="fa fa-check-circle-o check-icon text-primary"></i>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                               
+                                            }
+                                     
+                                    }
+                                    else
+                                    {
+                                        <p>No reviews yet.</p>
+                                    }
+
+                               
+
+                               
+
+                            </div>
+
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+     
+       
+    </div>
+</div>
+</div> *@
+
+<!-- ***** Product Area Ends ***** -->
+
+    @await Component.InvokeAsync("RelatedBook", new { id = Model.Book.Category.Id })
+}

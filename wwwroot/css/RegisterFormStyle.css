@@ -1,0 +1,615 @@
+﻿* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Work Sans", sans-serif;
+}
+
+.container1 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.image-bg {
+    width: 60%;
+    height: 100vh;
+    /* background-image: url('https://sweetsequels.com/wp-content/uploads/2020/05/shelflove-scaled-e1588341087852-600x800.jpg');*/
+
+    background-image: url('https://images.squarespace-cdn.com/content/v1/5456aa00e4b0750e1090a911/1605151383049-KJFGFIU718K7VOF27PE3/%C2%A9Sabina+Fenn_SF127_i2iArt.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* https://i.etsystatic.com/6395219/r/il/a9047a/3420059180/il_fullxfull.3420059180_aoa8.jpg */
+    /* https: //images.squarespace-cdn.com/content/v1/57f574f3d1758ed0dea9b165/1664281270842-1824A5XB83YSBA1ZQ3NA/stylist+magazine.jpg height: 100vh;*/ /*
+width: 60 %;
+background - image: url('https://i.etsystatic.com/13214647/r/il/3be39f/3253283571/il_600x600.3253283571_exr3.jpg');
+
+*/ /*  background-image: url('https://th.bing.com/th/id/OIP.480Swatj-NH4GDD-NxnkegHaGy?rs=1&pid=ImgDetMain');*/
+}
+.text-danger{
+    color:red;
+}
+.content {
+    width: 40%;
+    height: 100vh;
+    background-color: #f5f2f0;
+    ;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+.content .head {
+    height: 7vh;
+    width: 100%;
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+}
+
+    .content .head .logo {
+        width: 100%;
+        text-align: center;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     
+        color: #000000;
+        font-weight: bold;
+    }
+
+
+
+
+.content .body {
+    height: 80vh;
+    width: 100%;
+    margin-top:20px;
+    /* background-color: palevioletred; */
+}
+
+    .content .body .main {
+        height: 65vh;
+        width: 100%;
+    }
+
+        .content .body .main .form-content {
+            width: 400px;
+            margin: auto;
+            height: 70%;
+            /* background-color: rgb(96, 101, 101); */
+        }
+          
+             .content .body .main .form-content input,
+            .content .body .main .form-content select {
+                width: 100%;
+                height: 40px;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+                padding: 0 15px;
+                display: block;
+                margin-bottom: 5px;
+                outline: none;
+                background-color: #fff
+            }
+
+            .content .body .main .form-content label {
+                font-size: 16px;
+                display: block;
+                text-transform: capitalize;
+                color: #000000;
+                height: 20px;
+                margin-left: 5px;
+                margin-bottom: 5px;
+            }
+            .content .body .main .form-content input::placeholder{
+                font-size:14px
+            }
+            .content .body .main .form-content .select-form {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                /* background-color: aqua; */
+            }
+
+                .content .body .main .form-content .select-form .items {
+                    width: 49%;
+                    /* background-color: #27b53a; */
+                }
+
+    .content .body .footer {
+        height: 15vh;
+        width: 100%;
+        /* background-color: plum; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        /*.content .body .footer button {
+            background-color: #000000;*/
+            /* Green */
+            /*border-radius: 6px;
+            border: none;
+            color: #ffffff;
+            text-align: center;
+            width: 170px;
+            height: 41px;
+            line-height: 41px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }*/
+
+/*.login-button {
+    background-color: #27b53a;*/
+    /* Green */
+    /*border-radius: 6px;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    width: 170px;
+    height: 41px;
+    line-height: 41px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+}*/
+    
+.main .note {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.main .note-phone {
+    width: 80%;
+    margin: 0 auto;
+}
+
+    .main .note-phone h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+    .main .note-phone p {
+        max-width: 100%;
+        /* height: 70px; */
+        text-align: center;
+        font-size: 16px;
+        font-weight: normal;
+        color: #000000;
+        text-transform: capitalize;
+        margin: 10px auto;
+    }
+
+
+
+
+    .main .note-phone h3 {
+        color: #007A10;
+        font-size: 27px;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        font-weight: normal;
+        text-transform: capitalize;
+        margin: 5px auto;
+    }
+
+.image-input {
+    width: 100%;
+    height: 147px;
+    /* background-color: #007A10; */
+    margin-top: 30px;
+}
+
+.area {
+    cursor: pointer;
+    width: 99% !important;
+    height: 145px !important;
+    border: 1px dashed #707070 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 2px;
+}
+
+    .area .input-hiddin {
+        display: none !important;
+    }
+
+    .area .icon {
+        color: #707070;
+    }
+
+    .area span {
+        color: #707070;
+        margin-top: 10px;
+    }
+
+    .area img {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+.form-login {
+    padding-top: 30px;
+    /* margin-top: 35px; */
+    height: 250px;
+}
+
+    .form-login .forget-pass input {
+        margin-bottom: 2px;
+    }
+
+    .form-login .forget-pass p {
+        margin-top: 0;
+        color: #68B3F3;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: left;
+        margin: auto;
+    }
+
+.reg-btn {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 40px;
+    align-items: center;
+}
+
+    .reg-btn a {
+        display: block;
+        color: #007A10;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+.back {
+    cursor: pointer;
+}
+
+
+
+.select-inp select {
+    appearance: none !important;
+    -ms-accelerator: none !important;
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
+    outline: 0 !important;
+    flex: 1 !important;
+    background-color: #fff;
+    padding: 0 15px;
+    /* color: #707070; */
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    margin: 10px 0 10px 0;
+    min-width: 0px !important;
+    display: block !important;
+    /* border: 1px solid  #636363;  */
+    border: 1px solid #ccc;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+
+
+
+    .select-inp select::-ms-expand {
+        display: none !important;
+    }
+
+.container-sel {
+    width: 100%;
+}
+
+.select-inp {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: transparent;
+}
+
+    .select-inp::after {
+        display: block;
+        content: "";
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        bottom: 5px;
+        width: 2px;
+        height: 15px;
+        background: url('D:\community\public\images\arrow.png') no-repeat;
+        background-size: cover;
+        cursor: pointer;
+        padding-right: 15px;
+        cursor: pointer;
+        pointer-events: none;
+    }
+
+
+
+/* responsive login/register */
+/* //////////////////////////////////////////////////////////////////// */
+@media(max-width:990px) {
+    .container .image-bg {
+        display: none;
+    }
+
+    .content .head .back {
+        width: 93%;
+        margin: 0 auto;
+    }
+
+    .container .content {
+        width: 100%;
+        height: 100vh;
+    }
+
+        .container .content .body {
+            width: 100%;
+            padding: 10px;
+            height: 100%;
+        }
+
+        .container .content .main {
+            width: 90%;
+            margin: 0 auto;
+            height: auto;
+        }
+
+    .content .body .main .form-content {
+        width: 100%;
+        height: 100%;
+    }
+
+        .content .body .main .form-content input {
+            font-size: 16px;
+        }
+        .content .body .main .form-content input::placeholder {
+         
+        font-size: 14px;
+    }
+
+    .content .body .main .form-content select {
+        width: 100% !important;
+    }
+
+    .content .body .main .form-content input,
+    .content .body .main .form-content select {
+        font-size: 16px;
+    }
+
+    .content .body .footer {
+        height: 10%;
+    }
+
+
+    .main .note {
+        width: 100%;
+        margin: auto 0;
+    }
+
+    .main .new-password {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main .note-phone {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+        .main .note-phone p {
+            width: 100%;
+        }
+
+        .main .note-phone h2 {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+    .select-inp {
+        margin-bottom: 5px;
+        width: 100% !important;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+
+/* //////////////////////////////////////////////////////////////////////////////// */
+@media (min-width: 1000px) and (max-width: 1100px) {
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+
+        .container .image-bg {
+            display: none;
+        }
+
+    .content .head .back {
+        height: 20px;
+        font-size: 20px;
+    }
+
+    .content .head {
+        width: 36%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+
+    .container .content {
+        width: 100%;
+    }
+
+        .container .content .body {
+            width: 35%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .container .content .main {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+    .content .body .main .form-content {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+
+        .content .body .main .form-content input,
+        .content .body .main .form-content select {
+            height: 38px;
+            width: 100% !important;
+            padding: 10px;
+            margin-bottom: 13px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-all;
+        }
+
+    .reg-btn {
+        gap: 10px;
+        margin-bottom: 70px;
+    }
+
+    .select-inp {
+        margin-bottom: 5px;
+        width: 100% !important;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+        .select-inp select {
+            padding: 9px;
+            width: 100% !important;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+    .content .body .main .form-content label {
+        font-size: 15px;
+        color: #000000;
+        height: 15px;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+
+    .content .body .footer {
+        height: 11vh;
+    }
+
+    .main .note-phone {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
+/* //////////////////////////////////////////////////////// */
+@media (min-width: 750px) and (max-width: 950px) {
+
+
+    .content .head {
+        width: 68%;
+        margin: 0 auto;
+    }
+
+
+    .container .content {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+        .container .content .body {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .container .content .main {
+            width: 100%;
+            margin: 0 auto;
+        }
+}
+
+@media (min-width: 370px) and (max-width: 380px) {
+    .content {
+        padding: 20px 0;
+    }
+
+        .content .head {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+            .content .head .logo {
+                width: 145px;
+            }
+}

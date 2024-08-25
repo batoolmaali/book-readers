@@ -1,0 +1,518 @@
+﻿@model IEnumerable<BookReaders.Models.Question>
+@using BookReaders.Areas.AccountUser.Models
+@inject Microsoft.AspNetCore.Identity.SignInManager<ApplicationUser> _signInManager;
+<html>
+
+	<head>
+        <style>
+          
+        .bootdey {
+            margin-top: 100px;
+           /*  background-color: #f5f1ed; */
+            padding:30px;
+            display:flex;
+            justify-content:center
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width:100%
+        }
+
+     
+
+
+        .img-sm {
+            width: 46px;
+            height: 46px;
+        }
+
+        .panel {
+            box-shadow: 0 2px 0 rgba(0,0,0,0.075);
+            border-radius: 0;
+            border: 0;
+            margin-bottom: 15px;
+            background-color: #f5f1ed;
+        }
+
+            .panel .panel-footer, .panel > :last-child {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            .panel .panel-heading, .panel > :first-child {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+
+        .panel-body {
+            padding: 25px 20px;
+            /* background-color:#fff */
+            background-color: #f5f1ed;
+        }
+
+
+        .media-block .media-left {
+            display: block;
+            float: left
+        }
+
+        .media-block .media-right {
+            float: right
+        }
+
+        .media-block .media-body {
+            display: block;
+            overflow: hidden;
+            width: auto;
+            margin-left:50px
+        }
+
+        .middle .media-left,
+        .middle .media-right,
+        .middle .media-body {
+            vertical-align: middle
+        }
+
+        .thumbnail {
+            border-radius: 0;
+            border-color: #e9e9e9
+        }
+
+        .tag.tag-sm, .btn-group-sm > .tag {
+            padding: 5px 10px;
+        }
+
+        .tag:not(.label) {
+            background-color: #fff;
+            padding: 6px 12px;
+            border-radius: 2px;
+            border: 1px solid #cdd6e1;
+            font-size: 12px;
+            line-height: 1.42857;
+            vertical-align: middle;
+            -webkit-transition: all .15s;
+            transition: all .15s;
+        }
+
+        .text-muted, a.text-muted:hover, a.text-muted:focus {
+            color: #acacac;
+        }
+
+        .text-sm {
+            font-size: 0.9em;
+        }
+
+        .text-5x, .text-4x, .text-5x, .text-2x, .text-lg, .text-sm, .text-xs {
+            line-height: 1.25;
+        }
+
+        .btn-trans {
+            background-color: transparent;
+            border-color: transparent;
+            color: #929292;
+        }
+
+        .btn-icon {
+            padding-left: 9px;
+            padding-right: 9px;
+        }
+
+            .btn-sm, .btn-group-sm > .btn, .btn-icon.btn-sm {
+                padding: 5px 10px !important;
+            }
+
+        .mar-top {
+            margin-top: 15px;
+        }
+        .card {
+    border: none;
+    /* border-radius: 20px; */
+    padding: 20px;
+    margin-bottom: 40px;
+            background-color: #f5f1ed !important;
+}
+
+  .card img {
+    border-radius: 10px;
+    padding-right: 5px;
+    width: 60px;
+    height: 55px;
+               
+}
+
+.card img:hover {
+    cursor: pointer
+}
+
+.round .align-self-start {
+    border-radius: 100%;
+    width: 45px;
+    height: 40px
+}
+
+.media .comment {
+    background: #F4F4F4;
+    border: none;
+    border-radius: 10px
+}
+
+h6.user {
+    color: #5C5C5C;
+    font-size: 15px !important;
+    padding-left: 15px !important;
+    margin-bottom: 0
+}
+
+h6.user:hover {
+    cursor: pointer;
+    text-decoration: underline
+}
+
+p.text {
+    margin-bottom: 0;
+    color: #8A8A8A !important;
+    font-size: 14px
+}
+
+.ml-auto {
+    margin-right: 10px
+}
+
+p .reply {
+    color: #5C5C5C;
+    font-size: 15px
+}
+
+}
+
+        </style>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+ @*    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> *@
+  
+
+ 
+    </head>
+<body>
+  @*   <div class="container-fluid mb-3 " style="background-color:#f5f1ed ; height: 300px; background-size: cover; background-repeat: no-repeat;">
+
+        <div class="row">
+            <div class="about-us">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-lg-6">
+                            <div class="left-image2">
+                                <img src="https://bridge315.qodeinteractive.com/wp-content/uploads/2020/01/p1-img-02.jpg" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="right-content2">
+                                <h4>All Books</h4>
+
+
+
+                                <div class="total mt-2">
+                                    <h4><div class="main-border-button"><a href="#">Borrow Book</a></div></h4>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div> *@
+    
+    <div class="container-fluid bootdey">
+        <div class="row d-flex">
+          
+
+                <!-- Fluid width widget -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <ul class="list-unstyled">
+                      Recent Questions 
+                      <hr/>
+                          @*   <!--FIRST LIST ITEM-->
+                            <li class="media">
+                                <span class="round pt-2"><img src="https://img.icons8.com/bubbles/100/000000/groups.png" class="align-self-start mr-3"></span>
+                                <div class="media-body">
+                                    <div class="row d-flex">
+                                        <h6 class="user pt-2">Michael Andrews</h6>
+                                        <div class="ml-auto">
+                                            <p class="text">3m</p>
+                                        </div>
+                                    </div>
+                                    <p class="text">Liked four of your artworks</p>
+                                    <div class="images mt-2"> <img src="https://img.icons8.com/bubbles/100/000000/couple-icloud.png" /> <img src="https://img.icons8.com/bubbles/100/000000/check-male.png" /> <img src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" /> <img src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png" /> </div>
+                                </div>
+                            </li>
+                            <!--SECOND LIST ITEM-->
+                            <li class="media my-5">
+                                <span class="round"> <img src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" class="align-self-start mr-3"> </span>
+                                <div class="media-body">
+                                    <div class="row d-flex">
+                                        <h6 class="user">Craig Carder</h6>
+                                        <div class="ml-auto">
+                                            <p class="text">9m</p>
+                                        </div>
+                                    </div>
+                                    <p class="text">Followed you</p>
+                                </div>
+                            </li>
+                            <!--THIRD LIST ITEM-->
+                            <li class="media">
+                                <span class="round"><img src="https://img.icons8.com/bubbles/100/000000/groups.png" class="align-self-start mr-3"></span>
+                                <div class="media-body">
+                                    <div class="row d-flex">
+                                        <h6 class="user">Allison Kenter, Alhena Culhane and 57 others</h6>
+                                        <div class="ml-auto">
+                                            <p class="text">1h</p>
+                                        </div>
+                                    </div>
+                                    <p class="text mb-2">Liked your "Women in Jail" Artwork</p> <img src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                </div>
+                            </li>
+                            <!--FOURTH LIST ITEM-->
+                            <li class="media my-5">
+                                <span class="round"><img src="https://img.icons8.com/office/100/000000/user-group-man-man--v1.png" class="align-self-start mr-3"></span>
+                                <div class="media-body">
+                                    <div class="row d-flex">
+                                        <h6 class="user">Giana Ekstrom Bothman</h6>
+                                        <div class="ml-auto">
+                                            <p class="text">2h</p>
+                                        </div>
+                                    </div>
+                                    <p class="text">Commented on your"Le Doux" Artwork</p>
+                                    <div class="media mt-3 comment">
+                                        <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png" class="align-self-center mr-1"></a>
+                                        <div class="media-body">
+                                            <p class="reply">"Love this art, what inspired you to make this<br>&nbsp;wonderful artwork?"</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> *@
+                            <!--FIFTH LIST ITEM-->
+                        @foreach (var item in Model.Take(3))
+                        {
+                           
+                        
+                            <li class="media mt-3">
+                            <span class="round"><img src="@Url.Content("~/" + item.User.ImagePath)" class="align-self-start mr-3"></span>
+                                <div class="media-body">
+                                    <div class="row d-flex">
+                                        <h6 class="user">@item.User.UserName</h6>
+                                        <div class="ml-auto">
+                                            <p class="text">24h</p>
+                                        </div>
+                                    </div>
+                                    <p class="text"> @item.Content</p>
+                                </div>
+                            </li>
+                            <hr />
+                        }
+                     
+                        <li class="media">
+                         
+                            <div class="media-body">
+                              
+                                <div class="images mt-2"> <img src="https://img.icons8.com/bubbles/100/000000/couple-icloud.png" /> <img src="https://img.icons8.com/bubbles/100/000000/check-male.png" /> <img src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" /> <img src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png" /> </div>
+                            </div>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End fluid width widget -->
+
+       
+        <div class="col-md-8 bootstrap snippets">
+            <div class="panel">
+                <partial model="new BookReaders.Models.Question()" />
+                @Html.Partial("_QuestionForm", new BookReaders.Models.Question())
+            </div>
+                @foreach(var item in Model)
+                            {
+            <div class="panel">
+                <div class="panel-body">
+                    <!-- Newsfeed Content -->
+                    <!--===================================================-->
+                    <div class="media-block">
+                      
+                          
+                            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="@Url.Content("~/" + item.User.ImagePath)"/></a>
+                        <div class="media-body" style="margin-left:50px">
+                            <!-- Posts -->
+                          
+                                <div>
+                                    <div class="mar-btm">
+                                        <a href="#" class="btn-link text-semibold media-heading box-inline">@item.User.UserName</a>
+                                        @{
+                                                var currentTime = DateTime.Now.Day;
+                                                var itemTime = item.CreatedAt.Day;
+
+                                                var day = (currentTime - itemTime);
+                                                
+                                        }
+                                            <p class="text-muted text-sm">
+                                                <i class="fas fa-globe fa-md"></i> - From Web -
+                                                @if (DateTime.Now.Day == item.CreatedAt.Day)
+                                                {
+                                                <span>
+                                                      Today</span>
+                                                  
+                                                                                                            }
+                                                else
+                                                {
+                                                    <span>
+                                                       @(day)
+                                                    day ago</span >
+                                                                        }
+                                                </p>
+                                        </div>
+                                    <p>@item.Content</p>
+                                    <div class="pad-ver">
+
+                                        @if (_signInManager.IsSignedIn(User))
+                                        {
+                                            @if (@item.User.UserName == @User.Identity.Name)
+                                            {
+                                                <form asp-action="Delete" asp-controller="Question" asp-area="" asp-route-id="@item.Id" method="post">
+                                                        <input type="submit" value="Delete" class="btn btn-sm btn-default btn-hover-success active text-danger" />
+                                                </form>
+                                            }
+                                        }
+                  
+
+                                        <a class="btn btn-sm btn-dark mt-3 text-sm " data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Id">
+                                                <i class="fas fa-comment mr-2"></i>Comment
+                                            </a>
+
+                                        @*   modal *@
+                                        <div class="modal" id="exampleModal-@item.Id">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Modal title</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true"></span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        @Html.Partial("~/Views/Question/_AnswerForm.cshtml", new BookReaders.Models.Answer { QuestionId = item.Id })
+                                                    </div>
+                                                @*     <div class="modal-footer">
+                                                        <form asp-action="Create" asp-controller="Answer" asp-route-id="@item.Id" method="post">
+                                                            @Html.AntiForgeryToken()
+                                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                                        </form>
+
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    </div> *@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                         
+                            <hr>
+
+                            <!-- Comments -->
+                            <div>
+                                    @foreach(var Ans in item.Answers)
+                                    {
+                                        <div class="media-block">
+                                            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="@Url.Content("~/" + Ans.User.ImagePath)"></a>
+                                            <div class="media-body">
+                                                <div class="mar-btm">
+                                                    <a href="#" class="btn-link text-semibold media-heading box-inline">@Ans.User.UserName</a>
+                                                    <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - @Ans.CreatedAt min ago</p>
+                                                </div>
+                                                <p>@Ans.Content.</p>
+                                                <div class="pad-ver">
+                                                    <div class="btn-group">
+                                                            @if (_signInManager.IsSignedIn(User))
+                                                            {
+                                                                @if (Ans.User.UserName == @User.Identity.Name)
+                                                                {
+                                                                    <form asp-action="Delete" asp-route-id="@Ans.Id" asp-controller="Answer" asp-area="" method="post">
+                                                                        <input  type="submit" value="Delete" class="btn btn-sm btn-default btn-hover-success active text-danger" />
+                                                                    </form>
+                                                                }
+                                                            }
+                                                        </div>
+                                                  @*   <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a> *@
+                                                </div>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                    }
+                                   
+
+                                
+                            </div>
+
+                            
+                        </div>
+                        
+                    </div>
+                    <!--===================================================-->
+                    <!-- End Newsfeed Content -->
+                    <!-- Newsfeed Content -->
+                    <!--===================================================-->
+                   @*  <div class="media-block pad-all">
+                        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+                        <div class="media-body">
+                            <div class="mar-btm">
+                                <a href="#" class="btn-link text-semibold media-heading box-inline">John Doe</a>
+                                <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - 11 min ago</p>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <img class="img-responsive thumbnail" src="https://www.bootdey.com/image/400x300" alt="Image">
+                            <div class="pad-ver">
+                                <span class="tag tag-sm"><i class="fa fa-heart text-danger"></i> 250 Likes</span>
+                                <div class="btn-group">
+                                    <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                    <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+                                </div>
+                                <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+                            </div>
+                            <hr>
+
+                            <!-- Comments -->
+                            <div>
+                                <div class="media-block pad-all">
+                                    <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar2.png"></a>
+                                    <div class="media-body">
+                                        <div class="mar-btm">
+                                            <a href="#" class="btn-link text-semibold media-heading box-inline">Maria Leanz</a>
+                                            <p class="text-muted text-sm"><i class="fa fa-globe fa-lg"></i> - From Web - 2 min ago</p>
+                                        </div>
+                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate ?</p>
+                                        <div>
+                                            <div class="btn-group">
+                                                <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+                                            </div>
+                                            <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> *@
+                    <!--===================================================-->
+                    <!-- End Newsfeed Content -->
+                </div>
+            </div>
+
+
+            }
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<BookReaders.Models.Book>
+
+
+<section class="section" id="products">
+    <div class="container">
+  
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Related Books</h2>
+                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                </div>
+            </div>
+           
+
+
+
+
+    @foreach (var item in Model)
+    {
+                <div class="col-lg-2 col-md-4 col-6" style="width:200px; margin-right:35px">
+                    <div class="item " style="width:200px;margin-right:20px">
+                        <div class="thumb">
+                            <div class="hover-content">
+
+                                <ul>
+                                    <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
+
+                                    <li>
+                                        <form asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                            <button type="submit" style="border:none" class="star-button">
+                                                <i class="fa fa-star"></i>
+                                            </button>
+                                        </form>
+                                    </li>
+                                    @if (item.Quantity > 0)
+                                    {
+                                        <li>
+                                            <form asp-action="AddToBorrow" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                                <button type="submit" style="border:none" class="star-button">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </button>
+                                            </form>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li id="addToFavForm">
+                                            <button type="submit" style="border:none" class="star-button disabled">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </button>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                            <img src="@Url.Content("~/" + item.ImagePath)" height="302" alt="">
+                        </div>
+                        <div class="down-content">
+                            <h4>@item.Title</h4>
+                            <span>@item.Quantity</span>
+                            <ul class="stars">
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    }
+
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<BookReaders.Models.Favorite>
+
+
+
+<div class="row container d-flex justify-content-center">
+
+    <div class="container ">
+        <partial name="_Notification" />
+        <div class="row mb-4">
+            <div class="col-md-6">
+
+                <a asp-action="Create" asp-controller="Category" class="btn text-light" style="background-color:#573ba3">Create New</a>
+            </div>
+
+
+            <div class="col-md-6">
+                <form asp-action="Search" asp-controller="Category" asp-area="Dashboard" method="get" class="form-inline d-flex">
+
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="SearchItem">
+                    <input class="btn text-light" style="background-color:#573ba3" type="submit" value="Search" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 grid-margin stretch-card ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Favorite Books</h5>
+                <hr />
+                <p class="card-description">
+
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.User)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Book)
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.User.UserName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Book.Title)
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Id">
+
+                                            <i class="fas fa-trash-alt delete-icon"></i>
+                                        </a>
+                                      
+                                        <a type="button" asp-action="EditBook" asp-controller="Book" asp-area="Dashboard" asp-route-id="@item.Id" class="btn text-light btn-sm"
+                                           style="background-color:#573ba3">
+                                            <i class="fas fa-edit edit-icon"></i>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            }
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

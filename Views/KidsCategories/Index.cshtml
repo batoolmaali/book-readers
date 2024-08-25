@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BookAPI.ViewModels.KidsCategoryViewModel>
+
+
+
+
+<section class="our-team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Our Amazing Team</h2>
+                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                </div>
+            </div>
+            @foreach (var item in Model) {
+            <div class="col-lg-3">
+                <div class="team-item">
+                    <div class="thumb">
+                       
+                        @if (item.Image != null && item.Image.Length > 0)
+                        {
+                            string imageBase64 = Convert.ToBase64String(item.Image);
+                            <img src="data:image;base64,@imageBase64" alt="Image" />
+                        }
+                        else
+                        {
+                            <p>No image available</p>
+                        }
+                    </div>
+                    <div class="down-content">
+                        <h4> @Html.DisplayFor(modelItem => item.Name)</h4>
+                      
+                            <a asp-action="allBook" asp-controller="KidsCategories" asp-route-id="@item.Id" asp-area="">
+                                <span>All Books</span>
+                            </a>
+                    </div>
+
+                </div>
+            </div>
+          }
+        </div>
+    </div>
+</section>

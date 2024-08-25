@@ -1,0 +1,50 @@
+﻿@model BookReaders.Models.Author
+
+@{
+    ViewData["Title"] = "Create";
+
+
+}<div class="row container d-flex justify-content-center">
+<div class="card p-4 ">
+        <form asp-controller="Author" asp-area="Dashboard" asp-action="Create" method="post" enctype="multipart/form-data">
+        <h5>Add Author</h5>
+        <hr />
+       
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group pb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group pb-3">
+                <label asp-for="Biography" class="control-label"></label>
+                <input asp-for="Biography" class="form-control" />
+                <span asp-validation-for="Biography" class="text-danger"></span>
+            </div>
+            <div class="form-group pb-3">
+                <label asp-for="Nationality" class="control-label"></label>
+                <input asp-for="Nationality" class="form-control" />
+                <span asp-validation-for="Nationality" class="text-danger"></span>
+            </div>
+            <div class="form-group pb-3">
+                <label asp-for="Birthdate" class="control-label"></label>
+                <input asp-for="Birthdate" class="form-control" />
+                <span asp-validation-for="Birthdate" class="text-danger"></span>
+            </div>
+            <div class="form-group pb-3">
+                <label asp-for="ImagePath"></label>
+                <input asp-for="ImagePath" type="file" name="Image" class="form-control" placeholder="">
+                <span asp-validation-for="ImagePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn text-light" style="background-color:#573ba3" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
