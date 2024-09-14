@@ -26,53 +26,63 @@
 
         .input-text:focus {
             box-shadow: 0px 0px 0px;
-            border-color: #573ba3;
+            border-color: #06453d;
             outline: 0px;
         }
 
         .form-control {
-            border: 1px solid #573ba3;
+            border: 1px solid #06453d;
         }
+
+        button {
+            border: none;
+            background: none;
+        }
+
+        .con p {
+            font-size: 30px;
+            color: #06453d;
+            font-weight: bold;
+            font-style: italic
+        }
+
+        .con {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+            .con div {
+                width: 50%;
+                height: 100%;
+            }
+
+            .con img {
+                width: 80%;
+                height: auto;
+                max-width: 100%;
+                overflow: hidden;
+            }
     </style>
 </head>
 <body>
 
-    <div class="container-fluid mb-5 " style="background-color:#f5f1ed ; height: 300px; background-size: cover; background-repeat: no-repeat;">
-
-        <div class="row">
-            <div class="about-us">
-                <div class="container">
-                    <div class="row ">
-                        <div class="col-lg-6">
-                            <div class="left-image2">
-                                <img src="https://bridge315.qodeinteractive.com/wp-content/uploads/2020/01/p1-img-02.jpg" />
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="right-content2">
-                                <h4>All Books</h4>
-
-
-
-                                <div class="total mt-2" >
-                                   @*  <h4><div class="main-border-button"><a href="#">Borrow Book</a></div></h4> *@
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="container-fluid" style="background-color: #f5f1ed; margin-top: 80px;">
+        <div class="container con">
+            <div>
+                <img src="https://bridge315.qodeinteractive.com/wp-content/uploads/2020/01/p1-img-02.jpg" />
             </div>
-
+            <div>
+                <p>ALL Books</p>
+            </div>
         </div>
     </div>
-
 <section class="section" id="products">
-    <div class="container">
-        <div class="row">
+    <div class="container" style="margin-top:100px">
+     
         
 
-        <div class="row mb-5">
+        <div class="row mb-4 p-2">
             <div class="col-md-6">
                Showing all results
             </div>
@@ -82,22 +92,15 @@
 
                             <input type="text" class="form-control" placeholder="Search for a book" id="searchBook" />
                             <div class="input-group-append">
-                                <button class="btn btn-outline " type="button" style="border-color:#573ba3"><i class="fa fa-search"></i></button>
+                                <button class="btn btn-outline " type="button" style="border-color:#06453d"><i class="fa fa-search "></i></button>
                             </div>
                         <div id="autocompleteDropdown" class="custom-autocomplete"></div>
                     </div>
 
-                       @*  <div class="input-group position-relative">
-                            <input type="text" class="form-control input-text" placeholder="Search products...." aria-label="Recipient's username" aria-describedby="basic-addon2"
-                                   id="searchBook">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-warning " type="button"><i class="fa fa-search"></i></button>
-                            </div>
-                            <div id="autocompleteDropdown" class="custom-autocomplete"></div>
-                        </div> *@
+                    
                 </div>
             </div>
-        </div>
+     
     </div>
     <div class="container">
         <div class="row">
@@ -105,20 +108,32 @@
             {
                  
                     <div class="col-lg-2 col-md-4 col-6 book-item" style="width:200px; margin-right:35px; margin-bottom:30px">
+                        @if (item.Quantity > 0)
+                        {
                     <div class="item" style="width:200px; margin-right:20px">
                         <div class="thumb">
                             <div class="hover-content">
-                                <ul>
-                                    <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
-                                    <li>
-                                        <form asp-action="AddToFav" asp-controller="Book" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
-                                            <button type="submit" style="border:none" class="star-button">
-                                                <i class="fa fa-star"></i>
-                                            </button>
-                                        </form>
-                                    </li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+                                    <div class="hover-content">
+
+                                        <ul>
+                                            <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
+
+                                            <li>
+                                                <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                                    <button type="submit" style="border:none" class="star-button">
+                                                            <i class="fas fa-heart"></i>
+                                                    </button>
+                                                </form>
+                                            </li>
+
+                                            <li><a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id">
+                                                        <i class="fas fa-book"></i>
+                                                </a></li>
+
+                                            <li>
+                                
+                                        </ul>
+                                    </div>
                             </div>
                             <img src="@Url.Content("~/" + item.ImagePath)" alt="" height="302">
                         </div>
@@ -127,22 +142,124 @@
                             <span style="margin-bottom:10px">
                              <p class="author-name">@item.Author.Name</p>
                             </span>
-                            @if (item.Quantity > 0)
-                            {
-                                <a class="btn btn-dark" style="width:100%; background-color: #573ba3; border-radius: 9999px;">
-                                    <i class="fas fa-book"></i>
-                                    Borrow Now
-                                </a>
-                            }
-                            else
-                            {
-                                <a class="btn btn-danger disabled" style="width:100%; border-radius: 9999px">Not in Library</a>
-                            }
+
+
+                                    <a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id"
+                                       class="btn btn-dark" style="width:100%; background-color: #06453d; border-radius: 9999px;">
+                                        <i class="fas fa-book mr-1"></i>
+                                        Borrow Now
+                                    </a>
+                       
+                          
+                          
                         </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="item" style="width:200px; margin-right:20px">
+                                <div class="thumb">
+                                    <div class="hover-content">
+                                        <div class="hover-content">
+
+                                            <ul>
+                                                <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
+
+                                                <li>
+                                                    <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                                        <button type="submit" style="border:none" class="star-button">
+                                                            <i class="fas fa-heart"></i>
+                                                        </button>
+                                                    </form>
+                                                </li>
+
+                               
+
+                                                <li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <img src="@Url.Content("~/" + item.ImagePath)" alt="" height="302">
+                                </div>
+                                <div class="down-content">
+                                    <h5>@item.Title</h5>
+                                    <span style="margin-bottom:10px">
+                                        <p class="author-name">@item.Author.Name</p>
+                                    </span>
+
+                               
+
+                                    <a class="btn btn-danger disabled" style="width:100%; border-radius: 9999px">Not in Library</a>
+
+                                </div>
+                            </div>
+                        }
                     </div>
-                </div>
             }
         </div>
+
+          @*   <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    @if (ViewBag.CurrentPage> 1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="/Book/Index?term=@ViewBag.term& currentpage=@(ViewBag.CurrentPage-1)" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        
+                    }
+
+                    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                            <a class="page-link" href="/Book/Index?term=@ViewBag.term&currentpage=@i">@i</a>
+                        </li>
+                    }
+                  
+                    @if (ViewBag.CurrentPage < @ViewBag.TotalPages)
+                    {
+                        <li class="page-item">
+                     <a class="page-link" href="/Book/Index?term=@ViewBag.term& currentpage=@(ViewBag.CurrentPage+1)" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav> *@
+
+            <div class="col-lg-12">
+                <div class="pagination">
+                    <ul>
+                        @if (ViewBag.CurrentPage > 1)
+                        {
+                            <li >
+                                <a  href="/Book/Index?term=@ViewBag.term& currentpage=@(ViewBag.CurrentPage-1)" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+
+                        }
+
+                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            <li class=" @(i == ViewBag.CurrentPage ? "active" : "")">
+                                <a  href="/Book/Index?term=@ViewBag.term&currentpage=@i">@i</a>
+                            </li>
+                        }
+
+                        @if (ViewBag.CurrentPage < @ViewBag.TotalPages)
+                        {
+                            <li >
+                                <a  href="/Book/Index?term=@ViewBag.term& currentpage=@(ViewBag.CurrentPage+1)" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
     </div>
 </section>
 
@@ -153,7 +270,7 @@
             $("#searchBook").autocomplete({
                 source: function (request, response) {
                     $.ajax({
-                        url: '/Book/AutoComplete',
+                        url: '/Book/Index',
                         dataType: "json",
                         data: {
                             term: request.term

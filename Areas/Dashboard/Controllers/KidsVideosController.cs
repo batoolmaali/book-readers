@@ -35,12 +35,12 @@ namespace BookReaders.Areas.Dashboard.Controllers
         }
         public IActionResult Index()
         {
-            HttpResponseMessage response = _httpClient.GetAsync(baseUri + "/KidsCategory").Result;
+            HttpResponseMessage response = _httpClient.GetAsync(baseUri + "/KidsVideos").Result;
 
             if (response.IsSuccessStatusCode)
             {
                 var videos = response.Content.ReadAsStringAsync().Result;
-                List<KidsCategoryViewModel> videosList = JsonConvert.DeserializeObject<List<KidsCategoryViewModel>>(videos);
+                List<KidsVideosViewModel> videosList = JsonConvert.DeserializeObject<List<KidsVideosViewModel>>(videos);
                 return View(videosList);
             }
             return View();
@@ -48,48 +48,75 @@ namespace BookReaders.Areas.Dashboard.Controllers
 
         public IActionResult Create()
         {
-            var model = new KidsVideosViewModel();
-            return View(model);
+
+            return View();
         }
 
-         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Title, Description, ThumbnailUrl, VideoUrl")] KidsVideosViewModel model)
+      
+
+        [HttpPost]
+        public IActionResult Create(FormVideoKids model)
         {
             if (ModelState.IsValid)
             {
-                // Process the form data, save to database, etc.
-                // You can access form fields using the model parameter
+                using (var httpClient = new HttpClient())
+                {
+                    httpClient.BaseAddress = new Uri(baseUri + "/KidsVideos");
 
-                // Redirect to a success page or return a success response
-                return RedirectToAction("Index", "Home");
+                    // Prepare MultipartFormDataContent to send file along with other form data
+                    var content = new MultipartFormDataContent();
+                    content.Add(new StringContent(model.Title), "Title");
+                    content.Add(new StringContent(model.Description), "Description");
+                    // Add ThumbnailUrl file
+                    if (model.ThumbnailUrl != null)
+                    {
+                        var fileContent = new StreamContent(model.ThumbnailUrl.OpenReadStream());
+                        content.Add(fileContent, "ThumbnailUrl", model.ThumbnailUrl.FileName);
+                    }
+
+                    // Add VideoUrl file
+                    if (model.VideoUrl != null)
+                    {
+                        var fileContent = new StreamContent(model.VideoUrl.OpenReadStream());
+                        content.Add(fileContent, "VideoUrl", model.VideoUrl.FileName);
+                    }
+
+                    var response = httpClient.PostAsync("KidsVideos", content).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                }
             }
 
-            // If the model state is not valid, return to the form with validation errors
+           
             return View(model);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            HttpResponseMessage response = await _httpClient.DeleteAsync(baseUri + $"/KidsVideos/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+              
+                return RedirectToAction("Index"); 
+            }
+            else
+            {
+               
+                return View(); 
+            }
+        }
+
+
     }
-        /*   [HttpPost]
-           public async Task<IActionResult> Create(KidsVideos kids, IFormFile ThumbnailUrl, IFormFile VideoUrl)
-           {
 
 
-               using (var httpClient = new HttpClient())
-               {
-                   httpClient.BaseAddress = new Uri(baseUri + "/KidsVideos");
-                   var responseMessage = httpClient.PostAsJsonAsync<KidsVideos>("KidsVideos", kids); responseMessage.Wait();
-                   var response = responseMessage.Result;
-                   if (response.IsSuccessStatusCode)
-                   {
-                       return RedirectToAction("Index");
-                   }
-                   return View();
-               }
-           }*/
-
-
-  
-    
-    }
+}
                
          
     

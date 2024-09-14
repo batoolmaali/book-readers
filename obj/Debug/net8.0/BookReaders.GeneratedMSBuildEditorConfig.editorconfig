@@ -126,6 +126,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXEtpZHNWaWRlb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Areas/Dashboard/Views/Question1/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFF1ZXN0aW9uMVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Areas/Dashboard/Views/RecommendedBook/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFJlY29tbWVuZGVkQm9va1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Areas/Dashboard/Views/RecommendedBook/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFJlY29tbWVuZGVkQm9va1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Areas/Dashboard/Views/Review/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFJldmlld1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Areas/Dashboard/Views/Role/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFJvbGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -158,6 +174,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFVzZXJcTWFuYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Areas/Dashboard/Views/VideoKid/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFZpZGVvS2lkXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Areas/Dashboard/Views/VideoKid/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFZpZGVvS2lkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Areas/Dashboard/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -178,6 +202,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0tpZHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Book/ArabicBooks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBcmFiaWNCb29rcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Book/BookDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xCb29rRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -192,6 +220,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Borrow/BorrowBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93XEJvcnJvd0Jvb2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Borrow/BorrowConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93XEJvcnJvd0NvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Favorite/favorite.cshtml]
@@ -218,10 +250,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lkc0NhdGVnb3JpZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/KidsVideos/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lkc1ZpZGVvc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Message/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -238,6 +266,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cX1F1ZXN0aW9uRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Quote/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVvdGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Quote/_QuoteForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVvdGVcX1F1b3RlRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/RecommendedBook/Recommend.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjb21tZW5kZWRCb29rXFJlY29tbWVuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Review/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Shared/Components/ArabicBooks/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQXJhYmljQm9va3NcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Shared/Components/BestBooks/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmVzdEJvb2tzXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -248,6 +296,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Shared/Components/BorrowShared/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQm9ycm93U2hhcmVkXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Shared/Components/CatShared/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0U2hhcmVkXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Shared/Components/ComingSoon/Default.cshtml]
@@ -270,12 +322,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUmVsYXRlZEJvb2tcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Shared/Components/Reviews/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUmV2aWV3c1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/VideoKid/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkZW9LaWRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/desktop files/ASP-FinalProject/Solution_BookReaders/BookReaders/Views/_ViewImports.cshtml]

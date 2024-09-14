@@ -2,6 +2,7 @@
 using BookReaders.Data;
 using BookReaders.Models;
 using BookReaders.Repository.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -33,7 +34,7 @@ namespace BookReaders.Controllers
             {
                 var currentUsername = await _userManager.GetUserAsync(User);
 
-                var user = _dbContext.Users.Include(x => x.Borrows).ThenInclude(u => u.Book).FirstOrDefault(x => x.Id == currentUsername.Id);
+                var user = _dbContext.Users.Include(x => x.Borrows).ThenInclude(u => u.Book).ThenInclude(c=>c.Category).FirstOrDefault(x => x.Id == currentUsername.Id);
 
                 if (user != null)
                 {
@@ -58,13 +59,20 @@ namespace BookReaders.Controllers
                 var currentUsername = await _userManager.GetUserAsync(User);
                 if (currentUsername != null)
                 {
-             
-                        var book = _dbContext.Books.FirstOrDefault(x => x.Id == id);
+                    var borrow1 = _dbContext.Borrows.Where(x => x.UserId == currentUsername.Id).Where(x => x.BookId == id).FirstOrDefault();
 
-                        if (book != null && book.Quantity > 0)
+                    if (borrow1 != null)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+
+
+                    var book = _dbContext.Books.FirstOrDefault(x => x.Id == id);
+
+                    if (book != null && book.Quantity > 0)
                     {
                         book.Quantity--;
-                       /*_dbContext.SaveChanges();*/
+                        /*_dbContext.SaveChanges();*/
 
                         var borrow = new Borrow
                         {
@@ -81,14 +89,14 @@ namespace BookReaders.Controllers
 
                         return RedirectToAction("BorrowBook");
                     }
-                
+
                 }
             }
             else
             {
                 return RedirectToAction("Login", "Account", new { area = "AccountUser" });
             }
-            
+
 
             return RedirectToAction("Index", "Home");
         }
@@ -100,30 +108,79 @@ namespace BookReaders.Controllers
                 var currentUsername = await _userManager.GetUserAsync(User);
                 if (currentUsername != null)
                 {
-                    var book=_dbContext.Books.FirstOrDefault(x=>x.Id == id);
+                    var book = _dbContext.Books.FirstOrDefault(x => x.Id == id);
                     book.Quantity++;
 
 
-                    var msg=_dbContext.Messages.FirstOrDefault(x=>x.UserId == currentUsername.Id);
+                    var msg = _dbContext.Messages.FirstOrDefault(x => x.UserId == currentUsername.Id);
                     if (msg != null)
                     {
                         _dbContext.Remove(msg);
                     }
 
-                    var borrow = _dbContext.Borrows.FirstOrDefault(x => x.BookId== id && x.UserId==currentUsername.Id);
+                    var borrow = _dbContext.Borrows.FirstOrDefault(x => x.BookId == id && x.UserId == currentUsername.Id);
 
-                    borrow.IsReturned=true;
-                
+                    borrow.IsReturned = true;
+
 
 
 
                     _dbContext.SaveChanges();
                     return RedirectToAction("BorrowBook");
                 }
-                }
+            }
             else
             {
 
+            }
+            return View();
+        }
+
+
+        [Authorize]
+        public async Task<IActionResult> BorrowConfirmation(int id)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var currentUsername = await _userManager.GetUserAsync(User);
+                var userId = currentUsername.Id;
+
+                var borrows = _dbContext.Borrows.Where(x => x.UserId == userId).ToList();
+
+               
+
+                foreach (var item in borrows)
+                {
+                    DateTime date3 = item.ReturnDate.Date;
+                    DateTime date4 = DateTime.Now.Date;
+
+                    TimeSpan timeDifference1 = date3 - date4;
+                    int daysDifference1 = timeDifference1.Days;
+
+                    if (item.IsReturned == false && daysDifference1 < 0  )
+                    {
+
+                        ViewBag.NotReturn = true;
+
+                        break;
+                    }
+                    if (borrows.Count >= 2)
+                    {
+                        ViewBag.bor = true;
+                        break;
+                    }
+
+                }
+            
+              
+                var book = _dbContext.Books.FirstOrDefault(x => x.Id == id);
+
+                if (book != null)
+                {
+                    return View(book);
+                }
+
+                return View();
             }
             return View();
         }

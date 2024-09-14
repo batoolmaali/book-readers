@@ -37,7 +37,7 @@ namespace BookReaders.Controllers
             {
                 var currentUsername = await _userManager.GetUserAsync(User);
 
-                var user = _dbContext.Users.Include(x => x.Favorites).ThenInclude(uf => uf.Book).FirstOrDefault(x => x.Id == currentUsername.Id);
+                var user = _dbContext.Users.Include(x => x.Favorites).ThenInclude(uf => uf.Book).ThenInclude(c=>c.Category).FirstOrDefault(x => x.Id == currentUsername.Id);
 
                 if (user != null)
                 {
@@ -66,13 +66,13 @@ namespace BookReaders.Controllers
 
                 var book=_dbContext.Favorites.Where(x=>x.BookId== id).FirstOrDefault();
 
-                if (book != null)
+             /*   if (book != null)
               
                 {
                     ViewBag.message = "Already exzist";
                     return RedirectToAction("Index", "Home");
                 }
-                else {
+                else {*/
                 if (currentUsername != null)
                 {
                    
@@ -91,7 +91,7 @@ namespace BookReaders.Controllers
                 {
                     return RedirectToAction("Login", "Account");
                 }
-            }
+            
                 return RedirectToAction("Index", "Home");
             }
             else

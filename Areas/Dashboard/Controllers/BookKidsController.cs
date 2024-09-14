@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Drawing.Printing;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
@@ -18,7 +19,10 @@ namespace BookReaders.Areas.Dashboard.Controllers
         private readonly AppDbContext _dbContext;
         private readonly HttpClient _httpClient;
         Uri baseUri = new Uri("http://localhost:5026/api");
-
+        public int PageSize { get; set; }
+        public int CurrentPage { get; set; }
+        public int TotalPages { get; set; }
+        public string SearchItem { get; set; }
         public BookKidsController(AppDbContext dbContext
         )
         {
@@ -26,16 +30,37 @@ namespace BookReaders.Areas.Dashboard.Controllers
          
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = baseUri;
+            // Initialize 
+            PageSize = 10;
+            CurrentPage = 1;
+            TotalPages = 0;
+            SearchItem = "";
         }
-        public IActionResult Index()
+        public IActionResult Index(int currentpage = 1)
         {
+            int pageSize = 6;
             HttpResponseMessage response = _httpClient.GetAsync(baseUri + "/BookKid").Result;
 
             if (response.IsSuccessStatusCode)
             {
                 var videos = response.Content.ReadAsStringAsync().Result;
                 List<BookKidVM> videosList = JsonConvert.DeserializeObject<List<BookKidVM>>(videos);
-                return View(videosList);
+
+                var filteredBooks = videosList.ToList();
+
+                int totalRecords = filteredBooks.Count;
+                int totalPages = (int)Math.Ceiling(totalRecords / (double)pageSize);
+
+                var paginatedBooks = filteredBooks.Skip((currentpage - 1) * pageSize)
+                                                  .Take(pageSize)
+                                                  .ToList();
+
+                ViewBag.CurrentPage = currentpage;
+                ViewBag.TotalPages = totalPages;
+                ViewBag.PageSize = pageSize;
+                ViewBag.SearchItem = SearchItem;
+
+                return View(paginatedBooks);
             }
             return View();
         }

@@ -25,49 +25,51 @@ namespace BookReaders.Controllers
             return View();
         }
 
-        /*  [HttpGet]
-          public async Task<IActionResult> Details(int id)
-          {
-              HttpResponseMessage response = await _httpClient.GetAsync(baseUri + $"/BookKid/GetById/{id}");
-
-              if (response.IsSuccessStatusCode)
-              {
-                  var content = await response.Content.ReadAsStringAsync();
-                  var book = JsonConvert.DeserializeObject<BookKidVM>(content);
-
-                  return View(book);
-              }
-              else
-              {
-                
-              
-                  var errorContent = await response.Content.ReadAsStringAsync();
-                  return Content($"Failed to retrieve book details. StatusCode: {response.StatusCode}. Error: {errorContent}");
-              }*/
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
-            HttpResponseMessage response = await _httpClient.GetAsync(baseUri + $"/BookKid");
+            HttpResponseMessage response = await _httpClient.GetAsync(baseUri + $"/BookKid/GetById/{id}");
 
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                var book = JsonConvert.DeserializeObject<List<BookKidVM>>(content);
+                var book = JsonConvert.DeserializeObject<BookKidVM>(content);
 
-                // Filter 
-                var filteredBook = book.Where(item => item.Id == id).FirstOrDefault();
-
-             
-
-                return View(filteredBook);
+                return View(book);
             }
             else
             {
-               
+
+
                 var errorContent = await response.Content.ReadAsStringAsync();
                 return Content($"Failed to retrieve book details. StatusCode: {response.StatusCode}. Error: {errorContent}");
             }
-
         }
+        //    [HttpGet]
+        //public async Task<IActionResult> Details(int id)
+        //{
+        //    HttpResponseMessage response = await _httpClient.GetAsync(baseUri + $"/BookKid");
+
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        var content = await response.Content.ReadAsStringAsync();
+        //        var book = JsonConvert.DeserializeObject<List<BookKidVM>>(content);
+
+        //        // Filter 
+        //        var filteredBook = book.Where(item => item.Id == id).FirstOrDefault();
+
+
+
+        //        return View(filteredBook);
+        //    }
+        //    else
+        //    {
+
+        //        var errorContent = await response.Content.ReadAsStringAsync();
+        //        return Content($"Failed to retrieve book details. StatusCode: {response.StatusCode}. Error: {errorContent}");
+        //    }
+
+        //}
+
     }
 }

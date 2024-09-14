@@ -1,42 +1,50 @@
-﻿@model BookReaders.ViewModels.KidsVideosViewModel
+﻿@model BookReaders.ViewModels.FormVideoKids
 
-<h4>KidsVideos</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
 
-@if (Model != null)
-        {
-            <form asp-controller="KidsVideos" asp-area="Dashboard" asp-action="Create" method="post" enctype="multipart/form-data">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Title" class="control-label"></label>
-                    <input asp-for="Title" class="form-control" />
-                    <span asp-validation-for="Title" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Description" class="control-label"></label>
-                    <input asp-for="Description" class="form-control" />
-                    <span asp-validation-for="Description" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ThumbnailUrl" class="control-label"></label>
-                    <input asp-for="ThumbnailUrl" type="file" name="ThumbnailUrl" class="form-control">
-                    <span asp-validation-for="ThumbnailUrl" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="VideoUrl" class="control-label"></label>
-                    <input asp-for="VideoUrl" type="file" name="VideoUrl" class="form-control" accept="video/mp4"/>
-                    <span asp-validation-for="VideoUrl" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
-            </form>
-        }   
+
+
+
+
+<div class="row container d-flex justify-content-center">
+    <div class="card p-4 ">
+        <form asp-action="Create" asp-controller="KidsVideos" asp-area="Dashboard" method="post" enctype="multipart/form-data">
+            <h5>Add kids Videos </h5>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group pb-3">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" type="text" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group pb-3">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" type="text" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group pb-3">
+                <label asp-for="ThumbnailUrl" class="control-label"></label>
+                <input asp-for="ThumbnailUrl" type="file" class="form-control" />
+                <span asp-validation-for="ThumbnailUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group pb-3">
+                <label asp-for="VideoUrl" class="control-label"></label>
+                <input asp-for="VideoUrl" type="file" class="form-control" />
+                <span asp-validation-for="VideoUrl" class="text-danger"></span>
+            </div>
+
+
+
+
+
+            <div class="form-group ">
+                <input type="submit" value="Save" class="btn text-light" style="background-color:#06453d" />
+            </div>
+        </form>
     </div>
 </div>
-
-
-
-
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookReaders")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b0e344d883eaa9397b93318d077b3fcaf8e288c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5c1b1c3d7b62d50ca9591d3c0889554895bd9f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookReaders")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookReaders")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

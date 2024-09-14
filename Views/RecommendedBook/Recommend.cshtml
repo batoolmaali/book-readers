@@ -1,0 +1,162 @@
+﻿@model IEnumerable<BookReaders.ViewModels.RecommendedBookVM>
+
+@* 
+<table class="table">
+
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagePath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssociatedSeason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssociatedMood)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
+<style>
+    button {
+        border: none;
+        background: none;
+    }
+
+    .con p {
+        font-size: 30px;
+        color: #06453d;
+        font-weight: bold;
+        font-style: italic
+    }
+
+    .con {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        .con div {
+            width: 50%;
+            height: 100%;
+        }
+
+        .con img {
+            width: 80%;
+            height: auto;
+            max-width: 100%;
+            overflow: hidden;
+        }
+</style>
+
+<div class="container-fluid" style="background-color: #f5f1ed; margin-top: 80px;">
+    <div class="container con">
+        <div>
+            <img src="https://bridge315.qodeinteractive.com/wp-content/uploads/2020/01/p1-img-02.jpg" />
+        </div>
+        <div>
+            <p>
+                @if (Model.Any())
+                {
+                    <h2>@(Model.First().AssociatedSeason != null ? Model.First().AssociatedSeason : Model.First().AssociatedMood) Books</h2>
+                }
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="section" id="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <div class="section-heading">
+                        @if (Model.Any())
+                        {
+                            <h2>@(Model.First().AssociatedSeason != null ? Model.First().AssociatedSeason : Model.First().AssociatedMood) Books</h2>
+                        }
+                    <span>Check out all of our products.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-lg-2 col-md-4 col-6 book-item" style="width:200px; margin-right:35px; margin-bottom:30px">
+                     <div class="item" style="width:200px; margin-right:20px">
+                            <div class="thumb">
+                                <div class="hover-content">
+                                    <div class="hover-content">
+
+                                        <ul>
+                                            <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
+
+                                            <li>
+                                                <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                                    <button type="submit" style="border:none" class="star-button">
+                                                        <i class="fa fa-star"></i>
+                                                    </button>
+                                                </form>
+                                            </li>
+
+                                            <li><a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id"><i class="fa fa-shopping-cart"></i></a></li>
+
+                                            <li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            @if (item.ImagePath != null && item.ImagePath.Length > 0)
+                            {
+                                string imageBase64 = Convert.ToBase64String(item.ImagePath);
+                                <img  src="data:image;base64,@imageBase64" alt="Image"  height="302"/>
+                            }
+                            else
+                            {
+                                <p>No image available</p>
+                            }
+                            </div>
+                            <div class="down-content">
+                                <h5>@item.Title</h5>
+                                <span style="margin-bottom:10px">
+                                    <p class="author-name">@item.Author</p>
+                                </span>
+@* 
+                                <a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id"
+                                   class="btn btn-dark" style="width:100%; background-color: #06453d; border-radius: 9999px;">
+                                    <i class="fas fa-book mr-1"></i>
+                                    Borrow Now
+                                </a> *@
+
+
+
+                            </div>
+                        </div>
+                 
+                   
+                </div>
+            }
+        </div>
+    </div>
+</section>

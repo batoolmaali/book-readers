@@ -1,0 +1,178 @@
+﻿@model IEnumerable<BookReaders.ViewModels.RecommendedBookVM>
+
+<style>
+    .pagination .page-link {
+        color: black; /* Set the color of the page link text to black */
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #343a40; /* Set the background color of the active page link to dark */
+        color: white; /* Set the text color of the active page link to white */
+        border: none
+    }
+</style>
+
+<div class="row container d-flex justify-content-center">
+
+    <div class="container ">
+        <partial name="_Notification" />
+        <div class="row mb-4">
+            <div class="col-md-6">
+
+                <a asp-action="Create" asp-controller="RecommendedBook" class="btn text-light" style="background-color:#06453d">Create New</a>
+            </div>
+
+
+        
+        </div>
+    </div>
+    <div class="col-lg-12 grid-margin stretch-card ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">All Books</h5>
+                <hr />
+                <p class="card-description">
+
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Description)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Author)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ImagePath)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AssociatedSeason)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AssociatedMood)
+                                </th>
+                                <th>
+                                    Remove
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Author)
+                                    </td>
+                                    <td>
+
+                                        @if (item.ImagePath != null && item.ImagePath.Length > 0)
+                                        {
+
+                                            string imageBase64 = Convert.ToBase64String(item.ImagePath);
+                                            <img width="50px" src="data:image;base64,@imageBase64" alt="Image" /> 
+                                        }
+                                
+
+                                            
+                                                            
+                                        else
+                                        {
+                                            <p>No image available</p>
+                                        }
+                         
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AssociatedSeason)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AssociatedMood)
+                                    </td>
+                                    
+                                  
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Id">
+
+                                            <i class="fas fa-trash-alt delete-icon"></i>
+                                        </a>
+                                        @*   modal *@
+                                        <div class="modal" id="exampleModal-@item.Id">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Modal title</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true"></span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Are you Sure Delete Item @item.Title ?</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <form asp-action="Delete" asp-route-id="@item.Id" method="post">
+                                                            @Html.AntiForgeryToken()
+                                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                                        </form>
+
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                @*         <a type="button" asp-action="EditAuthor" asp-controller="Author" asp-area="Dashboard" asp-route-id="@item.Id" class="btn text-light btn-sm"
+                                           style="background-color:#06453d">
+                                            <i class="fas fa-edit edit-icon"></i>
+                                        </a> *@
+
+                                    </td>
+                                </tr>
+                            }
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center mt-5">
+            @if (ViewBag.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/Dashboard/RecommendedBook/Index?SearchItem=@ViewBag.SearchItem& currentpage=@(ViewBag.CurrentPage-1)" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+
+            }
+
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="/Dashboard/RecommendedBook/Index?SearchItem=@ViewBag.SearchItem&currentpage=@i">@i</a>
+                </li>
+            }
+
+            @if (ViewBag.CurrentPage < @ViewBag.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/Dashboard/RecommendedBook/Index?SearchItem=@ViewBag.SearchItem& currentpage=@(ViewBag.CurrentPage+1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>

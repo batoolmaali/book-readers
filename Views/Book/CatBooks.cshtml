@@ -1,16 +1,44 @@
 ﻿@model IEnumerable<BookReaders.Models.Book>
 
+    <style>
+    button {
+        border: none;
+        background: none;
+    }
 
+    .con p {
+        font-size: 30px;
+        color: #06453d;
+        font-weight: bold;
+        font-style: italic
+    }
 
-<div class="page-heading" id="top">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="inner-content">
-                    @*     <h2>Single Product Page</h2>
-                    <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span> *@
-                </div>
-            </div>
+    .con {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        .con div {
+            width: 50%;
+            height: 100%;
+        }
+
+        .con img {
+            width: 80%;
+            height: auto;
+            max-width: 100%;
+            overflow: hidden;
+        }
+    </style>
+
+<div class="container-fluid" style="background-color: #f5f1ed; margin-top: 80px;">
+    <div class="container con">
+        <div>
+            <img src="https://bridge315.qodeinteractive.com/wp-content/uploads/2020/01/p1-img-02.jpg" />
+        </div>
+        <div>
+            <p>@ViewBag.cat </p>
         </div>
     </div>
 </div>
@@ -20,7 +48,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>Coming Soon</h2>
+
+                    <h2>@ViewBag.cat </h2>
+          
                     <span>Check out all of our products.</span>
                 </div>
             </div>
@@ -34,41 +64,93 @@
             {
 
                 <div class="col-lg-2 col-md-4 col-6 book-item" style="width:200px; margin-right:35px; margin-bottom:30px">
-                    <div class="item" style="width:200px; margin-right:20px">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
-                                    <li>
-                                        <form asp-action="AddToFav" asp-controller="Book" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
-                                            <button type="submit" style="border:none" class="star-button">
-                                                <i class="fa fa-star"></i>
-                                            </button>
-                                        </form>
-                                    </li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+                    @if (item.Quantity > 0)
+                    {
+                        <div class="item" style="width:200px; margin-right:20px">
+                            <div class="thumb">
+                                <div class="hover-content">
+                                    <div class="hover-content">
+
+                                        <ul>
+                                            <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
+
+                                            <li>
+                                                <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                                    <button type="submit" style="border:none" class="star-button">
+                                                        <i class="fas fa-heart"></i>
+                                                    </button>
+                                                </form>
+                                            </li>
+
+                                            <li><a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id">
+
+                                                    <i class="fas fa-book"></i>
+                                                </a></li>
+
+                                            <li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img src="@Url.Content("~/" + item.ImagePath)" alt="" height="302">
                             </div>
-                            <img src="@Url.Content("~/" + item.ImagePath)" alt="" height="302">
-                        </div>
-                        <div class="down-content">
-                            <h5>@item.Title</h5>
-                            <span style="margin-bottom:10px">
-                                <p>@item.Author.Name</p>
-                            </span>
-                            @if (item.Quantity > 0)
-                            {
-                                <a class="btn btn-dark" style="width:100%; background-color: #573ba3; border-radius: 9999px;">
-                                    <i class="fas fa-book"></i>
+                            <div class="down-content">
+                                <h5>@item.Title</h5>
+                                <span style="margin-bottom:10px">
+                                    <p class="author-name">@item.Author.Name</p>
+                                </span>
+
+                       <a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id"
+                            class="btn btn-dark" style="width:100%; background-color: #06453d; border-radius: 9999px;">
+                                    <i class="fas fa-book mr-1"></i>
                                     Borrow Now
                                 </a>
-                            }
-                            else
-                            {
-                                <a class="btn btn-danger disabled" style="width:100%; border-radius: 9999px">Not in Library</a>
-                            }
+
+                        
+
+                            </div>
                         </div>
-                    </div>
+                    }
+                    else
+                    {
+                        <div class="item" style="width:200px; margin-right:20px">
+                            <div class="thumb">
+                                <div class="hover-content">
+                                    <div class="hover-content">
+
+                                        <ul>
+                                            <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
+
+                                            <li>
+                                                <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                                    <button type="submit" style="border:none" class="star-button">
+                                                        <i class="fas fa-heart"></i>
+                                                    </button>
+                                                </form>
+                                            </li>
+
+
+
+                                            <li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img src="@Url.Content("~/" + item.ImagePath)" alt="" height="302">
+                            </div>
+                            <div class="down-content">
+                                <h5>@item.Title</h5>
+                                <span style="margin-bottom:10px">
+                                    <p class="author-name">@item.Author.Name</p>
+                                </span>
+
+
+
+                                <a class="btn btn-danger disabled" style="width:100%; border-radius: 9999px">Not in Library</a>
+
+                            </div>
+                        </div>
+                    }
                 </div>
             }
         </div>

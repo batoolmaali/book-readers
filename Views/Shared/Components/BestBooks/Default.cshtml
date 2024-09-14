@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>Best Books</h2>
+                        <h2>The most requested books</h2>
                     <span>Check out all of our products.</span>
                 </div>
             </div>
@@ -24,27 +24,35 @@
               
 
                 <div class="col-lg-2 col-md-4 col-6" style="width:200px; margin-right:35px">
-                    <div class="item " style="width:200px;margin-right:20px">
-                        <div class="thumb">
-                            <div class="hover-content">
+                        <div class="item " style="width:200px;margin-right:20px;background-color:transparent">
+                        <div class="thumb" >
+                                <div class="hover-content">
 
-                                <ul>
+                                    <ul>
                                         <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@borrow.Book.Id"><i class="fa fa-eye"></i></a></li>
-                                    <li>
-                                            <form asp-action="AddToFav" asp-controller="Book" asp-area="" asp-route-id="@borrow.Book.Id" method="post" id="addToFavForm">
-                                            <button type="submit" style="border:none" class="star-button">
-                                                <i class="fa fa-star"></i>
-                                            </button>
-                                        </form>
-                                    </li>
+
+                                        <li>
+                                            <form asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@borrow.Book.Id" method="post" id="addToFavForm">
+                                                <button type="submit" style="border:none" class="star-button">
+                                                    <i class="fas fa-heart"></i>
+                                                </button>
+                                            </form>
+                                        </li>
+                                        @if (@borrow.Book.Quantity > 0)
+                                        {
+                                            <li><a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@borrow.Book.Id">
+                                                    <i class="fas fa-book"></i>
+                                                </a></li>
 
 
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="@Url.Content("~/" + @borrow.Book.ImagePath)" alt="">
+                                        }
+
+
+                                    </ul>
+                                </div>
+                                <img src="@Url.Content("~/" + @borrow.Book.ImagePath)" alt="" height="302">
                         </div>
-                        <div class="down-content">
+                            <div class="down-content" style="background-color:transparent">
                             <h4>@borrow.Book.Title</h4>
                             
                             <ul class="stars">

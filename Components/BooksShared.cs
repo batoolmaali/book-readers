@@ -15,8 +15,9 @@ namespace BookReaders.Components
         }
         public IViewComponentResult Invoke()
         {
-            var Cat = _DbContext.Categories.Include(cat => cat.Books).ThenInclude(a=>a.Author).ToList();
-           /* var Books = _DbContext.Books.Take(6).ToList();*/
+            var Cat = _DbContext.Categories.Where(c=>c.Name != "Arabic").Include(cat => cat.Books).ThenInclude(a=>a.Author).ToList();
+            ViewBag.Books = Cat.Count();
+         
 
             return View("Default", Cat);
         }

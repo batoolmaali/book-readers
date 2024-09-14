@@ -1,6 +1,16 @@
 ﻿@model IEnumerable<BookReaders.Areas.AccountUser.ViewModels.UserViewModel>
 
+<style>
+    .pagination .page-link {
+        color: black; /* Set the color of the page link text to black */
+    }
 
+    .pagination .page-item.active .page-link {
+        background-color: #343a40; /* Set the background color of the active page link to dark */
+        color: white; /* Set the text color of the active page link to white */
+        border: none
+    }
+</style>
 
 <div class="row container d-flex justify-content-center">
 
@@ -13,6 +23,7 @@
            
            
         </div>
+    </div>
     </div>
     <div class="col-lg-12 grid-margin stretch-card ">
         <div class="card">
@@ -83,7 +94,7 @@
                                             @Html.DisplayFor(modelItem => item.Roles)
                                         </td>
                                         <td>
-                                            <a class="btn btn-primary" style="background-color:#573ba3"
+                                            <a class="btn btn-primary" style="background-color:#06453d"
                                                 asp-action="Manage" asp-controller="User" asp-route-id="@item.Id">Manage</a>
                                         </td>
                                     </tr>
@@ -97,5 +108,33 @@
             </div>
         </div>
     </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center mt-5">
+            @if (ViewBag.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/Dashboard/User/Index?SearchItem=@ViewBag.SearchItem& currentpage=@(ViewBag.CurrentPage-1)" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
 
+            }
+
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="/Dashboard/User/Index?SearchItem=@ViewBag.SearchItem&currentpage=@i">@i</a>
+                </li>
+            }
+
+            @if (ViewBag.CurrentPage < @ViewBag.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/Dashboard/User/Index?SearchItem=@ViewBag.SearchItem& currentpage=@(ViewBag.CurrentPage+1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
 </div>

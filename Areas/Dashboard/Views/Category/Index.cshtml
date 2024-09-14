@@ -3,7 +3,17 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    .pagination .page-link {
+        color: black; /* Set the color of the page link text to black */
+    }
 
+    .pagination .page-item.active .page-link {
+        background-color: #343a40; /* Set the background color of the active page link to dark */
+        color: white; /* Set the text color of the active page link to white */
+        border: none
+    }
+</style>
 <div class="row container d-flex justify-content-center">
 
     <div class="container ">
@@ -11,7 +21,7 @@
         <div class="row mb-4">
             <div class="col-md-6">
 
-                <a asp-action="Create" asp-controller="Category" class="btn text-light" style="background-color:#573ba3">Create New</a>
+                <a asp-action="Create" asp-controller="Category" class="btn text-light" style="background-color:#06453d">Create New</a>
             </div>
 
 
@@ -19,7 +29,7 @@
                 <form asp-action="Search" asp-controller="Category" asp-area="Dashboard" method="get" class="form-inline d-flex">
 
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="SearchItem">
-                    <input class="btn text-light" style="background-color:#573ba3" type="submit" value="Search" />
+                    <input class="btn text-light" style="background-color:#06453d" type="submit" value="Search" />
                 </form>
             </div>
         </div>
@@ -58,7 +68,7 @@
                                             } *@
 
                                             <a class="btn text-light btn-sm"
-                                               style="background-color:#573ba3" data-bs-toggle="modal" data-bs-target="#exampleModal2-@item.Id">
+                                               style="background-color:#06453d" data-bs-toggle="modal" data-bs-target="#exampleModal2-@item.Id">
 
                                                 All Books
                                             </a>
@@ -125,7 +135,7 @@
                                             </div>
                                         </div>
                                         <a type="button" asp-action="EditBook" asp-controller="Book" asp-area="Dashboard" asp-route-id="@item.Id" class="btn text-light btn-sm"
-                                           style="background-color:#573ba3">
+                                           style="background-color:#06453d">
                                             <i class="fas fa-edit edit-icon"></i>
                                         </a>
 
@@ -141,5 +151,33 @@
             </div>
         </div>
     </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center mt-5">
+            @if (ViewBag.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/Dashboard/Category/Index?SearchItem=@ViewBag.SearchItem& currentpage=@(ViewBag.CurrentPage-1)" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
 
+            }
+
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="/Dashboard/Category/Index?SearchItem=@ViewBag.SearchItem&currentpage=@i">@i</a>
+                </li>
+            }
+
+            @if (ViewBag.CurrentPage < @ViewBag.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/Dashboard/Category/Index?SearchItem=@ViewBag.SearchItem& currentpage=@(ViewBag.CurrentPage+1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
 </div>

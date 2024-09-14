@@ -18,6 +18,7 @@ namespace BookReaders.Areas.AccountUser.Models
         public List<Question> Questions { get; set; }
         public List<Answer> Answers { get; set; }
 
+        public List<Quote> Quotes { get; set; }
         public Message Message { get; set; }
     }
 }

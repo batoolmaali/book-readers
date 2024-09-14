@@ -1,0 +1,180 @@
+﻿@model IEnumerable<BookReaders.Models.Quote>
+@using BookReaders.Areas.AccountUser.Models
+@inject Microsoft.AspNetCore.Identity.SignInManager<ApplicationUser> _signInManager;
+<style>
+	.pt-100 {
+		padding-top: 140px;
+	}
+
+
+	.section-title {
+		margin-bottom: 40px;
+	}
+
+		.section-title p {
+			color: #777;
+			font-size: 16px;
+		}
+
+		.section-title h4 {
+			text-transform: capitalize;
+			font-size: 40px;
+			position: relative;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			font-weight: 600;
+		}
+
+			.section-title h4:before {
+				position: absolute;
+				content: "";
+				width: 60px;
+				height: 2px;
+				background-color: black;
+				bottom: 0;
+				left: 50%;
+				margin-left: -30px;
+			}
+
+			.section-title h4:after {
+				position: absolute;
+				background-color: black;
+				content: "";
+				width: 10px;
+				height: 10px;
+				bottom: -4px;
+				left: 50%;
+				margin-left: -5px;
+				border-radius: 50%;
+			}
+			p{
+				font-size:20px;
+				word-break:break-word
+			}
+
+
+</style>
+
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:400,500,600,700" rel="stylesheet">
+
+
+
+<section class="experience pt-100 pb-100" id="experience">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 mx-auto text-center">
+                <div class="section-title">
+                    <h4>Add Your Favorite Quote</h4>
+                    <a class="btn btn-md btn-dark mt-3 text-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Add Quote
+                    </a>
+
+                    <!-- Modal -->
+                    <div class="modal" id="exampleModal">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Add Your Comment</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    @Html.Partial("~/Views/Quote/_QuoteForm.cshtml", new BookReaders.Models.Quote())
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  @*       <div class="row">
+            <div class="col-xl-12">
+                <ul class="timeline-list">
+                    <!-- Display Quotes in Timeline -->
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <div class="timeline_content">
+                                <p><i class="fa fa-quote-left"></i> @item.QuoteText</p>
+                              
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div> *@
+    </div>
+</section>
+
+<div class="row mt-4">
+	<div class="col-md-6 mx-auto">
+		<!-- Timeline -->
+		<div class="timeline timeline-two">
+			<!-- Timeline Item 1 -->
+			   @foreach (var item in Model)
+			{
+				<div class="timeline-item shadow-sm border border-dark p-4 mb-3">
+
+					@if (_signInManager.IsSignedIn(User))
+					{
+						@if (@item.User.UserName == @User.Identity.Name)
+						{
+							<form asp-action="Delete" asp-controller="Quote" asp-area="" asp-route-id="@item.Id" method="post" >
+								<button type="submit" class="btn btn-dark btn-sm float-end">
+									<i class="fas fa-times delete-icon"></i>
+								</button>
+							</form>
+						}
+					}
+				
+					<h5><i class="fa fa-quote-left"></i></h5>
+					<div class="timeline_content">
+						<p>
+							@item.QuoteText
+						</p>
+
+					</div>
+				
+					<a href="#" class="btn btn-link text-dark btn-icon"><span class="btn-inner-icon"><i class="fab fa-readme"></i></span> <span class="btn-inner-text font-weight-bold">@item.BookName</span></a>
+
+					<div class="post-meta mt-2"><a class="text-secondary mr-2" href="#"><i class="far fa-heart mr-2"></i>@item.User.UserName</a> <span class="text-light"><i class="far fa-clock mr-2"></i>Jan 03, 2019</span></div>
+				</div>
+			}
+		</div>
+		<!-- End of Timeline -->
+	</div>
+</div>
+
+<div class="col-lg-12 " id="products">
+	<div class="pagination">
+		<ul>
+			@if (ViewBag.CurrentPage > 1)
+			{
+				<li>
+					<a href="/Quote/Index? currentpage=@(ViewBag.CurrentPage-1)" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+
+			}
+
+			@for (int i = 1; i <= ViewBag.TotalPages; i++)
+			{
+				<li class=" @(i == ViewBag.CurrentPage ? "active" : "")">
+					<a href="/Quote/Index?&currentpage=@i">@i</a>
+				</li>
+			}
+
+			@if (ViewBag.CurrentPage < @ViewBag.TotalPages)
+			{
+				<li>
+					<a href="/Quote/Index? currentpage=@(ViewBag.CurrentPage+1)" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			}
+		</ul>
+	</div>
+</div>

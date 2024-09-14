@@ -21,6 +21,9 @@ namespace BookReaders.Areas.Dashboard.Controllers
             ViewBag.Authors =_dbContext.Authors.Count();
             ViewBag.Categories =_dbContext.Categories.Count();
             ViewBag.Users=_dbContext.Users.Count();
+            ViewBag.Videos= _dbContext.videoKids.Count();
+            ViewBag.Borrows = _dbContext.Borrows.Count();
+            ViewBag.Reviews = _dbContext.Reviews.Count();
             var genderGroups = _dbContext.Users
                          .GroupBy(u => u.Gender)
                           .Select(group => new

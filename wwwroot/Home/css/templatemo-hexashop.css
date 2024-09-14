@@ -5,7 +5,35 @@ TemplateMo 571 Hexashop
 https://templatemo.com/tm-571-hexashop
 
 */
+/*small*/
+@media only screen and (min-width: 768px) {
+    .container1 {
+        width: 750px;
+    }
+}
+/*medium*/
+@media only screen and (min-width: 992px) {
+    .container1 {
+        width: 970px;
+    }
+}
+/*large*/
+@media only screen and (min-width: 1200px) {
+    .container1 {
+        width: 1170px;
+    }
+}
+/*small*/
+@media only screen and (max-width: 767px) {
+    .special-heading {
+        font-size: 60px;
+    }
 
+        .special-heading + p {
+            margin-top: -20px;
+        }
+}
+  
 /* ---------------------------------------------
 Table of contents
 ------------------------------------------------
@@ -698,6 +726,7 @@ banner
 
 .main-banner .right-content .right-first-image .thumb img {
   width: 100%;
+ 
   overflow: hidden;
 }
 
@@ -771,7 +800,7 @@ Men
 
 #men {
   padding-top: 90px;
-  padding-bottom: 90px;
+  padding-bottom: 10px;
   border-bottom: 3px dotted #eee;
 }
 
@@ -1515,7 +1544,7 @@ footer
 */
 
 footer {
-  margin-top: 60px;
+  /*margin-top: 60px;*/
   padding: 60px 0px 30px 0px;
   background-color: #2a2a2a;
 }
@@ -1762,31 +1791,32 @@ Single Product Page
 --------------------------------------------- 
 */
 
-#product {
+#productt {
   margin-top: 80px;
 }
 
 
-#product .left-images img {
-  width: 100%;
+#productt .left-images img {
+  width: 80%;
   overflow: hidden;
+ 
   margin-bottom: 30px;
 }
 
-#product .right-content {
+/*#product .right-content {
   position: relative;
   z-index: 3;
   background-color: #fff;
-}
+}*/
 
-#product .right-content h4 {
+#productt .right-content h4 {
   font-size: 22px;
   color: #2a2a2a;
   font-weight: 700;
   margin-bottom: 0px;
 }
 
-#product .right-content span.price {
+#productt .right-content span.price {
   font-size: 18px;
   color: #a1a1a1;
   font-weight: 500;
@@ -1796,18 +1826,18 @@ Single Product Page
   padding-bottom: 20px;
 }
 
-#product .right-content ul.stars {
+#productt .right-content ul.stars {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-#product .right-content ul.stars li {
+#productt .right-content ul.stars li {
   display: inline;
   font-size: 13px;
 }
 
-#product .right-content span {
+#productt .right-content span {
   font-size: 14px;
   color: #aaaaaa;
   font-weight: 500;
@@ -1815,24 +1845,24 @@ Single Product Page
   margin-top: 25px;
 }
 
-#product .right-content .quote {
+#productt .right-content .quote {
   margin-top: 25px;
 }
 
-#product .right-content .quote i {
+#productt .right-content .quote i {
   float: left;
   font-size: 32px;
   margin-right: 15px;
   margin-top: 10px;
 }
 
-#product .right-content .quote p {
+#productt .right-content .quote p {
   font-style: italic;
   color: #2a2a2a;
   font-weight: 500;
 }
 
-#product .right-content p {
+#productt .right-content p {
   font-size: 14px;
   color: #aaaaaa;
   font-weight: 500;
@@ -1879,15 +1909,15 @@ Single Product Page
   text-align: right;
 }
 
-.total .main-border-button a {
-  border-color: #2a2a2a;
-  color: #2a2a2a;
-}
+    .total .main-border-button a{
+        border-color: #2a2a2a;
+        color: #2a2a2a;
+    }
 
-.total .main-border-button a:hover {
-  color: #fff;
-  background-color: #2a2a2a;
-}
+        .total .main-border-button a:hover{
+            color: #fff;
+            background-color: #2a2a2a;
+        }
 
 .quantity {
   display: inline-block; }
@@ -1960,7 +1990,12 @@ About Us Page
 }
 
 .about-us {
-  margin-top: 80px;
+  
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:10px auto
 }
 
 .about-us .left-image img {
@@ -1970,17 +2005,19 @@ About Us Page
 }
 
     .about-us .right-content {
-        margin-left: 30px;
-        margin-top: 120px;
-        display:flex;
+        /*margin-left: 30px;*/
+        /*margin-top: 120px;*/
+       /* display:flex;
         flex-direction:column;
-        justify-content:space-around;
-        padding-right:100px
+        justify-content:center;*/
+        padding-right:100px;
+       
     }
 
     .about-us .left-image2 img {
         width: 60%;
         overflow: hidden;
+      
     }
     .about-us .right-content2 {
        /* margin-left: 10px;*/
@@ -1991,11 +2028,69 @@ About Us Page
         padding-right: 100px
     }
 
-.about-us .right-content h4 {
-  font-size: 34px;
-  font-weight: 700;
+    .about-us .right-content h5 {
+        font-size: 22px;
+        font-weight: 550;
+        color: #004d00;
+    }
+
+.about-us .right-content h2 {
+  font-size: 48px;
+
+  margin-top:10px;
+  margin-bottom:30px;
   color: #2a2a2a;
+  width:400px
  
+}
+    .about-us .right-content p {
+        
+        margin-bottom: 40px;
+        color: #2a2a2a;
+      
+    }
+@media only screen and (max-width: 768px) {
+    .about-us{
+        margin-top:100px;
+    }
+    .about-us .left-image img {
+        width: 80%;
+    }
+
+    .right-content {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .about-us .left-image img {
+        width: 100%;
+    }
+
+    .right-content {
+        text-align: center;
+    }
+
+        .right-content h5 {
+            font-size: 1.5rem;
+        }
+
+        .right-content h2 {
+            font-size: 2rem;
+        }
+
+        .right-content p {
+            font-size: 0.9rem;
+        }
+
+    .total .main-border-button {
+        margin: 10px 0;
+    }
+
+        .total .main-border-button a {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
 }
 
 .about-us .right-content span {
@@ -2174,8 +2269,9 @@ About Us Page
 }
 
 .our-services .service-item img {
-  width: 100%;
+  width: 60%;
   overflow: hidden;
+  margin:auto
 }
 
 .our-services .service-item h4 {
@@ -2185,9 +2281,10 @@ About Us Page
   margin-bottom: 20px;
 }
 
-.our-services .service-item p {
-  margin-bottom: 25px;
-}
+    .our-services .service-item p {
+        margin-bottom: 10px;
+       
+    }
 
 
 
@@ -2349,6 +2446,7 @@ responsive
     text-align: center;
   }
   footer h4 {
+
     margin-top: 30px;
   }
 }

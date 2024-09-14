@@ -346,6 +346,33 @@ namespace BookReaders.Migrations
                     b.ToTable("Questions");
                 });
 
+            modelBuilder.Entity("BookReaders.Models.Quote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BookName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("QuoteText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Quotes");
+                });
+
             modelBuilder.Entity("BookReaders.Models.Review", b =>
                 {
                     b.Property<int>("Id")
@@ -375,6 +402,35 @@ namespace BookReaders.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
+                });
+
+            modelBuilder.Entity("BookReaders.Models.VideoKid", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("ThumbnailUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("VideoUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("videoKids");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -608,6 +664,17 @@ namespace BookReaders.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("BookReaders.Models.Quote", b =>
+                {
+                    b.HasOne("BookReaders.Areas.AccountUser.Models.ApplicationUser", "User")
+                        .WithMany("Quotes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("BookReaders.Models.Review", b =>
                 {
                     b.HasOne("BookReaders.Models.Book", "Book")
@@ -690,6 +757,8 @@ namespace BookReaders.Migrations
                         .IsRequired();
 
                     b.Navigation("Questions");
+
+                    b.Navigation("Quotes");
 
                     b.Navigation("Reviews");
                 });

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BookReaders.Models.Review>
+
+
+<!-- ***** Services Area Starts ***** -->
+<section class="our-services" style="border:none">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Books Reviews</h2>
+                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <img src="@Url.Content("~/" + item.Book.ImagePath)"  alt="" />
+                        <p style="font-size: 16px; margin-top: 25px;">
+
+                            <div class="quote">
+                                <i class="fa fa-quote-left"></i>
+                            @item.Comment
+                        </div>    
+                        </p>
+                       
+                        <div class="d-flex flex-row profile  w-60">
+                           <div> <img src="@Url.Content("~/" + item.User.ImagePath)" alt="" class="rounded-circle" style="    width: 45px !important;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;"/>
+        </div>
+                            <div class="d-flex flex-row pl-2 align-content-center mt-2">
+
+                                <div class="name me-1">@item.User.UserName | </div> <p class="text-muted designation">  @item.ReviewDate.ToString("MMMM") @item.ReviewDate.ToString("dd, yyyy") </p>
+                            </div>
+                        </div>
+                   
+               
+                      
+                 
+                </div>
+            </div>
+            }
+           
+        </div>
+    </div>
+</section>
+<!-- ***** Services Area Ends ***** -->

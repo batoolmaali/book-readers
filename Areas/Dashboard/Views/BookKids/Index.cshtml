@@ -1,6 +1,16 @@
 ﻿@model IEnumerable<BookReaders.ViewModels.BookKidVM>
 
+<style>
+    .pagination .page-link {
+        color: black; /* Set the color of the page link text to black */
+    }
 
+    .pagination .page-item.active .page-link {
+        background-color: #343a40; /* Set the background color of the active page link to dark */
+        color: white; /* Set the text color of the active page link to white */
+        border: none
+    }
+</style>
 
 
 @if (Model != null && Model.Any()){
@@ -11,7 +21,7 @@
         <div class="row mb-4">
             <div class="col-md-6">
 
-                <a asp-action="Create" asp-controller="BookKids" class="btn text-light" style="background-color:#573ba3">Create New</a>
+                    <a asp-action="Create" asp-controller="BookKids" class="btn text-light" style="background-color:#06453d">Create New</a>
             </div>
 
 
@@ -40,11 +50,11 @@
                                     @Html.DisplayNameFor(model => model.Image)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.KidsCategoryId)
+                                    @Html.DisplayNameFor(model => model.PDF)
                                 </th>
 
                                 <th>
-                                    Actions
+                                    Remove
                                 </th>
 
 
@@ -74,9 +84,9 @@
                                     <td>
 
 
-                                            <a class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Id" style="background-color:#573ba3">Read PDF</a>
+                                            <a class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal2-@item.Id" style="background-color:#06453d"> PDF</a>
 
-                                            <div class="modal fade" id="exampleModal-@item.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="exampleModal2-@item.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-scrollable">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -99,9 +109,7 @@
 
                                           
                                     </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.KidsCategoryId)
-                                    </td>
+                                  
 
 
                                     <td>
@@ -149,7 +157,35 @@
             </div>
         </div>
     </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center mt-5">
+                @if (ViewBag.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="/Dashboard/BookKids/Index?SearchItem=@ViewBag.SearchItem& currentpage=@(ViewBag.CurrentPage-1)" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
 
+                }
+
+                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="/Dashboard/BookKids/Index?SearchItem=@ViewBag.SearchItem&currentpage=@i">@i</a>
+                    </li>
+                }
+
+                @if (ViewBag.CurrentPage < @ViewBag.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="/Dashboard/BookKids/Index?SearchItem=@ViewBag.SearchItem& currentpage=@(ViewBag.CurrentPage+1)" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
 </div>
 }
 

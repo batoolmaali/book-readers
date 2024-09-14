@@ -6,10 +6,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Drawing.Printing;
 
 namespace BookReaders.Controllers
 {
-    [Authorize]
+   /* [Authorize]*/
     public class QuestionController : Controller
     {
         private readonly AppDbContext _dbContext;
@@ -18,6 +19,11 @@ namespace BookReaders.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+
+        public int PageSize { get; set; }
+        public int CurrentPage { get; set; }
+        public int TotalPages { get; set; }
+        public string Term { get; set; }
         public QuestionController(AppDbContext dbContext,
             UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
@@ -28,10 +34,26 @@ namespace BookReaders.Controllers
             _roleManager = roleManager;
 
         }
-        public IActionResult Index()
+        public IActionResult Index(int currentpage = 1)
         {
-            var Qus=_dbContext.Questions.Include(x=>x.User).Include(a=>a.Answers).OrderByDescending(x=>x.Id).ToList();
-            return View(Qus);
+            int pageSize = 3;
+            var Qus=_dbContext.Questions.Include(x=>x.User).Include(a=>a.Answers).OrderByDescending(x=>x.Id).AsQueryable();
+
+            var filteredQuotes = Qus.ToList();
+
+            int totalRecords = filteredQuotes.Count;
+            int totalPages = (int)Math.Ceiling(totalRecords / (double)pageSize);
+
+            var paginatedQuotes = filteredQuotes.Skip((currentpage - 1) * pageSize)
+                                              .Take(pageSize)
+                                              .ToList();
+
+            ViewBag.CurrentPage = currentpage;
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageSize = pageSize;
+
+            return View(paginatedQuotes);
+         
         }
         [HttpPost]
         public async Task<IActionResult> Create(Question question)

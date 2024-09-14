@@ -1,0 +1,241 @@
+﻿@model IEnumerable<BookReaders.Models.Book>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete Example</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include jQuery UI library for autocomplete -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        .position-relative {
+            position: relative;
+        }
+
+        .custom-autocomplete {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            z-index: 9999; /* Ensure dropdown is on top of other elements */
+        }
+
+        .input-text:focus {
+            box-shadow: 0px 0px 0px;
+            border-color: #06453d;
+            outline: 0px;
+        }
+
+        .form-control {
+            border: 1px solid #06453d;
+        }
+
+        button {
+            border: none;
+            background: none;
+        }
+
+        .con p {
+            font-size: 30px;
+            color: #06453d;
+            font-weight: bold;
+            font-style: italic
+        }
+
+        .con {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+            .con div {
+                width: 50%;
+                height: 100%;
+            }
+
+            .con img {
+                width: 80%;
+                height: auto;
+                max-width: 100%;
+                overflow: hidden;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid" style="background-color: #f5f1ed; margin-top: 80px;">
+        <div class="container con">
+            <div>
+                <img src="https://bridge315.qodeinteractive.com/wp-content/uploads/2020/01/p1-img-02.jpg" />
+            </div>
+            <div>
+                <p>ALL Books</p>
+            </div>
+        </div>
+    </div>
+    <section class="section" id="products">
+        <div class="container" style="margin-top:100px">
+
+
+
+            <div class="row mb-4 p-2">
+                <div class="col-md-6">
+                    Showing all results
+                </div>
+                <div class="col-md-6 mb-4" class="position-relative">
+
+                    <div class="input-group position-relative">
+
+                        <input type="text" class="form-control" placeholder="Search for a book" id="searchBook" />
+                        <div class="input-group-append">
+                            <button class="btn btn-outline " type="button" style="border-color:#06453d"><i class="fa fa-search "></i></button>
+                        </div>
+                        <div id="autocompleteDropdown" class="custom-autocomplete"></div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-lg-2 col-md-4 col-6 book-item" style="width:200px; margin-right:35px; margin-bottom:30px">
+                        @if (item.Quantity > 0)
+                        {
+                            <div class="item" style="width:200px; margin-right:20px">
+                                <div class="thumb">
+                                    <div class="hover-content">
+                                        <div class="hover-content">
+
+                                            <ul>
+                                                <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
+
+                                                <li>
+                                                    <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                                        <button type="submit" style="border:none" class="star-button">
+                                                            <i class="fas fa-heart"></i>
+                                                        </button>
+                                                    </form>
+                                                </li>
+
+                                                <li><a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id">
+                                                        <i class="fas fa-book"></i>
+                                                    </a></li>
+
+                                                <li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <img src="@Url.Content("~/" + item.ImagePath)" alt="" height="302">
+                                </div>
+                                <div class="down-content">
+                                    <h5>@item.Title</h5>
+                                    <span style="margin-bottom:10px">
+                                        <p class="author-name">@item.Author.Name</p>
+                                    </span>
+
+
+                                    <a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id"
+                                       class="btn btn-dark" style="width:100%; background-color: #06453d; border-radius: 9999px;">
+                                        <i class="fas fa-book mr-1"></i>
+                                        Borrow Now
+                                    </a>
+
+
+
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="item" style="width:200px; margin-right:20px">
+                                <div class="thumb">
+                                    <div class="hover-content">
+                                        <div class="hover-content">
+
+                                            <ul>
+                                                <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
+
+                                                <li>
+                                                    <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                                        <button type="submit" style="border:none" class="star-button">
+                                                            <i class="fas fa-heart"></i>
+                                                        </button>
+                                                    </form>
+                                                </li>
+
+
+
+                                                <li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <img src="@Url.Content("~/" + item.ImagePath)" alt="" height="302">
+                                </div>
+                                <div class="down-content">
+                                    <h5>@item.Title</h5>
+                                    <span style="margin-bottom:10px">
+                                        <p class="author-name">@item.Author.Name</p>
+                                    </span>
+
+
+
+                                    <a class="btn btn-danger disabled" style="width:100%; border-radius: 9999px">Not in Library</a>
+
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#searchBook").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/Book/Index',
+                        dataType: "json",
+                        data: {
+                            term: request.term
+                        },
+                        success: function (data) {
+                            response(data);
+                        }
+                    });
+                },
+                appendTo: "#autocompleteDropdown",
+                select: function (event, ui) {
+                    showSelectedBook(ui.item.value);
+                }
+            });
+
+            function showSelectedBook(selectedBookTitle) {
+                $('.book-item').each(function () {
+                    var title = $(this).find('h5').text();
+                    if (title.toLowerCase() === selectedBookTitle.toLowerCase()) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+        });
+    </script>
+
+
+</body>
+</html>

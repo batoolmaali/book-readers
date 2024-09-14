@@ -3,25 +3,55 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    .pagination .page-link {
+        color: black; /* Set the color of the page link text to black */
+    }
 
+    .pagination .page-item.active .page-link {
+        background-color: #343a40; /* Set the background color of the active page link to dark */
+        color: white; /* Set the text color of the active page link to white */
+        border:none
+    }
+</style>
 
 
 <div class="row container d-flex justify-content-center">
   
     <div class="container ">
+      @*   <div class="alert alert-danger" role="alert">
+            @Html.Raw(ViewBag.Warning)
+        </div> *@
         <partial name="_Notification" />
-        <div class="row mb-4">
-            <div class="col-md-6">
+        <div class="row mb-4 d-flex">
+            <div class="col-md-6 d-flex justify-content-start">
 
-                <a asp-action="Create" asp-controller="Book" class="btn text-light" style="background-color:#573ba3">Create New</a>
+                <a asp-action="Create" asp-controller="Book" class="btn text-light" style="background-color:#06453d; margin-right: 10px">Create New</a>
+                <form asp-action="Index" asp-controller="Book" asp-area="Dashboard" method="get" 
+                class="form-inline " >
+
+                    <input type="hidden" name="showLowQuantity" value="true"  />
+                    <button type="submit" class="btn btn-danger" >Show Low Quantity Books
+                    @*     @ViewBag.Warning  *@
+                    </button>
+                </form>
             </div>
+          
+             @*    <div class="col-md-3">
+                    <form asp-action="Index" asp-controller="Book" asp-area="Dashboard" method="get" class="form-inline d-flex">
+
+                        <input type="hidden" name="showLowQuantity" value="true" />
+                    <button type="submit" class="btn text-light" style="background-color:#06453d">Show Low Quantity Books</button>
+                    </form>
+                    
+                </div> *@
            
 
             <div class="col-md-6">
-                <form asp-action="Search" asp-controller="Book" asp-area="Dashboard" method="get" class="form-inline d-flex">
+                <form asp-action="Index" asp-controller="Book" asp-area="Dashboard" method="get" class="form-inline d-flex">
                
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="SearchItem">
-                    <input class="btn text-light" style="background-color:#573ba3" type="submit" value="Search"/>
+                    <input class="btn text-light" style="background-color:#06453d" type="submit" value="Search" />
                 </form>
             </div>
         </div>
@@ -45,7 +75,7 @@
                                     @Html.DisplayNameFor(model => model.Description)
                                 </th> *@
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Quantity)
+                                   QTY
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Language)
@@ -66,7 +96,7 @@
                                     @Html.DisplayNameFor(model => model.Author)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.BookPDF)
+                                   PDF
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.IsComingSoon)
@@ -120,9 +150,39 @@
                                    
                                     
                                     <td>
-                                        <a class="btn text-light btn-sm"
-                                           style="background-color:#573ba3" href="@Url.Content("~/" + @item.BookPDF)" target="_blank">PDF</a>
+                                  @*       <a class="btn text-light btn-sm"
+                                           style="background-color:#573ba3" href="@Url.Content("~/" + @item.BookPDF)" target="_blank">PDF</a> *@
+
+
+                                        <a class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal2-@item.Id" style="background-color:#06453d">PDF</a>
+
+                                        <div class="modal fade" id="exampleModal2-@item.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">PDF Viewer</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        @if (item.BookPDF != null && item.BookPDF.Length > 0)
+                                                        {
+                                                          
+                                                            <iframe src="@Url.Content("~/" + @item.BookPDF)" class="w-100" height="500" style="border: none;"></iframe>
+                                                        }
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
                                     </td>
+
+
                                     <td>
                                         @if(item.IsComingSoon== true)
                                         {
@@ -164,7 +224,7 @@
                                         </div>
                                     </div>
                                         <a type="button" asp-action="EditBook" asp-controller="Book" asp-area="Dashboard" asp-route-id="@item.Id" class="btn text-light btn-sm"
-                                           style="background-color:#573ba3">
+                                           style="background-color:#06453d">
                                         <i class="fas fa-edit edit-icon"></i>
                                     </a>
 
@@ -180,8 +240,37 @@
             </div>
         </div>
     </div>
+       <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center mt-5">
+    @if (ViewBag.CurrentPage> 1)
+    {
+                <li class="page-item">
+                    <a class="page-link" href="/Dashboard/Book/Index?SearchItem=@ViewBag.SearchItem& currentpage=@(ViewBag.CurrentPage-1)" aria-label="Previous">
+    <span aria-hidden="true">&laquo;</span>
+    </a>
+    </li>
 
+    }
+
+    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+    {
+    <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="/Dashboard/Book/Index?SearchItem=@ViewBag.SearchItem&currentpage=@i">@i</a>
+    </li>
+    }
+
+    @if (ViewBag.CurrentPage < @ViewBag.TotalPages)
+    {
+    <li class="page-item">
+                    <a class="page-link" href="/Dashboard/Book/Index?SearchItem=@ViewBag.SearchItem& currentpage=@(ViewBag.CurrentPage+1)" aria-label="Next">
+    <span aria-hidden="true">&raquo;</span>
+    </a>
+    </li>
+    }
+    </ul>
+    </nav> 
 </div>
+
 
 @* <div class="container d-flex justify-content-center mt-4">
     @{

@@ -3,17 +3,19 @@
 
 
 
-<section class="our-team">
+<section class="our-team" style="border:none">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>Our Amazing Team</h2>
+                    <h2>Best Children's and Young Adult Books</h2>
                     <span>Details to details is what makes Hexashop different from the other themes.</span>
                 </div>
             </div>
             @foreach (var item in Model) {
             <div class="col-lg-3">
+                
+                            <a asp-action="allBook" asp-controller="KidsCategories" asp-route-id="@item.Id" asp-area="">
                 <div class="team-item">
                     <div class="thumb">
                        
@@ -36,6 +38,7 @@
                     </div>
 
                 </div>
+                </a>
             </div>
           }
         </div>

@@ -21,6 +21,10 @@ namespace BookReaders.Areas.Dashboard.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
+        public int PageSize { get; set; }
+        public int CurrentPage { get; set; }
+        public int TotalPages { get; set; }
+        public string SearchItem { get; set; }
         public UserController(AppDbContext dbContext, IWebHostEnvironment webHostEnvironment, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager
             )
         {
@@ -29,13 +33,19 @@ namespace BookReaders.Areas.Dashboard.Controllers
             _signInManager = signInManager;
             _roleManager = roleManager;
             _webHostEnvironment = webHostEnvironment;
+            // Initialize 
+            PageSize = 10;
+            CurrentPage = 1;
+            TotalPages = 0;
+            SearchItem = "";
         }
 
        
 
-            public async Task<IActionResult> Index()
+            public async Task<IActionResult> Index(int currentpage = 1)
             {
-                var Allusers = await _userManager.Users.ToListAsync();
+            int pageSize = 5;
+            var Allusers = await _userManager.Users.ToListAsync();
                 var users = new List<UserViewModel>();
 
                 foreach (var user in Allusers)
@@ -53,8 +63,23 @@ namespace BookReaders.Areas.Dashboard.Controllers
                         Roles = _userManager.GetRolesAsync(user).Result
                     });
                 }
+            var filteredBooks = users.ToList();
 
-                return View(users);
+            int totalRecords = filteredBooks.Count;
+            int totalPages = (int)Math.Ceiling(totalRecords / (double)pageSize);
+
+            var paginatedBooks = filteredBooks.Skip((currentpage - 1) * pageSize)
+                                              .Take(pageSize)
+                                              .ToList();
+
+            ViewBag.CurrentPage = currentpage;
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageSize = pageSize;
+
+
+            return View(paginatedBooks);
+
+           
             }
         public async Task<IActionResult> Manage(string id)
         {

@@ -33,6 +33,8 @@ namespace BookReaders.Areas.AccountUser.ViewModels
         public string Gender { get; set; }
         [Required]
         public string City { get; set; }
+
+        [Display(Name = "Image")]
         public string? ImagePath { get; set; }
 
     }

@@ -259,3 +259,5 @@ D:\desktop files\ASP-FinalProject\Solution_BookReaders\BookReaders\obj\Debug\net
 D:\desktop files\ASP-FinalProject\Solution_BookReaders\BookReaders\obj\Debug\net8.0\BookReaders.pdb
 D:\desktop files\ASP-FinalProject\Solution_BookReaders\BookReaders\obj\Debug\net8.0\BookReaders.genruntimeconfig.cache
 D:\desktop files\ASP-FinalProject\Solution_BookReaders\BookReaders\obj\Debug\net8.0\ref\BookReaders.dll
+D:\desktop files\ASP-FinalProject\Solution_BookReaders\BookReaders\bin\Debug\net8.0\PagedList.dll
+D:\desktop files\ASP-FinalProject\Solution_BookReaders\BookReaders\bin\Debug\net8.0\PagedList.Mvc.dll

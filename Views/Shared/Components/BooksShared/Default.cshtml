@@ -5,6 +5,7 @@
 }
 
 <style>
+   
     .promo{
         font-size: 1em;
         color: #fff;
@@ -47,139 +48,144 @@
         bottom: -7px;
         right: 0;
     }
+    button{
+        border:none;
+        background: none;
+        
+    }
+
     }
 </style>
 
 
-<!-- ***** Men Area Starts ***** -->
-<section class="section" id="men">
-     @foreach (var item in Model)
-                        {
-    <div class="container">
-          
-        <div class="row">
-            <div class="col-lg-6">
-              
-                <div class="section-heading">
-                        <h2>@item.Name  Latest</h2>
-                    <span>Details to details is what makes Hexashop different from the other themes.</span>
-                </div>
-                      
-            </div>
-                <div class="col-lg-6">
 
-                    <div class="section-heading d-flex justify-content-end">
-                        <h2></h2>
-                        <h6><a asp-action="CatBooks" asp-controller="Book" asp-route-id="@item.Id" asp-area="">View All @item.Books.Count()</a></h6>
+
+@* <li><a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@book.Id"><i class="fa fa-eye"></i></a></li>
+
+<li> *@
+    <section class="section" id="men" style="padding-bottom:0px">
+            @foreach (var item in Model)
+            {
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <div class="section-heading">
+                            <h2>@item.Name  Latest</h2>
+                            <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        </div>
+
                     </div>
+                    <div class="col-lg-6">
 
+                        <div class="section-heading d-flex justify-content-end">
+                            <h2></h2>
+                            <h6><a asp-action="CatBooks" asp-controller="Book" asp-route-id="@item.Id" asp-area="">View All @item.Books.Count()</a></h6>
+                        </div>
+
+                    </div>
                 </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="men-item-carousel">
-                    <div class="owl-men-item owl-carousel">
-                        @foreach (var book in item.Books)
-                        {
-                                @if (book.Quantity > 0)
-                                {
-                                <div class="item " style="width:215px;position: relative">
-
-                                  
-                                    <div class="thumb">
-                                      
-                                            <div class="hover-content">
-                      
-                                                <ul>
-           <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@book.Id"><i class="fa fa-eye"></i></a></li>
-
-                                                    <li>
-                                                        <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@book.Id" method="post" id="addToFavForm">
-                                                            <button type="submit" style="border:none" class="star-button">
-                                                                <i class="fa fa-star"></i>
-                                                            </button>
-                                                        </form>
-                                                    </li>
-
-
-                                                    <li>
-                                                        <form class="formm" asp-action="AddToBorrow" asp-controller="Borrow" asp-area="" asp-route-id="@book.Id" method="post" id="addToFavForm">
-                                                        <button type="submit" style="border:none" class="star-button">
-                                                            <i class="fa fa-shopping-cart"></i>
-                                                        </button>
-                                                    </form>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                       
-                              
-                                        <img src="@Url.Content("~/" + book.ImagePath)" alt="" height="302">
-                                </div>
-                                <div class="down-content">
-                                    <div class="d-flex justify-content-between" >
-                                        <h5>@book.Title</h5>
-
-                                        <span>@book.Quantity</span>
-                                        </div>
-
-                                        <span style="margin-bottom:10px">
-                                            <p>@book.Author.Name</p>
-                                        </span>
-                              @*           @if (book.Quantity > 0)
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="men-item-carousel">
+                            <div class="owl-men-item owl-carousel">
+                                    @foreach (var book in item.Books.Take(6))
+                                    {
+                                        @if (book.Quantity > 0)
                                         {
-                                            <a class="btn btn-dark" style="width:100%; background-color: #573ba3; border-radius: 9999px;">
-                                                <i class="fas fa-book"></i>
-                                                Borrow Now
-                                            </a>
+                                        <div class="item " style="width:215px;position: relative">
+
+
+                                            <div class="thumb">
+
+                                                <div class="hover-content">
+
+                                                    <ul>
+                                                        <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@book.Id"><i class="fa fa-eye"></i></a></li>
+
+                                                        <li>
+                                                            <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@book.Id" method="post" id="addToFavForm">
+                                                                <button type="submit" style="border:none" class="star-button">
+                                                   <i class="fas fa-heart"></i>
+                                                                </button>
+                                                            </form>
+                                                        </li>
+					
+                                                    <li><a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@book.Id">
+                                                            <i class="fas fa-book"></i>
+                                                   </a></li>
+
+                                        <li> 
+                                                    @*     <li>
+                                                            <form class="formm" asp-action="AddToBorrow" asp-controller="Borrow" asp-area="" asp-route-id="@book.Id" method="post" id="addToFavForm">
+                                                                <button type="submit" style="border:none" class="star-button">
+                                                                    <i class="fa fa-shopping-cart"></i>
+                                                                </button>
+                                                            </form>
+                                                        </li> *@
+                                                    </ul>
+                                                </div>
+
+
+                                                <img src="@Url.Content("~/" + book.ImagePath)" alt="" height="302">
+                                            </div>
+                                            <div class="down-content">
+                                                <div class="d-flex justify-content-between">
+                                                    <h5>@book.Title</h5>
+
+                                                    <span>@book.Quantity</span>
+                                                </div>
+
+                                                <span style="margin-bottom:10px">
+                                                    <p>@book.Author.Name</p>
+                                                </span>
+                                             
+                          
+                                            </div>
+                                        </div>
                                         }
                                         else
                                         {
-                                            <a class="btn btn-danger disabled" style="width:100%; border-radius: 9999px">Not in Library</a>
-                                        } *@
-                                </div>
-                                    </div>
-                                }
-                                else
-                                {
-                                    <div class="item " style="width:215px;position: relative">
+                                        <div class="item " style="width:215px;position: relative">
 
-                                        <p class="promo">Not in Library!</p>
-                                        <div class="thumb">
+                                            <p class="promo">Not in Library!</p>
+                                            <div class="thumb">
 
-                                            <div class="hover-content">
+                                                <div class="hover-content">
 
-                                                <ul>
-                                                    <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@book.Id"><i class="fa fa-eye"></i></a></li>
+                                                    <ul>
+                                                        <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@book.Id"><i class="fa fa-eye"></i></a></li>
 
-                                                    <li>
-                                                        <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@book.Id" method="post" id="addToFavForm">
-                                                            <button type="submit" style="border:none" class="star-button">
-                                                                <i class="fa fa-star"></i>
-                                                            </button>
-                                                        </form>
-                                                    </li>
+                                                        <li>
+                                                            <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@book.Id" method="post" id="addToFavForm">
+                                                                <button type="submit" style="border:none" class="star-button">
+                                                                <i class="fas fa-heart"></i>
+                                                                </button>
+                                                            </form>
+                                                        </li>
 
 
-                                               
-                                                </ul>
+
+                                                    </ul>
+                                                </div>
+
+
+                                                <img src="@Url.Content("~/" + book.ImagePath)" alt="" height="302">
                                             </div>
+                                            <div class="down-content">
+                                                <div class="d-flex justify-content-between">
+                                                    <h5>@book.Title</h5>
 
+                                                    <span>@book.Quantity</span>
+                                                </div>
 
-                                            <img src="@Url.Content("~/" + book.ImagePath)" alt="" height="302">
-                                        </div>
-                                        <div class="down-content">
-                                            <div class="d-flex justify-content-between">
-                                                <h5>@book.Title</h5>
-
-                                                <span>@book.Quantity</span>
-                                            </div>
-
-                                            <span style="margin-bottom:10px">
-                                                <p>@book.Author.Name</p>
-                                            </span>
-                                            @*           @if (book.Quantity > 0)
+                                                <span style="margin-bottom:10px">
+                                                    <p>@book.Author.Name</p>
+                                                </span>
+                                                    @*           @if (book.Quantity > 0)
                                 {
                                 <a class="btn btn-dark" style="width:100%; background-color: #573ba3; border-radius: 9999px;">
                                 <i class="fas fa-book"></i>
@@ -190,17 +196,16 @@
                                 {
                                 <a class="btn btn-danger disabled" style="width:100%; border-radius: 9999px">Not in Library</a>
                                 } *@
+                                            </div>
                                         </div>
-                                    </div>
-                                   
-                                }
-                            }
+
+                                        }
+                                    }
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
-        </div>
-    
-    </div>
-    }
-</section>
-<!-- ***** Men Area Ends ***** -->
+            }
+    </section>

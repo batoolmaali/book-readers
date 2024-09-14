@@ -1,0 +1,14 @@
+﻿@model IEnumerable<BookReaders.Models.Category>
+
+
+
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a asp-action="CatBooks" asp-controller="Book" asp-route-id="@item.Id" asp-area="">@item.Name</a></li>
+            
+        }
+    </ul>
+}

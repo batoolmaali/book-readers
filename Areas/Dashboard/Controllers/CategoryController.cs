@@ -12,21 +12,75 @@ namespace BookReaders.Areas.Dashboard.Controllers
     public class CategoryController : Controller
     {
         private readonly AppDbContext _dbContext;
-      
+
         private IRepository<Category> _repository;
+        public int PageSize { get; set; }
+        public int CurrentPage { get; set; }
+        public int TotalPages { get; set; }
+        public string SearchItem { get; set; }
         public CategoryController(AppDbContext dbContext, IRepository<Category> repository)
         {
             _dbContext = dbContext;
             _repository = repository;
+            // Initialize 
+            PageSize = 10;
+            CurrentPage = 1;
+            TotalPages = 0;
+            SearchItem = "";
         }
+
+      
         [HttpGet]
-        public IActionResult Index()
+
+        public IActionResult Index(string SearchItem, int currentpage = 1)
         {
-              var Cat = _repository.GetAll().Include(cat => cat.Books).ToList();
-           /* var Cat = _repository.GetAll();*/
-        
-            return View(Cat);
+
+
+            int pageSize = 4;
+            var Cat = _repository.GetAll().Include(cat => cat.Books).AsQueryable();
+
+
+            if (SearchItem == null)
+            {
+                Cat = _repository.GetAll().Include(cat => cat.Books).AsQueryable();
+            }
+
+            else
+            {
+              
+                    Cat = Cat.Include(x => x.Books).Where(x => x.Name.Contains(SearchItem)).AsQueryable();
+             
+
+
+
+
+
+            }
+            // Materialize the query before pagination
+            var filteredBooks = Cat.ToList();
+
+            int totalRecords = filteredBooks.Count;
+            int totalPages = (int)Math.Ceiling(totalRecords / (double)pageSize);
+
+            var paginatedBooks = filteredBooks.Skip((currentpage - 1) * pageSize)
+                                              .Take(pageSize)
+                                              .ToList();
+
+            ViewBag.CurrentPage = currentpage;
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageSize = pageSize;
+            ViewBag.SearchItem = SearchItem;
+
+
+
+
+
+            return View(paginatedBooks);
+
+
         }
+
+    
         [HttpGet]
         public IActionResult Create()
         {
@@ -50,16 +104,6 @@ namespace BookReaders.Areas.Dashboard.Controllers
             return RedirectToAction("Index");
         }
        
-            public ActionResult Search(string SearchItem)
-            {
-                var Cat = _dbContext.Categories.AsQueryable();
-
-                if (SearchItem != null)
-                {
-                    Cat = Cat.Include(x=>x.Books).Where(x => x.Name.Contains(SearchItem)).AsQueryable();
-                }
-
-                return View("Index", Cat);
-            }
+        
     }
 }

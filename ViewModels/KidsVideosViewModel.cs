@@ -18,7 +18,7 @@ namespace BookReaders.ViewModels
 
 
         [Url]
-        public string? ThumbnailUrl { get; set; }
+        public byte[] ThumbnailUrl { get; set; }
 
         
         [Url]

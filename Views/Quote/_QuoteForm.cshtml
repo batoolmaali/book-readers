@@ -1,0 +1,20 @@
+﻿@model BookReaders.Models.Quote
+
+<div class="text-start panel-body">
+    <form asp-action="Create" asp-controller="Quote" asp-area="" method="post">
+     
+        <label asp-for="QuoteText" class="control-label"></label>
+        <textarea asp-for="QuoteText" class="form-control" rows="2" placeholder="Add Quote"></textarea>
+
+        <div class="form-group mt-2">
+            <label asp-for="BookName" class="control-label"></label>
+            <input asp-for="BookName" class="form-control" />
+         </div>
+     
+        <div class="mt-2 clearfix">
+            <button class="btn btn-sm btn-dark pull-right" type="submit">Share</button>
+          
+        </div>
+    </form>
+</div>
+

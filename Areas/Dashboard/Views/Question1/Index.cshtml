@@ -1,0 +1,154 @@
+﻿@model IEnumerable<BookReaders.Models.Question>
+
+
+
+
+
+<div class="row container d-flex justify-content-center">
+
+    <div class="container ">
+        <partial name="_Notification" />
+        @*  <div class="row mb-4">
+        <div class="col-md-6">
+
+        <a asp-action="Create" asp-controller="Category" class="btn text-light" style="background-color:#06453d">Create New</a>
+        </div>
+
+
+        <div class="col-md-6">
+        <form asp-action="Search" asp-controller="Category" asp-area="Dashboard" method="get" class="form-inline d-flex">
+
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="SearchItem">
+        <input class="btn text-light" style="background-color:#573ba3" type="submit" value="Search" />
+        </form>
+        </div>
+        </div> *@
+    </div>
+    <div class="col-lg-12 grid-margin stretch-card ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Q&A</h5>
+                <hr />
+                <p class="card-description">
+
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                   Question @Html.DisplayNameFor(model => model.Content)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CreatedAt)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.User.UserName)
+                                </th>
+                                <th>
+                                  Answers Count
+                                </th>
+                                <th>
+                                   Answers 
+                                </th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                        @*                 <p>@Html.Raw(item.Content.Length > 30 ? item.Content.Substring(0, 40) + "..." : item.Content)</p> *@
+                                        @item.Content
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreatedAt)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.User.UserName)
+                                    </td>
+                                    <td>
+                                        @item.Answers.Count
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal1-@item.Id" style="background-color:#06453d">
+                                             Answers
+                                        </a>
+
+                                        <div class="modal" id="exampleModal1-@item.Id">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Modal title</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true"></span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                              @foreach(var ans in item.Answers){
+
+                                  <p><span>@ans.User.UserName: </span>@ans.Content</p>
+                                  <br/>
+
+                              }
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <form asp-action="Delete" asp-route-id="@item.Id" method="post">
+                                                            @Html.AntiForgeryToken()
+                                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                                        </form>
+
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Id">
+
+                                            <i class="fas fa-trash-alt delete-icon"></i>
+                                        </a>
+                                        @*   modal *@
+                                        <div class="modal" id="exampleModal-@item.Id">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Modal title</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true"></span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Are you Sure Delete Question for User @item.User.UserName ?</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <form asp-action="Delete" asp-route-id="@item.Id" method="post">
+                                                            @Html.AntiForgeryToken()
+                                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                                        </form>
+
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                
+                                </tr>
+                            }
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

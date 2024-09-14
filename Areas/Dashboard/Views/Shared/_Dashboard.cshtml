@@ -14,10 +14,13 @@
 
   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BookReaders.styles.css" asp-append-version="true" />
+  
+ 
 </head>
-<body>
+<body style="background-color: #f6f2ef">
     <div class="wrapper">
-        <!-- Sidebar  -->
+       
+        <!-- Sidebar #f6f4ef -->
         <nav id="sidebar" class="bg-dark">
             <div class="sidebar-header">
                 <h4 style="font-style:italic">BookReaders</h4>
@@ -28,91 +31,143 @@
                     <div class="d-flex flex-column align-items-center text-center p-2 pb-2">
                          @if (_signInManager.IsSignedIn(User))
                                 {
-                        <div style="width:50%;height:100px;border:4px solid #573ba3">
-                                <img src="~/@User.FindFirst("UserImage").Value" alt="User Image" style="width:100%; height:100%" />
+                            <div style="width:40%;height:70px;border:5px solid #06453d; border-radius:50%">
+                                <img src="~/@User.FindFirst("UserImage").Value" alt="User Image" style="width:100%; height:100%;border-radius:50%" />
                         </div>
                           
                         <span class="font-weight-bold"> @User.Identity.Name</span>
                             <span class="text-light-50">@User.FindFirst("Email")</span>
 
-                            <span> </span>
+                        
                                 }
                     </div>
                 </div>
                 <li class="active">
+                    <a asp-action="AdminIndex" asp-controller="Admin" style="font-size:18px">
+                        <i class="fa fa-tachometer-alt"></i> Statistics
+
+                       
+                    </a>
+                </li>
+                <li class="active">
                     <a asp-action="Index" asp-controller="Book" >
-                        <i class="fa fa-tachometer-alt"></i> All Books
+                        <i class="fas fa-book"></i> All Books
                     </a>
                 </li>
-                <li>
+             @*    <li>
                     <a asp-action="Create" asp-controller="Book">
-                        <i class="fa fa-plus"></i> Add Product
+                        <i class="fa fa-plus"></i> Add Book
                     </a>
-                </li>
+                </li> *@
                 <li>
                     <a asp-action="Index" asp-controller="Author" >
-                        <i class="fa fa-list"></i> All Authors
+                        <i class="fas fa-user"></i> All Authors
                     </a>
                 </li>
-                <li>
+             @*    <li>
                     <a asp-action="Create" asp-controller="Author">
                         <i class="fa fa-plus"></i> Add Author
                     </a>
-                </li>
+                </li> *@
                 <li>
                    
                     <a asp-action="Index" asp-controller="Category" >
-                        <i class="fa fa-plus"></i> All Categories
+                        <i class="fas fa-list"></i> All Categories
                     </a>
                 </li>
-                <li>
+             @*    <li>
 
                     <a asp-action="Create" asp-controller="Category">
-                        <i class="fa fa-plus"></i> Add Categories
+                        <i class="fa fa-plus"></i> Add Category
+                    </a>
+                </li> *@
+
+                <li>
+
+                    <a asp-action="Index" asp-controller="Review">
+                        <i class="fas fa-star"></i> Reviews Books
                     </a>
                 </li>
+
+                <li>
+
+                    <a asp-action="Index" asp-controller="Question1">
+                        <i class="fas fa-comments"></i> InterActions
+                    </a>
+                </li>
+
                 <li>
 
                     <a asp-action="Index" asp-controller="Borrow" >
-                        <i class="fa fa-plus"></i> Borrow Books
+                        <i class="fas fa-hand-holding"></i> Borrow Books
                     </a>
                 </li>
                 <li>
 
                     <a asp-action="Index" asp-controller="Favorite">
-                        <i class="fa fa-plus"></i> Favorite Books
+                        <i class="fas fa-heart"></i> Favorite Books
                     </a>
                 </li>
 
                 <li>
                     <a asp-action="Index" asp-controller="Role">
-                        <i class="fa fa-plus"></i> Roles
+                        <i class="fas fa-users"></i> Roles
                     </a>
                 </li>
 
                 <li>
                     <a asp-action="Index" asp-controller="User">
-                        <i class="fa fa-plus"></i> All Users
+                        <i class="fas fa-user-friends"></i>  All Users
                     </a>
                 </li>
+             @*    <li>
+                    <a asp-action="Index" asp-controller="KidsVideos" asp-area="Dashboard">
+                        <i class="fa fa-plus"></i> Kids Videos
+                    </a>
+                </li>
+                <li>
+                    <a asp-action="Create" asp-controller="KidsVideos" asp-area="Dashboard">
+                        <i class="fa fa-plus"></i> Add Videos
+                    </a>
+                </li> *@
                 <li>
                     <a asp-action="Index" asp-controller="KidsCategory1" asp-area="Dashboard">
-                        <i class="fa fa-plus"></i> Kids Categories
+                        <i class="fas fa-child"></i> Kids Categories
                     </a>
                 </li>
-                <li>
+              @*   <li>
                     <a asp-action="Create" asp-controller="KidsCategory1" asp-area="Dashboard">
                         <i class="fa fa-plus"></i> Add Kids Categories
                     </a>
-                </li>
+                </li> *@
                 <li>
                     <a asp-action="Index" asp-controller="BookKids" asp-area="Dashboard">
-                        <i class="fa fa-plus"></i> Kids books
+                        <i class="fas fa-child"></i> Kids books
                     </a>
                 </li>
-                <li>
+             @*    <li>
                     <a asp-action="Create" asp-controller="BookKids" asp-area="Dashboard">
                         <i class="fa fa-plus"></i> Add Kids books
+                    </a>
+                </li> *@
+              @*   <li>
+                    <a asp-action="Create" asp-controller="RecommendedBook" asp-area="Dashboard">
+                        <i class="fa fa-plus"></i> Add RecommendedBook
+                    </a>
+                </li> *@
+                <li>
+                    <a asp-action="Index" asp-controller="RecommendedBook" asp-area="Dashboard">
+                        <i class="fas fa-star"></i> RecommendedBooks
+                    </a>
+                </li>
+              @*   <li>
+                    <a asp-action="Create" asp-controller="VideoKid" asp-area="Dashboard">
+                        <i class="fa fa-plus"></i>  Add Kids Videos
+                    </a>
+                </li> *@
+                <li>
+                    <a asp-action="Index" asp-controller="VideoKid" asp-area="Dashboard">
+                        <i class="fas fa-child"></i> Kids Videos
                     </a>
                 </li>
             </ul>
@@ -142,7 +197,7 @@
                         </ul>
                     </div>
                     <div>
-                        <a asp-controller="Home" asp-action="Index" asp-area="" class="btn text-light" style="background-color:#573ba3">Back to Home</a>
+                        <a asp-controller="Home" asp-action="Index" asp-area="" class="btn text-light" style="background-color:#06453d">Back to Home</a>
                     </div>
                 </div>
             </nav>

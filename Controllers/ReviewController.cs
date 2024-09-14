@@ -25,7 +25,8 @@ namespace BookReaders.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var reviews = _dbContext.Reviews.Include(b => b.Book).Include(u => u.User).OrderByDescending(x => x.Id).ToList();
+            return View(reviews);
         }
 
         [HttpPost]
@@ -69,6 +70,24 @@ namespace BookReaders.Controllers
             // If model state is invalid, return the same view with the model
             // You should return the same view to display validation errors to the user
             return View("BookDetails", viewModel);
+        }
+
+        [HttpPost]
+
+        public ActionResult Delete(int id)
+        {
+            var item = _dbContext.Reviews.Where(x => x.Id == id).FirstOrDefault();
+
+            if (item != null)
+            {
+                _dbContext.Reviews.Remove(item);
+
+                _dbContext.SaveChanges();
+
+                int bookId =item.BookId;
+                return RedirectToAction("BookDetails", "Book", new { id = bookId, area = "" });
+            }
+            return View();
         }
     }
 }

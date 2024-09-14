@@ -35,6 +35,10 @@ namespace BookReaders.Data
 
         public DbSet<Message> Messages { get; set; }
 
+        public DbSet<Quote> Quotes { get; set; }
+
+        public DbSet<VideoKid> videoKids { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -93,6 +97,8 @@ namespace BookReaders.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
         }
+    
+        
     
        
    

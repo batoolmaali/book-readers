@@ -90,46 +90,79 @@ namespace BookReaders.Areas.AccountUser.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-         /*   var loginVM = new LoginViewModel()
-            {
-                Schemes = await _signInManager.GetExternalAuthenticationSchemesAsync()
-            };*/
-
+        
             return View();
         }
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel model)
+       /* public async Task<IActionResult> Login(LoginViewModel model, string ReturnUrl)
         {
             if (ModelState.IsValid)
             {
                 var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, false, false);
-                var currentUser = await _userManager.GetUserAsync(User);
+
                 if (result.Succeeded)
                 {
-                    var role = await _userManager.GetRolesAsync(currentUser);
-                    if (role.Contains("Admin"))
+                    var currentUser = await _userManager.FindByNameAsync(model.UserName);
+
+                    if (!string.IsNullOrEmpty(ReturnUrl))
                     {
-         
+                        return LocalRedirect(ReturnUrl);
+                    }
+
+                    var roles = await _userManager.GetRolesAsync(currentUser);
+
+                    if (roles.Contains("Admin"))
+                    {
                         return RedirectToAction("AdminIndex", "Admin", new { area = "Dashboard" });
                     }
                     else
                     {
                         return RedirectToAction("Index", "Home", new { area = "" });
                     }
-                   
                 }
                 else
                 {
-
-                    ModelState.AddModelError("", "Invalid user or password");
+                    ModelState.AddModelError("", "Invalid username or password");
                     return View(model);
                 }
-
             }
-            return View(model);
 
-        }
+            return View(model);
+        }*/
+         public async Task<IActionResult> Login(LoginViewModel model )
+         {
+             if (ModelState.IsValid)
+             {
+                 var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, false, false);
+                 var currentUser = await _userManager.GetUserAsync(User);
+                 if (result.Succeeded)
+                 {
+                    
+                     var role = await _userManager.GetRolesAsync(currentUser);
+                     if (role.Contains("Admin"))
+                     {
+
+                         return RedirectToAction("AdminIndex", "Admin", new { area = "Dashboard" });
+                     }
+                     else
+                     {
+                         return RedirectToAction("Index", "Home", new { area = "" });
+                     }
+
+                 }
+                 else
+                 {
+
+                     ModelState.AddModelError("", "Invalid user or password");
+                     return View(model);
+                 }
+
+             }
+             return View(model);
+
+         }
 
         public async Task<IActionResult> Logout()
         {
@@ -183,7 +216,7 @@ namespace BookReaders.Areas.AccountUser.Controllers
                 var viewModel = new ManageUserViewModel
                 {
                    
-                    UserName = currentUsername.UserName,
+                  /*  UserName = currentUsername.UserName,*/
                     PhoneNumber = currentUsername.PhoneNumber,
                     Gender = currentUsername.Gender,
                     Birthday = currentUsername.Birthday,

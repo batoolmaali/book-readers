@@ -23,6 +23,7 @@ namespace BookReaders.Models
 
         [Required]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime Birthdate { get; set; }
 
         [Display(Name = "Auther Image")]

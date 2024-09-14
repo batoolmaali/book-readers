@@ -1,12 +1,36 @@
 ﻿@model BookReaders.Models.Author
 <style>
-   
+
+    .con p {
+        font-size: 30px;
+        color: #06453d;
+        font-weight: bold;
+        font-style: italic
+    }
+
+    .con {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        .con div {
+            width: 50%;
+            height: 100%;
+        }
+
+        .con img {
+            width: 80%;
+            height: auto;
+            max-width: 100%;
+            overflow: hidden;
+        }
     .m-t-5 {
         margin-top: 5px;
     }
 
     .card {
-        background-color: #f5f2f0;
+      /*   background-color: #f5f2f0; */
         margin-bottom: 30px;
         transition: .5s;
         border: 0;
@@ -68,39 +92,48 @@
                     color: #424242
                 }
 
-    Similar
+    button {
+        border: none;
+        background: none;
+    }
+ 
 </style>
-<div class="page-heading" id="top">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="inner-content">
-                    @*     <h2>Single Product Page</h2>
-                    <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span> *@
-                </div>
-            </div>
+
+<div class="container-fluid" style="background-color: #f5f1ed; margin-top: 80px;">
+    <div class="container con">
+        <div>
+            <img src="https://bridge315.qodeinteractive.com/wp-content/uploads/2020/01/p1-img-02.jpg" />
+        </div>
+        <div>
+            <p>About Author</p>
         </div>
     </div>
 </div>
+
+
+
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container profile-page">
+<div class="container profile-page" style="margin-top:50px">
     <div class="row">
         <div class="col-xl-6 col-lg-7 col-md-12">
-            <h2 class="mb-3">About the author</h2>
+            <h3 class="mb-3">About the author</h3>
             <div class="card profile-header">
                 <div class="body">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-12">
-                            <div class="profile-image float-md-right"> <img src="@Url.Content("~/" + Model.ImagePath)" alt=""> </div>
+                            <div class="profile-image float-md-right">
+                                <img src="@Url.Content("~/" + Model.ImagePath)" width="140px"
+                                     height="140px" alt="">
+                            </div>
                         </div>
                         <div class="col-lg-8 col-md-8 col-12">
-                            <h4 class="m-t-0 m-b-0"><strong>@Model.Name</strong> Deo</h4>
+                            <h4 class="m-t-0 m-b-0"><strong>@Model.Name</strong> </h4>
                             <span class="job_post">@Model.Nationality</span>
                             <p>@Model.Biography</p>
-                             <div>
+                           @*   <div>
                                 <button class="btn btn-primary btn-round">Follow</button>
                                 <button class="btn btn-primary btn-round btn-simple">Message</button>
-                            </div> 
+                            </div>  *@
                           
                         </div>
                     </div>
@@ -108,46 +141,57 @@
             </div>
         </div>
 
-
+   @if (ViewBag.BestBook != null)
+                        {
         <div class="col-xl-6 col-lg-7 col-md-12">
-            <h2 class="mb-3"
-            >Most popular</h2>
+
+          
+            <h3 class="mb-3">
+                Most popular
+            </h3>
+                        
             <div class="card profile-header">
                 <div class="body">
+                  
                     @foreach (var book in Model.Books)
                     {
-                        @if (book.Title == ViewBag.BestBook.book)
+                        @if (ViewBag.BestBook != null)
                         {
-                        
-                      
+                            @if (book.Title == ViewBag.BestBook.book)
 
-                  
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-12">
-                                    <div  style="  
+
+                            {
+
+                              
+
+
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div style="
             width: 140px;
             height:140px;
             border: 3px solid #fff;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)">
-                                        <img src="@Url.Content("~/" + book.ImagePath)" alt="" width="100%" height="100%">
+                                            <img src="@Url.Content("~/" + book.ImagePath)" alt="" width="100%" height="100%">
+                                        </div>
                                     </div>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-12">
-                                    <h4 class="m-t-0 m-b-0"><strong>@book.Title</strong> Deo</h4>
-                            <span class="job_post">Ui UX Designer</span>
-                            <p>795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                            <div>
-                                <button class="btn btn-primary btn-round">Follow</button>
-                                <button class="btn btn-primary btn-round btn-simple">Message</button>
-                            </div>
-                        
-                        </div>
-                    </div>
+                                    <div class="col-lg-8 col-md-8 col-12">
+                                        <h4 class="m-t-0 m-b-0"><strong>@book.Title</strong> </h4>
+
+                                        <p>@book.Description</p>
+
+
+                                    </div>
+                                </div>
+                            }
                         }
+                     
+                       
                     }
                 </div>
             </div>
         </div>
+        }
     </div>
 
   
@@ -178,41 +222,86 @@
             {
 
                 <div class="col-lg-2 col-md-4 col-6 book-item" style="width:200px; margin-right:35px; margin-bottom:30px">
-                    <div class="item" style="width:200px; margin-right:20px">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
-                                    <li>
-                                        <form asp-action="AddToFav" asp-controller="Book" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
-                                            <button type="submit" style="border:none" class="star-button">
-                                                <i class="fa fa-star"></i>
-                                            </button>
-                                        </form>
-                                    </li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+                    @if (item.Quantity > 0)
+                    {
+                        <div class="item" style="width:200px; margin-right:20px">
+                            <div class="thumb">
+                                <div class="hover-content">
+                                    <div class="hover-content">
+
+                                        <ul>
+                                            <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
+
+                                            <li>
+                                                <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                                    <button type="submit" style="border:none" class="star-button">
+                                                        <i class="fas fa-heart"></i>
+                                                    </button>
+                                                </form>
+                                            </li>
+
+                                            <li><a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id">
+                                                    <i class="fas fa-book"></i>
+                                                </a></li>
+
+                                            <li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img src="@Url.Content("~/" + item.ImagePath)" alt="" height="302">
                             </div>
-                            <img src="@Url.Content("~/" + item.ImagePath)" alt="" height="302">
+                            <div class="down-content">
+                                <h5>@item.Title</h5>
+                                <span style="margin-bottom:10px">
+                                    <p class="author-name">@item.Author.Name</p>
+                                </span>
+
+
+
+
+                            </div>
                         </div>
-                        <div class="down-content">
-                            <h5>@item.Title</h5>
-                            <span style="margin-bottom:10px">
-                                <p>@item.Author.Name</p>
-                            </span>
-                            @if (item.Quantity > 0)
-                            {
-                                <a class="btn btn-dark" style="width:100%; background-color: #573ba3; border-radius: 9999px;">
-                                    <i class="fas fa-book"></i>
-                                    Borrow Now
-                                </a>
-                            }
-                            else
-                            {
-                                <a class="btn btn-danger disabled" style="width:100%; border-radius: 9999px">Not in Library</a>
-                            }
+                    }
+                    else
+                    {
+                        <div class="item" style="width:200px; margin-right:20px">
+                            <div class="thumb">
+                                <div class="hover-content">
+                                    <div class="hover-content">
+
+                                        <ul>
+                                            <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
+
+                                            <li>
+                                                <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                                    <button type="submit" style="border:none" class="star-button">
+                                                        <i class="fas fa-heart"></i>
+                                                    </button>
+                                                </form>
+                                            </li>
+
+
+
+                                            <li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img src="@Url.Content("~/" + item.ImagePath)" alt="" height="302">
+                            </div>
+                            <div class="down-content">
+                                <h5>@item.Title</h5>
+                                <span style="margin-bottom:10px">
+                                    <p class="author-name">@item.Author.Name</p>
+                                </span>
+
+
+
+
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             }
         </div>

@@ -14,6 +14,7 @@ namespace BookReaders.Models
         public int BookId { get; set; }
         public Book Book { get; set; }
         public string Comment { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime ReviewDate { get; set; }
     }
 }

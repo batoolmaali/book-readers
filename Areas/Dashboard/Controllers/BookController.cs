@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static System.Reflection.Metadata.BlobBuilder;
+
 
 namespace BookReaders.Areas.Dashboard.Controllers
 {
@@ -14,40 +16,92 @@ namespace BookReaders.Areas.Dashboard.Controllers
     {
         private readonly AppDbContext _dbContext;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        private int pageItem;
+        public int PageSize { get; set; }
+        public int CurrentPage { get; set; }
+        public int TotalPages { get; set; }
+        public string SearchItem { get; set; }
         public BookController(AppDbContext dbContext, IWebHostEnvironment webHostEnvironment)
         {
             _dbContext = dbContext;
             _webHostEnvironment = webHostEnvironment;
-            pageItem = 5;
+
+            // Initialize 
+            PageSize = 10;
+            CurrentPage = 1;
+            TotalPages = 0;
+            SearchItem = "";
+
         }
 
         [HttpGet]
-        public IActionResult Index(int? id)
-        {
+   
+       public IActionResult Index(string SearchItem, int currentpage = 1, bool showLowQuantity = false)
+            {
 
 
-            var Books = _dbContext.Books.Include(A => A.Author).Include(C => C.Category).ToList();
-                return View(Books);
+            int pageSize = 6;
+            var books = _dbContext.Books.Include(A => A.Author).Include(C => C.Category).AsQueryable();
+
+        /*    var lowq = 0 ;
+            var bookname="";
+            foreach (var book in books)
+            {
+                if (book.Quantity < 2)
+                {
+                    lowq++;
+                    bookname += book.Title+ "<br/>";
+
+                }
+            }
+            ViewBag.Warning = lowq+ bookname;*/
+
+            if (showLowQuantity)  // Test with hardcoded filter
+            {
+                books = books.Include(x => x.Author).Include(C => C.Category).Where(book => book.Quantity < 2).AsQueryable();
+
+            }
+          
+
+            else if (SearchItem == null)
+            {
+                books = _dbContext.Books.Include(A => A.Author).Include(C => C.Category).AsQueryable();
+            }
+
+            else
+            {
+                books = books.Include(x => x.Author).Include(C => C.Category).Where(x => x.Title.Contains(SearchItem)
+                   || x.Description.Contains(SearchItem)
+                   || x.Language.Contains(SearchItem)
+                   || x.Category.Name.Contains(SearchItem)
+                   || x.Author.Name.Contains(SearchItem)
+                   || x.PublishDate.Year.ToString().Contains(SearchItem)).AsQueryable();
+
+              
+            }
+            // Materialize the query before pagination
+            var filteredBooks = books.ToList();
+
+            int totalRecords = filteredBooks.Count;
+            int totalPages = (int)Math.Ceiling(totalRecords / (double)pageSize);
+
+            var paginatedBooks = filteredBooks.Skip((currentpage - 1) * pageSize)
+                                              .Take(pageSize)
+                                              .ToList();
+
+            ViewBag.CurrentPage = currentpage;
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageSize = pageSize;
+            ViewBag.SearchItem = SearchItem;
+
+
+
+
+
+            return View(paginatedBooks);
          
 
         }
-        /* public IActionResult Index(int? id)
-         {
-             if (id == 0 || id == null)
-             {
-                 var Books = _dbContext.Books.Include(A => A.Author).Include(C => C.Category).ToList().Take(pageItem);
-                 return View(Books);
-             }
-
-             else 
-             {
-                 var Books = _dbContext.Books.Include(A => A.Author).Include(C => C.Category).Where(x => x.Id > id).ToList().Take(pageItem);
-                 return View(Books);
-
-             }
-
-         }*/
+  
 
         [HttpGet]
         public IActionResult Create()
@@ -172,7 +226,7 @@ namespace BookReaders.Areas.Dashboard.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Search(string SearchItem)
+      /*  public ActionResult Search(string SearchItem)
         {
 
             var books = _dbContext.Books.AsQueryable();
@@ -195,6 +249,6 @@ namespace BookReaders.Areas.Dashboard.Controllers
             }
 
             return View("Index", books);
-        }
+        }*/
     }
 }

@@ -39,13 +39,14 @@ namespace BookReaders.Controllers
             return View();
         }
 
-        /* public IActionResult allbook(int id)
+        [HttpGet]
+        public IActionResult allbook(int id)
         {
             HttpResponseMessage response = _httpClient.GetAsync($"{baseUri}/KidsCategory/GetCategoryWithBooks/{id}").Result;
 
 
-          
-     if (response.IsSuccessStatusCode)
+
+            if (response.IsSuccessStatusCode)
             {
                 var booksJson = response.Content.ReadAsStringAsync().Result;
 
@@ -57,35 +58,35 @@ namespace BookReaders.Controllers
 
             }
             return View();
-        }*/
-
-
-
-        [HttpGet]
-        public async Task<IActionResult> allbook(int id)
-        {
-            HttpResponseMessage response = await _httpClient.GetAsync(baseUri + "/BookKid");
-
-            if (response.IsSuccessStatusCode)
-            {
-                var res = await response.Content.ReadAsStringAsync();
-                List<BookKidVM> bookList = JsonConvert.DeserializeObject<List<BookKidVM>>(res);
-
-                // Filter 
-                var filteredbooks = bookList.Where(item => item.KidsCategoryId == id).ToList();
-
-                return View(filteredbooks);
-            }
-
-           
-            return View("Error");
         }
 
+
+
+        /*     [HttpGet]
+             public async Task<IActionResult> allbook(int id)
+             {
+                 HttpResponseMessage response = await _httpClient.GetAsync(baseUri + "/BookKid");
+
+                 if (response.IsSuccessStatusCode)
+                 {
+                     var res = await response.Content.ReadAsStringAsync();
+                     List<BookKidVM> bookList = JsonConvert.DeserializeObject<List<BookKidVM>>(res);
+
+                     // Filter 
+                     var filteredbooks = bookList.Where(item => item.KidsCategoryId == id).ToList();
+
+                     return View(filteredbooks);
+                 }
+
+
+                 return View("Error");
+             }
+     */
 
 
 
 
 
     }
-   
+
 }

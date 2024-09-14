@@ -1,0 +1,167 @@
+﻿@model BookReaders.Models.Book
+
+
+@{
+  
+    Layout = null;
+}
+<style>
+    .container {
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        padding:0 100px;
+    }
+
+    .left-image {
+        width:40%;
+       padding-top:20px
+    }
+
+        .left-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+    .right-content {
+        width:60%;
+        padding: 20px; /* Adjust padding as needed */
+    }
+
+        .right-content h5 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .right-content h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .right-content p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+    .total {
+        margin-top: 20px;
+    }
+
+    .main-border-button a, .main-border-button form {
+        font-size: 13px;
+        color: black;
+        text-decoration:none;
+        border: 1px solid black;
+        padding: 12px 25px;
+        display: inline-block;
+        font-weight: 500;
+        transition: all .3s;
+        
+    }
+
+       
+        .disable{
+        background-color:darkred;
+        color: #fff;
+        font-size: 13px;
+        padding: 12px 25px;
+        display: inline-block;
+        font-weight: 500;
+        transition: all .3s;
+    }
+
+       
+</style>
+<div class="container-fluid mb-5 " style="background-color:#f5f1ed ; height: 100%; background-size: cover; ">
+    <div style="margin:auto; height:70%">
+<div class="container">
+    <div class="left-image">
+        <img src="~/home/images/prt_540x540_1700568370-removebg-preview.png" />
+    </div>
+
+        <div class="right-content">
+                <h2 style="color:red">
+                    Alert Message
+                </h2>
+            @if (ViewBag.NotReturn != true)
+            {
+                @if (ViewBag.bor == true)
+                {
+                  
+
+                    <div class="total" style="width:60%;display:flex;justify-content:space-between">
+                        <div class="main-border-button">
+                            <button disabled class="disable">Not allowed to Borrow more than 2 Books</button>
+                        </div>
+                        <div class="main-border-button">
+                            <a asp-action="Index" asp-controller="Home" asp-area="">Back to Home</a>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <h5>BookReaders Library</h5>
+                    <p>
+                        <strong>Policy on Book Returns</strong>: At BookReaders Library, we uphold a strict policy regarding the return of borrowed books. It is imperative that all borrowed materials are <span style="color:red">returned within a period of 7 days</span> from the date of borrowing. This timeframe ensures fair access to our collection for all members. Failure to return a book within this designated period will result in the account being temporarily locked, thereby preventing further borrowing until the overdue item is returned. We appreciate your cooperation in adhering to this policy as it enables us to maintain an efficient and equitable borrowing system for all our patrons.
+                    </p>
+                    <div class="main-border-button">
+                        <form class="formm" asp-action="AddToBorrow" asp-controller="Borrow" asp-area="" asp-route-id="@Model.Id" method="post" id="addToFavForm">
+                            <button type="submit" style="border:none" class="star-button">Borrow</button>
+                        </form>
+                    </div>
+                }
+              
+            }
+            @if (ViewBag.NotReturn == true)
+            {
+                <p>
+                    <strong style="color:red">"Account Lock Notice:</strong> We regret to inform you that your account has been temporarily locked due to the failure to return a borrowed book within the stipulated 7-day period. As per our policy, timely returns are crucial to ensure fair access to all our members. The delay in returning the book has led to the temporary suspension of your borrowing privileges. To reactivate your account and resume borrowing, please return the overdue item at your earliest convenience. We value your cooperation in upholding our borrowing policy to maintain an efficient and equitable lending system for all our patrons. Thank you for your understanding."
+                </p>
+                <div class="total" style="width:50%;display:flex;justify-content:space-between">
+                    <div class="main-border-button">
+                        <button disabled class="disable">Not allowed to Borrow Book</button>
+                    </div>
+                    <div class="main-border-button">
+                        <a asp-action="Index" asp-controller="Home" asp-area="">Back to Home</a>
+                    </div>
+                </div>
+            }
+           
+           
+          
+        </div>
+
+
+     
+</div>
+    </div>
+</div>
+
+ @*    <h4 style="margin-top:300px">Book</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        
+
+        @if (ViewBag.NotReturn == true)
+        {
+            <button disabled class="btn btn-danger">Borrow Book</button>
+        }
+        else
+        {
+             <a href="#">Borrow Book</a>
+         
+        } 
+ 
+
+
+    </dl>
+</div> *@
+

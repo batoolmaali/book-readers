@@ -1,7 +1,12 @@
 ﻿@model IEnumerable<BookReaders.Models.Book>
 
-
-<section class="section" id="products">
+<style>
+    button {
+        border: none;
+        background: none;
+    }
+</style>
+<section class="section" id="products" style="padding-top:0px !important">
     <div class="container">
   
         <div class="row">
@@ -27,45 +32,35 @@
                                     <li><a asp-action="BookDetails" asp-controller="Book" asp-area="" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a></li>
 
                                     <li>
-                                        <form asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
+                                        <form class="formm" asp-action="AddToFav" asp-controller="Favorite" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
                                             <button type="submit" style="border:none" class="star-button">
-                                                <i class="fa fa-star"></i>
+                                                <i class="fas fa-heart"></i>
                                             </button>
                                         </form>
                                     </li>
-                                    @if (item.Quantity > 0)
-                                    {
-                                        <li>
-                                            <form asp-action="AddToBorrow" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id" method="post" id="addToFavForm">
-                                                <button type="submit" style="border:none" class="star-button">
-                                                    <i class="fa fa-shopping-cart"></i>
-                                                </button>
-                                            </form>
-                                        </li>
-                                    }
-                                    else
-                                    {
-                                        <li id="addToFavForm">
-                                            <button type="submit" style="border:none" class="star-button disabled">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </button>
-                                        </li>
-                                    }
+
+                                    <li><a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@item.Id">
+                                            <i class="fas fa-book"></i>
+                                        </a></li>
+
+                                    <li>
+                            
                                 </ul>
                             </div>
                             <img src="@Url.Content("~/" + item.ImagePath)" height="302" alt="">
                         </div>
                         <div class="down-content">
-                            <h4>@item.Title</h4>
-                            <span>@item.Quantity</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
+                            <div class="d-flex justify-content-between">
+                                <h5>@item.Title</h5>
+
+                              @*   <span>@item.Quantity</span> *@
+                            </div>
+
+                       
+
+
+                        
+                    </div>
                     </div>
                 </div>
     }

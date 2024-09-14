@@ -1,39 +1,67 @@
 ﻿@model UserFavViewModel
 
-  
+<style>
+    .con p {
+        font-size: 30px;
+        color: #06453d;
+        font-weight: bold;
+        font-style: italic
+    }
 
+    .con {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 
-<!-- ***** Main Banner Area Start ***** -->
-<div class="container-fluid mb-5 " style="background-color:#f5f1ed ; height: 300px; background-size: cover; background-repeat: no-repeat;">
+        .con div {
+            width: 50%;
+            height: 100%;
+        }
 
-    <div class="row">
-        <div class="about-us">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-lg-6">
-                        <div class="left-image2">
-                            <img src="https://bridge315.qodeinteractive.com/wp-content/uploads/2020/01/p1-img-02.jpg" />
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="right-content2">
-                            <h4>Favorite Books</h4>
+        .con img {
+            width: 80%;
+            height: auto;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .left-images img{
+            width:70% !important;
+        }
+        a{
+            cursor:pointer
+        }
 
+    .main-border-button form{
+        font-size: 13px;
+        border-color: #2a2a2a;
+        color: #2a2a2a;
+        padding: 11px 25px;
+        display: inline-block;
+        font-weight: 500;
+        transition: all .3s;
+        
+    }
+    .main-border-button input{
+        background-color: transparent;
+        border:none
+    }
+    
+</style>  
 
-
-                            <div class="total mt-2">
-                                <h4><div class="main-border-button"><a href="#">Borrow Book</a></div></h4>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="container-fluid" style="background-color: #f5f1ed; margin-top: 80px;">
+    <div class="container con">
+        <div>
+            <img src="https://bridge315.qodeinteractive.com/wp-content/uploads/2020/01/p1-img-02.jpg" />
         </div>
-
+        <div>
+            <p>Favorite List</p>
+        </div>
     </div>
 </div>
-@if (User.Identity.IsAuthenticated)
+<!-- ***** Main Banner Area Start ***** -->
+
+@* @if (User.Identity.IsAuthenticated)
 {
      <div class="container">
   
@@ -46,7 +74,7 @@
     </div>
    </div>
    </div>
-}
+} *@
 <!-- ***** Main Banner Area End ***** -->
 <!-- ***** Product Area Starts ***** -->
 @if (Model.Favorites != null && Model.Favorites.Any() && Model.Favorites.All(f => f.Book != null))
@@ -54,46 +82,132 @@
     <ul>
         @foreach (var favorite in Model.Favorites)
         {
-            <section class="section" id="product">
+            <section class="section" id="productt">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="left-images">
-                                <img width="50px" src="@Url.Content("~/" + favorite.Book.ImagePath)" />
-                                <img src="assets/images/single-product-02.jpg" alt="">
+                            <div class="left-images  d-flex justify-content-end">
+                                <img width="30%" src="@Url.Content("~/" + favorite.Book.ImagePath)" style="margin-left: auto;" />
+                             
                             </div>
                         </div>
                         <div class="col-lg-8 pl-5">
                             <div class="right-content">
                                 <h4>@favorite.Book.Title</h4>
                                 <span class="price">Languages: @favorite.Book.Language</span>
-                                @* <ul class="stars">
-                                    <li>@favorite.Book.Category.Name</li>
-                                </ul> *@
+                                <ul class="stars">
+                                   @favorite.Book.Category.Name
+                                </ul>
                                 <span>@favorite.Book.Description</span>
                         @*         <div class="quote">
                                     <i class="fa fa-quote-left"></i><h3>By: @favorite.Book.Author.Name</h3>
                                 </div> *@
                                 <div class="quantity-content" style="height:150px">
                                     <div class="total">
-                                        <h4>
-                                            <div class="main-border-button">
-                                                <form asp-action="Delete" asp-controller="Favorite" asp-route-id="@favorite.Book.Id">
-                                                    <input type="submit" value="Delete" class="main-border-button" />
-                                            </form>
-                                            </div>
-                                        </h4>
+                                        <h4 class="d-flex justify-content-between " style="width:55%">
+                                            @if (@favorite.Book.Quantity > 0)
+                                            {
+
+                                                <div class="main-border-button">
+
+                                                    <a a asp-action="BorrowConfirmation" asp-controller="Borrow" asp-area="" asp-route-id="@favorite.Book.Id">Borrow Book</a>
+                                                </div>
                                      
-                    
-                                                     
-                       
+                                                <div class="main-border-button">
+                                                    <a class="main-border-button" data-bs-toggle="modal" data-bs-target="#exampleModal2-@favorite.Book.Id">Read PDF</a>
+
+
+
+
+                                                    <div class="modal fade" id="exampleModal2-@favorite.Book.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-scrollable">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">PDF Viewer</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+
+                                                                    <iframe src="@Url.Content("~/" + @favorite.Book.BookPDF)" class="w-100" height="500" style="border: none;"></iframe>
+
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+
+                                                <div class="main-border-button ">
+                                                    <form asp-action="Delete" asp-area="" asp-controller="Favorite" method="post" asp-route-id="@favorite.Book.Id">
+                                                        <input type="submit" class="main-border-button" value="Remove" style="background:transparent;
+ border-color: #2a2a2a;
+        color: #2a2a2a;" />
+                                                    </form>
+                                                </div>
+                                            }
+                                            else
+                                            {
+
+                                                <div class="main-border-button "><a href="#" class="disabled btn-danger text-light">Not Available</a></div>
+                                        
+                                                <div class="main-border-button">
+
+                                                    <a class="main-border-button" data-bs-toggle="modal" data-bs-target="#exampleModal2-@favorite.Book.Id">Read PDF</a>
+
+
+
+
+                                                    <div class="modal fade" id="exampleModal2-@favorite.Book.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-scrollable">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">PDF Viewer</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+
+                                                                    <iframe src="@Url.Content("~/" + @favorite.Book.BookPDF)" class="w-100" height="500" style="border: none;"></iframe>
+
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+
+                                                <div class="main-border-button ">
+                                                    <form asp-action="Delete" asp-area="" asp-controller="Favorite" method="post" asp-route-id="@favorite.Book.Id">
+                                                        <input type="submit" class="main-border-button" value="Remove" style="background:transparent;
+ border-color: #2a2a2a;
+        color: #2a2a2a;" />
+                                                    </form>
+                                                </div>
+
+                                            }
+
+                                        </h4>
+                           
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr/>
                 </div>
             </section>
+
         }
     </ul>
 }

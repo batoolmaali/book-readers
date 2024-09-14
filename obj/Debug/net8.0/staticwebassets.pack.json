@@ -5,6 +5,54 @@
       "PackagePath": "staticwebassets\\BookReaders.bundle.scp.css"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\4865902-uhd_4096_2160_25fps.mp4",
+      "PackagePath": "staticwebassets\\4865902-uhd_4096_2160_25fps.mp4"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\854417-uhd_3840_2160_25fps.mp4",
+      "PackagePath": "staticwebassets\\854417-uhd_3840_2160_25fps.mp4"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Details\\fonts\\icomoon\\Read Me.txt",
+      "PackagePath": "staticwebassets\\Details\\fonts\\icomoon\\Read Me.txt"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Details\\fonts\\icomoon\\demo-files\\demo.css",
+      "PackagePath": "staticwebassets\\Details\\fonts\\icomoon\\demo-files\\demo.css"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Details\\fonts\\icomoon\\demo-files\\demo.js",
+      "PackagePath": "staticwebassets\\Details\\fonts\\icomoon\\demo-files\\demo.js"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Details\\fonts\\icomoon\\demo.html",
+      "PackagePath": "staticwebassets\\Details\\fonts\\icomoon\\demo.html"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Details\\fonts\\icomoon\\fonts\\icomoon.eot",
+      "PackagePath": "staticwebassets\\Details\\fonts\\icomoon\\fonts\\icomoon.eot"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Details\\fonts\\icomoon\\fonts\\icomoon.svg",
+      "PackagePath": "staticwebassets\\Details\\fonts\\icomoon\\fonts\\icomoon.svg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Details\\fonts\\icomoon\\fonts\\icomoon.ttf",
+      "PackagePath": "staticwebassets\\Details\\fonts\\icomoon\\fonts\\icomoon.ttf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Details\\fonts\\icomoon\\fonts\\icomoon.woff",
+      "PackagePath": "staticwebassets\\Details\\fonts\\icomoon\\fonts\\icomoon.woff"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Details\\fonts\\icomoon\\selection.json",
+      "PackagePath": "staticwebassets\\Details\\fonts\\icomoon\\selection.json"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Details\\fonts\\icomoon\\style.css",
+      "PackagePath": "staticwebassets\\Details\\fonts\\icomoon\\style.css"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\Home\\css\\bootstrap.min.css"
     },
@@ -89,96 +137,12 @@
       "PackagePath": "staticwebassets\\Home\\fonts\\slick.woff"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\Capture.PNG",
-      "PackagePath": "staticwebassets\\Home\\images\\Capture.PNG"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\ERD.PNG",
-      "PackagePath": "staticwebassets\\Home\\images\\ERD.PNG"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\about-left-image.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\about-left-image.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\about-us-page-heading.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\about-us-page-heading.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\baner-right-image-01.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\baner-right-image-01.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\baner-right-image-02.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\baner-right-image-02.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\baner-right-image-03.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\baner-right-image-03.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\baner-right-image-04.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\baner-right-image-04.jpg"
-    },
-    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\close.png",
       "PackagePath": "staticwebassets\\Home\\images\\close.png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\explore-image-01.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\explore-image-01.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\explore-image-02.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\explore-image-02.jpg"
-    },
-    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\home.PNG",
       "PackagePath": "staticwebassets\\Home\\images\\home.PNG"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\instagram-01.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\instagram-01.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\instagram-02.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\instagram-02.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\instagram-03.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\instagram-03.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\instagram-04.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\instagram-04.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\instagram-05.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\instagram-05.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\instagram-06.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\instagram-06.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\kid-01.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\kid-01.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\kid-02.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\kid-02.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\kid-03.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\kid-03.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\kkkk.PNG",
-      "PackagePath": "staticwebassets\\Home\\images\\kkkk.PNG"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\left-banner-image.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\left-banner-image.jpg"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\loading.gif",
@@ -189,18 +153,6 @@
       "PackagePath": "staticwebassets\\Home\\images\\logo.png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\men-01.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\men-01.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\men-02.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\men-02.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\men-03.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\men-03.jpg"
-    },
-    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\next.png",
       "PackagePath": "staticwebassets\\Home\\images\\next.png"
     },
@@ -209,64 +161,12 @@
       "PackagePath": "staticwebassets\\Home\\images\\prev.png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\products-page-heading.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\products-page-heading.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\removed_text.jpeg",
-      "PackagePath": "staticwebassets\\Home\\images\\removed_text.jpeg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\section.PNG",
-      "PackagePath": "staticwebassets\\Home\\images\\section.PNG"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\service-01.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\service-01.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\service-02.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\service-02.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\service-03.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\service-03.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\single-product-01.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\single-product-01.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\single-product-02.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\single-product-02.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\team-member-01.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\team-member-01.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\team-member-02.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\team-member-02.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\team-member-03.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\team-member-03.jpg"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\prt_540x540_1700568370-removebg-preview.png",
+      "PackagePath": "staticwebassets\\Home\\images\\prt_540x540_1700568370-removebg-preview.png"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\white-logo.png",
       "PackagePath": "staticwebassets\\Home\\images\\white-logo.png"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\women-01.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\women-01.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\women-02.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\women-02.jpg"
-    },
-    {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\images\\women-03.jpg",
-      "PackagePath": "staticwebassets\\Home\\images\\women-03.jpg"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Home\\js\\accordions.js",
@@ -329,8 +229,20 @@
       "PackagePath": "staticwebassets\\Home\\js\\waypoints.min.js"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\045494dc-566a-4c3d-a7d0-cb926bf8c1c7.jpg",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\045494dc-566a-4c3d-a7d0-cb926bf8c1c7.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\1b9067ac-803d-4ee8-a1c7-1e5e97aecdbb.jpg",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\1b9067ac-803d-4ee8-a1c7-1e5e97aecdbb.jpg"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\1c30c329-1c20-4736-8898-c8f06b1b5bb4.jpg",
       "PackagePath": "staticwebassets\\Images\\AuthorImages\\1c30c329-1c20-4736-8898-c8f06b1b5bb4.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\21a88210-ea7b-48af-a98e-392d411cf6f1.jpg",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\21a88210-ea7b-48af-a98e-392d411cf6f1.jpg"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\24de8171-87a1-4161-88b8-b625dca1a083.jfif",
@@ -345,8 +257,24 @@
       "PackagePath": "staticwebassets\\Images\\AuthorImages\\28991054-0422-4af8-916a-206cab4423e0.jfif"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\3642e49b-a88c-4802-bd60-b15592b1bd5d.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\3642e49b-a88c-4802-bd60-b15592b1bd5d.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\38bdb259-ec08-4e0d-9ecd-2454e2489232.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\38bdb259-ec08-4e0d-9ecd-2454e2489232.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\40167e79-9d46-4bb9-b36d-3962054bac07.jpg",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\40167e79-9d46-4bb9-b36d-3962054bac07.jpg"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\40eaea07-2060-4b05-bdf3-09e2dc2fa697.jfif",
       "PackagePath": "staticwebassets\\Images\\AuthorImages\\40eaea07-2060-4b05-bdf3-09e2dc2fa697.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\45b985dc-9057-4fcd-a8ef-f32d1ab54124.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\45b985dc-9057-4fcd-a8ef-f32d1ab54124.jfif"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\47fc0a01-e4fe-4519-b883-e2ade4de180a.jfif",
@@ -357,16 +285,32 @@
       "PackagePath": "staticwebassets\\Images\\AuthorImages\\528a99c9-1bf9-453a-98ba-d0516a41a933.jfif"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\5f91d522-b663-4908-b4f1-831a7ae83f73.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\5f91d522-b663-4908-b4f1-831a7ae83f73.jfif"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\610ba3d3-8c41-4ef1-b283-bfc705c9c362.jfif",
       "PackagePath": "staticwebassets\\Images\\AuthorImages\\610ba3d3-8c41-4ef1-b283-bfc705c9c362.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\61b3e7ab-8cd0-4b2b-a133-9adbf7aa865c.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\61b3e7ab-8cd0-4b2b-a133-9adbf7aa865c.jfif"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\71c8c58f-0aca-40f4-81fc-68b9a8a75d4f.jfif",
       "PackagePath": "staticwebassets\\Images\\AuthorImages\\71c8c58f-0aca-40f4-81fc-68b9a8a75d4f.jfif"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\7560130e-eb0a-4f19-a74b-c0b2f30b37ac.jpg",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\7560130e-eb0a-4f19-a74b-c0b2f30b37ac.jpg"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\8d9d8fb5-dd3a-48fd-938a-152db861b2ce.webp",
       "PackagePath": "staticwebassets\\Images\\AuthorImages\\8d9d8fb5-dd3a-48fd-938a-152db861b2ce.webp"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\9e2b9274-01af-4368-8de3-92109c017326.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\9e2b9274-01af-4368-8de3-92109c017326.jfif"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\a6affde2-f972-4a38-a88f-01aed6654afc.jfif",
@@ -377,12 +321,44 @@
       "PackagePath": "staticwebassets\\Images\\AuthorImages\\a822709b-ef6b-4f84-85c6-c38da76df93b.jfif"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\a8c4f96c-334c-4b66-a216-a05e33e6fdf7.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\a8c4f96c-334c-4b66-a216-a05e33e6fdf7.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\af2df9c2-5719-4203-a4e4-14ec03f75b1a.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\af2df9c2-5719-4203-a4e4-14ec03f75b1a.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\b12a9663-1a6b-4dfe-b0b8-e2e9265f3e29.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\b12a9663-1a6b-4dfe-b0b8-e2e9265f3e29.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\c0bfd51a-7a5e-4b92-82ea-1ac1f11fabd5.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\c0bfd51a-7a5e-4b92-82ea-1ac1f11fabd5.jfif"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\d50a196d-0080-4509-8447-5d63ac9618ef.jfif",
       "PackagePath": "staticwebassets\\Images\\AuthorImages\\d50a196d-0080-4509-8447-5d63ac9618ef.jfif"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\d9c4ed3c-9a13-4a37-9ada-b64fb5fa29b3.jfif",
       "PackagePath": "staticwebassets\\Images\\AuthorImages\\d9c4ed3c-9a13-4a37-9ada-b64fb5fa29b3.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\e0b2840d-799d-4e52-99ab-e4af6f6872c6.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\e0b2840d-799d-4e52-99ab-e4af6f6872c6.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\e33d4df9-6735-46db-bab6-00aeacf59f9c.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\e33d4df9-6735-46db-bab6-00aeacf59f9c.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\ed4f9a29-c6d5-4666-8a80-321ed667476d.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\ed4f9a29-c6d5-4666-8a80-321ed667476d.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\f10eb8ff-a11a-4ec3-9ba1-256e5f64ade9.jfif",
+      "PackagePath": "staticwebassets\\Images\\AuthorImages\\f10eb8ff-a11a-4ec3-9ba1-256e5f64ade9.jfif"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\AuthorImages\\f2a815cf-f9ff-4db2-b9bd-f03e65e47961.jfif",
@@ -411,6 +387,14 @@
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\153ff679-750f-49f8-add2-6dd79feadc27.jpg",
       "PackagePath": "staticwebassets\\Images\\BookImages\\153ff679-750f-49f8-add2-6dd79feadc27.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\173b009a-a93f-440a-89ac-40eb0acc191d.webp",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\173b009a-a93f-440a-89ac-40eb0acc191d.webp"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\178e2ce3-fc7f-4387-bb9f-95e4a870bc5a.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\178e2ce3-fc7f-4387-bb9f-95e4a870bc5a.jpg"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\1d0f94a2-9b93-45be-90dc-c8f97050c0f2.jpg",
@@ -445,6 +429,10 @@
       "PackagePath": "staticwebassets\\Images\\BookImages\\2e349683-c7fe-4a52-800a-93bed58a168c.jpg"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\30a54c93-69dd-4db2-987f-a7062648eabe.webp",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\30a54c93-69dd-4db2-987f-a7062648eabe.webp"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\35ed526b-9c5f-402d-866d-2bb214a9ca05.webp",
       "PackagePath": "staticwebassets\\Images\\BookImages\\35ed526b-9c5f-402d-866d-2bb214a9ca05.webp"
     },
@@ -453,8 +441,20 @@
       "PackagePath": "staticwebassets\\Images\\BookImages\\3a4fbe72-8251-4655-935a-1655d0a9b3f5.jpg"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\3c65e6e0-02f6-4616-97f2-73393ee2872c.webp",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\3c65e6e0-02f6-4616-97f2-73393ee2872c.webp"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\3dcd11ba-dfc8-4a05-b9b7-943610baff0e.webp",
       "PackagePath": "staticwebassets\\Images\\BookImages\\3dcd11ba-dfc8-4a05-b9b7-943610baff0e.webp"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\3e3b38bf-99e3-468d-9af3-de3b8cfe2465.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\3e3b38bf-99e3-468d-9af3-de3b8cfe2465.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\40673d39-6a94-4750-95c7-bc08d5453483.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\40673d39-6a94-4750-95c7-bc08d5453483.jpg"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\4192b689-b6b2-4e57-a77c-49bbf22b89f1.jpg",
@@ -469,6 +469,10 @@
       "PackagePath": "staticwebassets\\Images\\BookImages\\46761e1e-ebe2-4ad1-b957-f989031b6389.webp"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\46b3ba0c-f5a0-440d-9117-263b08fc80d2.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\46b3ba0c-f5a0-440d-9117-263b08fc80d2.jpg"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\487b172f-8476-4edf-a024-2ca4b6515cbe.jpg",
       "PackagePath": "staticwebassets\\Images\\BookImages\\487b172f-8476-4edf-a024-2ca4b6515cbe.jpg"
     },
@@ -479,6 +483,10 @@
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\4c84bae2-650e-4417-b923-6e7469d01513.webp",
       "PackagePath": "staticwebassets\\Images\\BookImages\\4c84bae2-650e-4417-b923-6e7469d01513.webp"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\5095ef68-058a-4125-b10b-5dd6e7f49b51.webp",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\5095ef68-058a-4125-b10b-5dd6e7f49b51.webp"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\50af8347-0676-4293-b8cc-75a6487fae80.webp",
@@ -505,6 +513,10 @@
       "PackagePath": "staticwebassets\\Images\\BookImages\\5aa2d1c0-2829-459e-a322-8cddbcc759a4.jpg"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\6371d11b-d732-4627-9775-954f30184f97.webp",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\6371d11b-d732-4627-9775-954f30184f97.webp"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\663b3dd6-5638-48f2-9c2f-62cb17bbd661.jpg",
       "PackagePath": "staticwebassets\\Images\\BookImages\\663b3dd6-5638-48f2-9c2f-62cb17bbd661.jpg"
     },
@@ -529,6 +541,10 @@
       "PackagePath": "staticwebassets\\Images\\BookImages\\7215323b-1b50-4bb7-b5d9-1f6f41fc37d3.webp"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\8563cf68-925a-48f6-817c-e7691f1c09f3.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\8563cf68-925a-48f6-817c-e7691f1c09f3.jpg"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\87cca180-6e2f-427a-bc82-472aa197238f.jpg",
       "PackagePath": "staticwebassets\\Images\\BookImages\\87cca180-6e2f-427a-bc82-472aa197238f.jpg"
     },
@@ -545,8 +561,16 @@
       "PackagePath": "staticwebassets\\Images\\BookImages\\919d1904-06b7-4ba5-aaba-d2e3ee6eae70.jpg"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\91eb89c0-8590-475f-ae58-06f18da96758.webp",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\91eb89c0-8590-475f-ae58-06f18da96758.webp"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\97190931-b30b-4fa0-8bb8-97b90c208bda.webp",
       "PackagePath": "staticwebassets\\Images\\BookImages\\97190931-b30b-4fa0-8bb8-97b90c208bda.webp"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\976c9271-5705-4a0f-baf4-d3a0e9ea351c.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\976c9271-5705-4a0f-baf4-d3a0e9ea351c.jpg"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\989ec0c6-5ddc-4b5f-b298-ca9928817083.webp",
@@ -581,8 +605,32 @@
       "PackagePath": "staticwebassets\\Images\\BookImages\\a88860de-47b2-42cc-82a3-790011486da5.webp"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\a88a6183-7b70-4f8d-92fb-93d0a9913300.webp",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\a88a6183-7b70-4f8d-92fb-93d0a9913300.webp"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\ac15191d-7907-4f61-9626-c83b42d7e80f.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\ac15191d-7907-4f61-9626-c83b42d7e80f.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\b2ac95e3-89d9-4e45-b4b4-1da9d96ccbd1.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\b2ac95e3-89d9-4e45-b4b4-1da9d96ccbd1.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\b4a0ac84-27af-4aac-b4fc-8263be6910be.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\b4a0ac84-27af-4aac-b4fc-8263be6910be.jpg"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\b7addb2d-3d9e-44bb-9ba5-a0b2a1b02f73.jpg",
       "PackagePath": "staticwebassets\\Images\\BookImages\\b7addb2d-3d9e-44bb-9ba5-a0b2a1b02f73.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\bc422e4c-b55e-4c8b-8590-45279b7a83a7.webp",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\bc422e4c-b55e-4c8b-8590-45279b7a83a7.webp"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\be717dcf-cf7c-489c-8aa7-97b11b6c8dc7.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\be717dcf-cf7c-489c-8aa7-97b11b6c8dc7.jpg"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\be9f001d-ab9b-4a8a-af2a-d04050a9beca.jpg",
@@ -593,6 +641,14 @@
       "PackagePath": "staticwebassets\\Images\\BookImages\\bfc5fcad-0882-4405-be18-8c9d68e40057.jpg"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\bfedc8c4-b9eb-48f3-9042-569eec70d4e4.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\bfedc8c4-b9eb-48f3-9042-569eec70d4e4.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\c28c82b2-fc74-4941-acf7-90f5d00f15f5.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\c28c82b2-fc74-4941-acf7-90f5d00f15f5.jpg"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\c2caefe1-8074-4884-8e10-bbfe5bb9b235.webp",
       "PackagePath": "staticwebassets\\Images\\BookImages\\c2caefe1-8074-4884-8e10-bbfe5bb9b235.webp"
     },
@@ -601,8 +657,16 @@
       "PackagePath": "staticwebassets\\Images\\BookImages\\c3eb92e9-b2e1-42a2-a484-364088faa274.webp"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\c51e587d-d0d4-4994-894d-823816896ebd.webp",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\c51e587d-d0d4-4994-894d-823816896ebd.webp"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\c5860e99-07c3-48e1-b40c-e2565b9f362c.jpg",
       "PackagePath": "staticwebassets\\Images\\BookImages\\c5860e99-07c3-48e1-b40c-e2565b9f362c.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\c6c71f9f-c2d3-458c-b8b8-9990148122b8.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\c6c71f9f-c2d3-458c-b8b8-9990148122b8.jpg"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\c8640274-dd3b-4198-be34-be5ff9217f4d.jpg",
@@ -633,12 +697,28 @@
       "PackagePath": "staticwebassets\\Images\\BookImages\\daa4b31b-2f94-4e20-85e8-354168e0cbca.webp"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\de45c533-bb6b-43e5-8fc7-9c03bd158ac4.png",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\de45c533-bb6b-43e5-8fc7-9c03bd158ac4.png"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\dfdf80a6-c98d-4a18-90d9-0ca02eb6cc48.webp",
       "PackagePath": "staticwebassets\\Images\\BookImages\\dfdf80a6-c98d-4a18-90d9-0ca02eb6cc48.webp"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\e155371d-111d-4caa-b53f-b9ce89d7b7d0.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\e155371d-111d-4caa-b53f-b9ce89d7b7d0.jpg"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\e4b2540f-10fc-46f2-b4f4-f212d331da30.jpg",
       "PackagePath": "staticwebassets\\Images\\BookImages\\e4b2540f-10fc-46f2-b4f4-f212d331da30.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\e4b59fae-94ac-449e-8f16-2e3ac1a6833d.webp",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\e4b59fae-94ac-449e-8f16-2e3ac1a6833d.webp"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\e57fa520-9655-452e-b19f-26d5e7e4dd27.png",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\e57fa520-9655-452e-b19f-26d5e7e4dd27.png"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\e7575e6a-1040-41b6-838f-b769537d2dba.webp",
@@ -673,6 +753,14 @@
       "PackagePath": "staticwebassets\\Images\\BookImages\\f96e84b7-019a-4272-a907-b5794dd7e1da.jpg"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\fa4eabc6-b0c7-48c2-8b07-f865b80a8b21.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\fa4eabc6-b0c7-48c2-8b07-f865b80a8b21.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\fa93ed37-0d24-4685-bb7d-e66594e92f51.jpg",
+      "PackagePath": "staticwebassets\\Images\\BookImages\\fa93ed37-0d24-4685-bb7d-e66594e92f51.jpg"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookImages\\fb109517-361c-47e1-a541-92358fc329bb.jpg",
       "PackagePath": "staticwebassets\\Images\\BookImages\\fb109517-361c-47e1-a541-92358fc329bb.jpg"
     },
@@ -693,12 +781,28 @@
       "PackagePath": "staticwebassets\\Images\\BookPDF\\04671e46-6e17-475c-b187-9255cdff6c94.pdf"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\082cdfa3-58eb-427b-a612-aef6a732b2f3.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\082cdfa3-58eb-427b-a612-aef6a732b2f3.pdf"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\09a7f93e-b2f7-4914-93a8-fd79184f55c3.pdf",
       "PackagePath": "staticwebassets\\Images\\BookPDF\\09a7f93e-b2f7-4914-93a8-fd79184f55c3.pdf"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\0bee1139-69d5-440f-8686-0a8db99cbbf0.pdf",
       "PackagePath": "staticwebassets\\Images\\BookPDF\\0bee1139-69d5-440f-8686-0a8db99cbbf0.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\10ceff59-c642-4185-80a1-b43444d72863.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\10ceff59-c642-4185-80a1-b43444d72863.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\14b1206f-5ad0-495a-9333-8c393688c17b.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\14b1206f-5ad0-495a-9333-8c393688c17b.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\160a83de-1f5b-4e52-aa6f-5a26d90ae3cb.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\160a83de-1f5b-4e52-aa6f-5a26d90ae3cb.pdf"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\16993bbd-7e6c-45f4-ad9e-ff3693cb9ddc.pdf",
@@ -709,12 +813,24 @@
       "PackagePath": "staticwebassets\\Images\\BookPDF\\16aaa96e-bec8-4f16-a421-09a63fcb2e23.pdf"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\19d40fb9-5e36-45c9-a023-0e33672da2a9.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\19d40fb9-5e36-45c9-a023-0e33672da2a9.pdf"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\1be1f093-3ae2-414c-bcb7-c0c4f95f9105.pdf",
       "PackagePath": "staticwebassets\\Images\\BookPDF\\1be1f093-3ae2-414c-bcb7-c0c4f95f9105.pdf"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\1df39082-ceb8-4fba-b7ba-e73dcedfb923.pdf",
       "PackagePath": "staticwebassets\\Images\\BookPDF\\1df39082-ceb8-4fba-b7ba-e73dcedfb923.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\209598f5-2e08-4b89-bfaf-f3717e7a36cd.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\209598f5-2e08-4b89-bfaf-f3717e7a36cd.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\2127fc21-3861-459b-a994-427c20d6eb97.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\2127fc21-3861-459b-a994-427c20d6eb97.pdf"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\2152d983-2af9-4f22-84ea-d1dae30035b4.pdf",
@@ -733,12 +849,20 @@
       "PackagePath": "staticwebassets\\Images\\BookPDF\\2cd51b67-3a5d-4082-97b8-31aa78795d8a.pdf"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\30b6ee63-164b-4406-8f62-3b38c488aa83.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\30b6ee63-164b-4406-8f62-3b38c488aa83.pdf"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\31956cd1-e3f0-4d52-a219-97de7f477d85.pdf",
       "PackagePath": "staticwebassets\\Images\\BookPDF\\31956cd1-e3f0-4d52-a219-97de7f477d85.pdf"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\345b74a9-d1fd-44de-9b7b-b7118de66ed4.pdf",
       "PackagePath": "staticwebassets\\Images\\BookPDF\\345b74a9-d1fd-44de-9b7b-b7118de66ed4.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\389b306e-3e40-41a3-817b-be9f42f4a2df.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\389b306e-3e40-41a3-817b-be9f42f4a2df.pdf"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\431b7d3a-7c26-4dbf-bd07-03060422c50a.pdf",
@@ -805,6 +929,10 @@
       "PackagePath": "staticwebassets\\Images\\BookPDF\\9a6d1cf4-a2ae-4cc3-b7e5-c7ef6f0a03cc.pdf"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\a3f5ecda-fb83-4405-98e8-017a5d10e0cd.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\a3f5ecda-fb83-4405-98e8-017a5d10e0cd.pdf"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\a42ecef0-b8d8-4588-a549-faff30494ec2.pdf",
       "PackagePath": "staticwebassets\\Images\\BookPDF\\a42ecef0-b8d8-4588-a549-faff30494ec2.pdf"
     },
@@ -833,12 +961,36 @@
       "PackagePath": "staticwebassets\\Images\\BookPDF\\b3dc6583-1fb6-4b22-9b65-133842bc319e.pdf"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\b51211ff-5314-4935-b9a1-d38846548da6.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\b51211ff-5314-4935-b9a1-d38846548da6.pdf"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\b7cf8b28-a26b-4ea2-9865-4312bd5d0de1.pdf",
       "PackagePath": "staticwebassets\\Images\\BookPDF\\b7cf8b28-a26b-4ea2-9865-4312bd5d0de1.pdf"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\b8449924-0d2a-4d0a-ac39-155244888149.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\b8449924-0d2a-4d0a-ac39-155244888149.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\bc2a5526-1916-48ec-aaa8-9c9266ec1acb.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\bc2a5526-1916-48ec-aaa8-9c9266ec1acb.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\c5c57806-4dbf-4420-a9c9-2e09f5056905.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\c5c57806-4dbf-4420-a9c9-2e09f5056905.pdf"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\cb8dcc75-6542-47df-9eff-4eacc8d0e1da.pdf",
       "PackagePath": "staticwebassets\\Images\\BookPDF\\cb8dcc75-6542-47df-9eff-4eacc8d0e1da.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\cc519da1-4789-47a7-9d17-82218db48dcc.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\cc519da1-4789-47a7-9d17-82218db48dcc.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\d073e6ec-e23d-4255-a9f0-0d81b2c2b01c.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\d073e6ec-e23d-4255-a9f0-0d81b2c2b01c.pdf"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\d92d0ee2-8191-4eb6-a98d-0506e8966af6.pdf",
@@ -849,12 +1001,28 @@
       "PackagePath": "staticwebassets\\Images\\BookPDF\\deeb03eb-853b-4fe4-9f74-182e809ed0a9.pdf"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\df2b21f5-d874-4691-bae0-38950c9aae2a.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\df2b21f5-d874-4691-bae0-38950c9aae2a.pdf"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\dff2e1a1-7335-4539-91c2-dc2a9c436ac2.pdf",
       "PackagePath": "staticwebassets\\Images\\BookPDF\\dff2e1a1-7335-4539-91c2-dc2a9c436ac2.pdf"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\e24f8908-f9f4-4392-81bf-da18a9489b3e.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\e24f8908-f9f4-4392-81bf-da18a9489b3e.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\e7ea226b-8588-4998-8486-566300ea05d6.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\e7ea226b-8588-4998-8486-566300ea05d6.pdf"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\e81f323e-2b70-45bf-bac2-3ff564a37e66.pdf",
       "PackagePath": "staticwebassets\\Images\\BookPDF\\e81f323e-2b70-45bf-bac2-3ff564a37e66.pdf"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\eadd8511-ccd3-4517-8c3a-b35d19eaf5ff.pdf",
+      "PackagePath": "staticwebassets\\Images\\BookPDF\\eadd8511-ccd3-4517-8c3a-b35d19eaf5ff.pdf"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\BookPDF\\eb3313b6-754d-4097-95c4-6cf3ee172feb.pdf",
@@ -899,6 +1067,10 @@
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\UserImages\\1cc8c458-a005-4053-894f-c42da6a4b330.jfif",
       "PackagePath": "staticwebassets\\Images\\UserImages\\1cc8c458-a005-4053-894f-c42da6a4b330.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\UserImages\\31879cc1-536d-4162-9d0a-834bdb3f6a1e.jfif",
+      "PackagePath": "staticwebassets\\Images\\UserImages\\31879cc1-536d-4162-9d0a-834bdb3f6a1e.jfif"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\UserImages\\3d94dc8c-4454-42a5-a083-0f757b9e5a21.jfif",
@@ -965,6 +1137,10 @@
       "PackagePath": "staticwebassets\\Images\\UserImages\\88fc7e9b-c0ff-4e77-af48-440fe4253948.jfif"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\UserImages\\96f1154a-883a-40f9-b305-c4297f80ce41.jfif",
+      "PackagePath": "staticwebassets\\Images\\UserImages\\96f1154a-883a-40f9-b305-c4297f80ce41.jfif"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\UserImages\\9f4903e4-dc85-4f9b-92d8-bd48c42d221f.jfif",
       "PackagePath": "staticwebassets\\Images\\UserImages\\9f4903e4-dc85-4f9b-92d8-bd48c42d221f.jfif"
     },
@@ -981,12 +1157,20 @@
       "PackagePath": "staticwebassets\\Images\\UserImages\\c025a6d5-92c0-46bc-93a6-8754409bfe79.jfif"
     },
     {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\UserImages\\d291b43f-8598-495f-bf42-40039dfdc076.jfif",
+      "PackagePath": "staticwebassets\\Images\\UserImages\\d291b43f-8598-495f-bf42-40039dfdc076.jfif"
+    },
+    {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\UserImages\\d2c1dd6e-a869-4b56-9d50-456beebc9932.jfif",
       "PackagePath": "staticwebassets\\Images\\UserImages\\d2c1dd6e-a869-4b56-9d50-456beebc9932.jfif"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\UserImages\\de68061b-fc46-4a0f-aea7-2ecf9d5df55d.jfif",
       "PackagePath": "staticwebassets\\Images\\UserImages\\de68061b-fc46-4a0f-aea7-2ecf9d5df55d.jfif"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\UserImages\\e43d57d8-da0d-47d1-88df-e19a14f74ef3.jfif",
+      "PackagePath": "staticwebassets\\Images\\UserImages\\e43d57d8-da0d-47d1-88df-e19a14f74ef3.jfif"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\UserImages\\e80d011b-5bfb-4e6d-bb42-055d7ca58617.jfif",
@@ -1057,56 +1241,128 @@
       "PackagePath": "staticwebassets\\Images\\VideoImages\\f1dbd93c-b22b-459d-a020-4f67238f6229.jpg"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\0c588870-043a-4983-814f-80d3dc9d8c0e.mp4",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\0c588870-043a-4983-814f-80d3dc9d8c0e.mp4"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\image (1).png",
+      "PackagePath": "staticwebassets\\Images\\image (1).png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\259d4bfa-39c8-4214-a43c-d7e219237f1f.mp4",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\259d4bfa-39c8-4214-a43c-d7e219237f1f.mp4"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\image (2).png",
+      "PackagePath": "staticwebassets\\Images\\image (2).png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\2deead30-0a97-4cc3-95eb-1dfcfa382424.mp4",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\2deead30-0a97-4cc3-95eb-1dfcfa382424.mp4"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\image (3).png",
+      "PackagePath": "staticwebassets\\Images\\image (3).png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\3aa3cfc9-279b-48a3-99b7-df14cf316fa1.mp4",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\3aa3cfc9-279b-48a3-99b7-df14cf316fa1.mp4"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\image (4).png",
+      "PackagePath": "staticwebassets\\Images\\image (4).png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\4005566a-d618-4211-8926-7716719682bc.jpg",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\4005566a-d618-4211-8926-7716719682bc.jpg"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\image (5).png",
+      "PackagePath": "staticwebassets\\Images\\image (5).png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\56fb0d17-b067-44a0-b05e-22ddda513536.mp4",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\56fb0d17-b067-44a0-b05e-22ddda513536.mp4"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\image (6).png",
+      "PackagePath": "staticwebassets\\Images\\image (6).png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\7f021376-16d2-4175-b301-d3fcbe5a9272.mp4",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\7f021376-16d2-4175-b301-d3fcbe5a9272.mp4"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\image (7).png",
+      "PackagePath": "staticwebassets\\Images\\image (7).png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\86f3f27d-29f5-4a41-9485-1a58605000d7.mp4",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\86f3f27d-29f5-4a41-9485-1a58605000d7.mp4"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\image (8).png",
+      "PackagePath": "staticwebassets\\Images\\image (8).png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\991f18b0-74ef-49c2-868b-855ff454c673.mp4",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\991f18b0-74ef-49c2-868b-855ff454c673.mp4"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\image (9).png",
+      "PackagePath": "staticwebassets\\Images\\image (9).png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\a3ed36b1-766d-4b3e-95c7-e19e4ab394a1.mp4",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\a3ed36b1-766d-4b3e-95c7-e19e4ab394a1.mp4"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\image.png",
+      "PackagePath": "staticwebassets\\Images\\image.png"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\b415f63d-c092-4e3b-8d44-00ea8839a71f.mp4",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\b415f63d-c092-4e3b-8d44-00ea8839a71f.mp4"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Images\\p1-img-02.jpg",
+      "PackagePath": "staticwebassets\\Images\\p1-img-02.jpg"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\ceb5029b-8de7-41d5-a345-bb9fa818632a.mp4",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\ceb5029b-8de7-41d5-a345-bb9fa818632a.mp4"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsImages\\195e048d-b807-4464-9140-eabfea76fa82.webp",
+      "PackagePath": "staticwebassets\\Videos\\KidsImages\\195e048d-b807-4464-9140-eabfea76fa82.webp"
     },
     {
-      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\f2c38f95-6e06-4dae-92fc-46cc881f4dec.webp",
-      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\f2c38f95-6e06-4dae-92fc-46cc881f4dec.webp"
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsImages\\3867b576-69ce-4312-9992-0b6f0c6e4db4.webp",
+      "PackagePath": "staticwebassets\\Videos\\KidsImages\\3867b576-69ce-4312-9992-0b6f0c6e4db4.webp"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsImages\\4153ef80-c4e2-404f-9713-dee9a8df33c5.webp",
+      "PackagePath": "staticwebassets\\Videos\\KidsImages\\4153ef80-c4e2-404f-9713-dee9a8df33c5.webp"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsImages\\49973230-b572-48de-974c-7595021d2363.jpg",
+      "PackagePath": "staticwebassets\\Videos\\KidsImages\\49973230-b572-48de-974c-7595021d2363.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsImages\\7b7e3d05-3727-4e89-9056-21eae6b241b6.png",
+      "PackagePath": "staticwebassets\\Videos\\KidsImages\\7b7e3d05-3727-4e89-9056-21eae6b241b6.png"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsImages\\7cbff30c-a07f-4c82-a03d-d84781aa7ffe.jpg",
+      "PackagePath": "staticwebassets\\Videos\\KidsImages\\7cbff30c-a07f-4c82-a03d-d84781aa7ffe.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsImages\\8b1422d0-8808-4576-adfc-c66c75167527.png",
+      "PackagePath": "staticwebassets\\Videos\\KidsImages\\8b1422d0-8808-4576-adfc-c66c75167527.png"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsImages\\a404d1a3-85f3-46e8-a428-5d219a2cc4ca.png",
+      "PackagePath": "staticwebassets\\Videos\\KidsImages\\a404d1a3-85f3-46e8-a428-5d219a2cc4ca.png"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsImages\\b9ec7635-60bf-420a-bb17-e6cd554ef3a8.jpg",
+      "PackagePath": "staticwebassets\\Videos\\KidsImages\\b9ec7635-60bf-420a-bb17-e6cd554ef3a8.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsImages\\fd590cdb-4911-4ee1-875e-a6863cf553a2.jpg",
+      "PackagePath": "staticwebassets\\Videos\\KidsImages\\fd590cdb-4911-4ee1-875e-a6863cf553a2.jpg"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\101864d1-8919-4f5c-8f8f-232daa9198f7.mp4",
+      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\101864d1-8919-4f5c-8f8f-232daa9198f7.mp4"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\175915a1-649a-4d2b-b961-90348d31c581.mp4",
+      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\175915a1-649a-4d2b-b961-90348d31c581.mp4"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\26f8375e-2017-4191-98ff-fc6fb2552d3e.mp4",
+      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\26f8375e-2017-4191-98ff-fc6fb2552d3e.mp4"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\396a89d6-51b9-4a61-a2db-620ed2dd3b70.mp4",
+      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\396a89d6-51b9-4a61-a2db-620ed2dd3b70.mp4"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\48f0b98a-7e18-4741-ae06-d05b3a66148e.mp4",
+      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\48f0b98a-7e18-4741-ae06-d05b3a66148e.mp4"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\63cabcca-8202-43ce-a9f3-7c32926f3863.mp4",
+      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\63cabcca-8202-43ce-a9f3-7c32926f3863.mp4"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\8276206a-d09f-4477-8982-a4afbd70b906.mp4",
+      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\8276206a-d09f-4477-8982-a4afbd70b906.mp4"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\c91c5630-ef94-419d-92fd-59e1abab121a.mp4",
+      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\c91c5630-ef94-419d-92fd-59e1abab121a.mp4"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\e79da8a2-1a03-40f1-b5a5-9ce53ba5a1f8.mp4",
+      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\e79da8a2-1a03-40f1-b5a5-9ce53ba5a1f8.mp4"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\Videos\\KidsVideos\\e7bbaae1-3ec7-4ebd-893b-e28c6f3e75c4.mp4",
+      "PackagePath": "staticwebassets\\Videos\\KidsVideos\\e7bbaae1-3ec7-4ebd-893b-e28c6f3e75c4.mp4"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\css\\DashboardStyle.css",
@@ -1123,6 +1379,10 @@
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\icons8-borrow-book-50.png",
+      "PackagePath": "staticwebassets\\icons8-borrow-book-50.png"
     },
     {
       "Id": "D:\\desktop files\\ASP-FinalProject\\Solution_BookReaders\\BookReaders\\wwwroot\\js\\site.js",

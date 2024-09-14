@@ -16,18 +16,76 @@ namespace BookReaders.Areas.Dashboard.Controllers
         private IRepository<Author> _repository;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        private int pageItem;
+        public int PageSize { get; set; }
+        public int CurrentPage { get; set; }
+        public int TotalPages { get; set; }
+        public string SearchItem { get; set; }
         public AuthorController(AppDbContext dbContext, IWebHostEnvironment webHostEnvironment,
             IRepository<Author> repository)
         {
             _dbContext = dbContext;
             _webHostEnvironment = webHostEnvironment;
             _repository = repository;
-            pageItem = 5;
+            // Initialize 
+            PageSize = 10;
+            CurrentPage = 1;
+            TotalPages = 0;
+            SearchItem = "";
+
         }
 
         [HttpGet]
-        public IActionResult Index(int? id)
+
+        public IActionResult Index(string SearchItem, int currentpage = 1)
+        {
+
+
+            int pageSize = 6;
+            var author = _repository.GetAll().Include(B => B.Books).AsQueryable();
+
+
+            if (SearchItem == null)
+            {
+                author = _repository.GetAll().Include(B => B.Books).AsQueryable();
+            }
+
+            else
+            {
+                author = author.Include(x => x.Books).Where(
+                       x => x.Name.Contains(SearchItem)
+                      || x.Nationality.Contains(SearchItem)
+                      || x.Biography.Contains(SearchItem)
+                      || x.Birthdate.Year.ToString().Contains(SearchItem)).AsQueryable();
+
+                
+
+
+            }
+            // Materialize the query before pagination
+            var filteredBooks = author.ToList();
+
+            int totalRecords = filteredBooks.Count;
+            int totalPages = (int)Math.Ceiling(totalRecords / (double)pageSize);
+
+            var paginatedBooks = filteredBooks.Skip((currentpage - 1) * pageSize)
+                                              .Take(pageSize)
+                                              .ToList();
+
+            ViewBag.CurrentPage = currentpage;
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageSize = pageSize;
+            ViewBag.SearchItem = SearchItem;
+
+
+
+
+
+            return View(paginatedBooks);
+
+
+        }
+/*
+        public IActionResult Index()
         {
            
                 var author = _repository.GetAll().Include(B => B.Books).ToList();
@@ -35,22 +93,30 @@ namespace BookReaders.Areas.Dashboard.Controllers
           
 
         }
-        /*      public IActionResult Index(int? id)
-              {
-                  if (id == 0 || id== null)
-                  {
-                      var author = _repository.GetAll().Include(B => B.Books).ToList().Take(pageItem);
-                      return View(author);
-                  }
-                  else 
-                  {
-                      var author = _repository.GetAll().Include(B => B.Books).Where(x=>x.Id > id).ToList().Take(pageItem);
-                      return View(author);
-                  }
+        public ActionResult Search(string SearchItem)
+        {
 
+            var authors = _dbContext.Authors.AsQueryable();
 
+            if (SearchItem == null)
+            {
+                authors = _dbContext.Authors.AsQueryable();
+            }
 
-              }*/
+            else
+            {
+                authors = authors.Include(x => x.Books).Where(
+                    x => x.Name.Contains(SearchItem)
+                   || x.Nationality.Contains(SearchItem)
+                   || x.Biography.Contains(SearchItem)
+                   || x.Birthdate.Year.ToString().Contains(SearchItem)).AsQueryable();
+
+                return View("Index", authors);
+            }
+
+            return View("Index", authors);
+        }
+*/
 
         [HttpGet]
         public IActionResult Create()
@@ -142,28 +208,6 @@ namespace BookReaders.Areas.Dashboard.Controllers
             TempData["successData"] = "Book has been Deleted successfully";
             return RedirectToAction("Index");
         }
-        public ActionResult Search(string SearchItem)
-        {
-
-            var authors= _dbContext.Authors.AsQueryable();
-
-            if (SearchItem == null)
-            {
-                authors = _dbContext.Authors.AsQueryable();
-            }
-
-            else
-            {
-                authors = authors.Include(x => x.Books).Where(
-                    x => x.Name.Contains(SearchItem)
-                   || x.Nationality.Contains(SearchItem)
-                   || x.Biography.Contains(SearchItem)
-                   || x.Birthdate.Year.ToString().Contains(SearchItem)).AsQueryable();
-
-                return View("Index", authors);
-            }
-
-            return View("Index", authors);
-        }
+     
     }
 }
